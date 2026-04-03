@@ -76,7 +76,7 @@ Esimerkeistä (EXAMPLES) jokin helppo ja keskeinen esimerkki
 
 # LÄHTEET 
 
-Sharifi, L. 2026. Verkkosivu. Palvelinten hallinta. Luettavissa: https://github.com/LilJayyy/Palvelinten-hallinta/blob/main/h1.md/ Luettu: xx.04.2026
+Sharifi, L. 2026. Verkkosivu. _Palvelinten hallinta h1_. Luettavissa: https://github.com/LilJayyy/Palvelinten-hallinta/blob/main/h1.md/ Luettu: xx.04.2026
 
 Karvinen, T. 2026. Verkkosivu. _Sudo without password_ Luettavissa: https://terokarvinen.com/passwordless-sudo/ Luettu xx.04.2026.
 
