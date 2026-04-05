@@ -12,20 +12,25 @@
 ## x) Artikkeli 
 
 ## Karvinen 2026: Sudo without password
--
--
-Kysymys/huomio:
+-Artikkelissa ohjeistetaan sallimaan sudo-komennon käyttäminen ilman salasanaa. 
+-Luodaan uusi käyttäjä ja lisätään se "sudoless" -ryhmään hyvällä salasanalla. Muistutetaan hyvien salasanojen käyttämisestä.
+-Avataan root-shell vakuutuksena eli turvaksi sen varalta, että sudo menee rikki, jotta sen voi avata shellistä. Tämä tehdään ennen sudoers-tiedoston muokkaamista.
+-Syötetään komento`sudo visudo /etc/sudoers.d/sudoless`ja tiedostoon sääntö `%sudoless ALL = (ALL) NOPASSWD: ALL` sallien ryhmälle käytön ilman salasanaa.
+Oma huomio: Selkeä ohje, jossa tulee kuitenkin olla tarkkana, jotta prosessia ei tarvitse monesti toistaa.
 
 ## Munroe 2006: xkcd 149: Sandwitch
--
--
-Kysymys/huomio:
-
+Mitä sarjakuvassa tapahtuu? Mitä yhteistä sillä on Karvisen artikkeliin?
+-Sarjakuvassa on hauskasti kuvailtu miten sudo-komento toimii. On pakko totella ja tehdä se voileipä!
+-Sudolla toimitaan pääkäyttäjän oikeuksilla (root) eikä userin, eli tavallisen käyttäjän oikeuksilla.
+-Siinä on kuvailtu kuvituksen muodossa, millainen merkitys komennolla on. Sudolla "pakotetaan" suorittamaan tiettyjä komentoja ja on äärimmäisen tärkeä ellei yksi tärkeimmistä komennoista muistaa.
+Kysymys/huomio: Miksi juuri voileipä? 
 
 ## Karvinen 2026: Passwordless with Ansible
--
--
-Kysymys/huomio:
+-Ansiblessa rooli (role) on luoda "sudoless" ryhmä. Lisää säännön `sudoers.d/ NOPASSWD` ryhmälle.
+-Teron sääntö numero 1: Manuaalinen ennen automaattista. Tällä tarkoitetaan sitä, että tehdään ensin salasanaton sudo manuaalisesti ensin.
+-`Tree-komennolla` hakemiston rakenne tarkistetaan ja `cat`- komennolla tiedoston sisältö.
+-Alkuun ei ole sudoa ilman salasanaa, joten sitä työstetään ensin. Pitää ensin lisätä `become: true`oikeaan kohtaan blockissa site.yml:ssä. lopuksi `playbook` ajetaan ja tarvittaessa sudo annetaan -K lisäyksellä.
+Kysymys/huomio: Kumpi tuli ensin, muna vai kana?
 
 ## Ansiblen sisäänrakennettu dokumentaatio ansible-doc -kommennolla
 Ansiblen sisäänrakennettu dokumentaatio ansible-doc -kommennolla.
