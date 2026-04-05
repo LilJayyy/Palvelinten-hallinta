@@ -84,7 +84,8 @@ _Käyttäjän luomien_
 
 Käynnistin uuden ikkunan terminaalissa ja otin ssh-yhteyden kohdekoneeseen.
 
-_![10](images/10.png)
+![10](images/10.png)
+
 _Onnistunut yhteyden muodostaminen_
 
 Avasin uuteen ikkunaan root-shellin sudolla varmuuden vuoksi, jos sudoers-tiedosto menee rikki.
@@ -108,7 +109,7 @@ Tässä kohtaa hetken mietin, olinko tehnyt väärin, kun ssh-yhteys kysyi salas
 Syötteeksi tuli testi ilman salasanakyselyjä, joten tehtävä oli suoritettu onnistuneesti.
 
 
-_![11](images/11.png)
+![11](images/11.png)
 
 _sudo echo komennon vastaus_
 
@@ -128,7 +129,7 @@ Tässä suoritetut komennot, jolla siirryin `ansible`-hakemistoon:
 
 Eli `cd ansible` suoritettiin jotta päästiin ansible hakemistoon, rakenteen tarkistus `ls`ja `tree -F`komennolla.
 
-_![12](images/12.png)
+![12](images/12.png)
 
 _antero rooli lisätty_ 
 
@@ -159,7 +160,7 @@ Hetken pohdinnan jälkeen hahmottui, että täytyi luoda tiedosto alla olevilla 
 Tässä kohtaa tulikin jälleen pieni ongelmatilanne. En päässyt etenemään `site.yml` tiedoston muokkaamiseen, sillä ´hosts.ini`-tiedostossa oli vanhemmat tiedot, jossa se yritti kirjautua liljasha@localhost`-ina, jolla olin testaillut aiemmin. Pieni paluu h1 tehtävän raporttiin onneksi auttoi ja löysin syyn. Kävin `hosts.ini` -tiedostoon päivittämässä alla olevasti ansible_user kohtaan `antero ja pyyhin aiemman.
 
 
-_![13](images/13.png)
+![13](images/13.png)
 
 _useriksi antero kirjautumista varten_
 
@@ -169,7 +170,7 @@ Seuraavaksi SSH-avain jota valitteli ohjeistuksen varoituksen mukaisesti. Syöti
 
 Pieni ongelma tuli jälleen vastaan. Jostain syystä liljas -salasana ei kirjautunutkaan enää, kun yritin `sudo nano /etc/ssh/sshd_config`  -komennolla tarkistaa salasanakirjautumisen tilanteen. Onneksi pääsin muuttamaan sen anteron kautta sudolla alla olevasti:
 
-_![14](images/14.png)
+![14](images/14.png)
 
 _Salasananvaihtoa välissä sudolla_
 
@@ -181,7 +182,7 @@ Nyt pääsin muokkaamaan mielestäni jo aiemmin muutetua, mutta teinpäs sen uud
 * Otetaan "#" -merkki pois "PasswordAuthentication" edestä
 * **`ctrl + s ja ctrl x`**
 
-  _![15](images/15.png)
+![15](images/15.png)
   
 _Käyttöönotto ottamalla # merkki pois_
 
@@ -194,7 +195,7 @@ Olin vielä aiemmin testailujeni aikana tehnyt toisen roolin, mutta unohtanut an
 * **`nano site.yml`** lisäsin roolin `antero` ja lopuksi vielä tallennus
 
 
-  _![16](images/16.png)
+![16](images/16.png)
 
   _antero roolin lisääminen_
 
@@ -204,7 +205,7 @@ Takaisin isäntäkone (host) näkymään ja suoritin jälleen komennon:
 * **sieltä nappasin kohdan -k ja -K`**
 * **`ansible-playbook site.yml -k -K`** lopulta oikeaksi komennoksi jolla pääsin miellyttävään lopputulemaan: Tehtävä oli onnistunut.
 
-  ![17](images/17.png)
+![17](images/17.png)
 
   _Ansiblella onnistuneesti luotu antero-rooli_ 
 
