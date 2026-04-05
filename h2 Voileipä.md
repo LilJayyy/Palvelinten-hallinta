@@ -152,9 +152,8 @@ Hetken pohdinnan jälkeen hahmottui että alla oleva sisältö laitettiin tiedos
     content: "%sudoless ALL = (ALL) NOPASSWD: ALL\n"
     owner: "root"
     group: "root"
-    mode: "0644" ```
-
-
+    mode: "0644"
+ ```
 
 
 
