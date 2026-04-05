@@ -120,7 +120,7 @@ Siirryin tähän tehtäväosioon 16:30 pienen tauon jälkeen.
 
 Tässä kohtaa jouduin hieman palailemaan omaan h1 tehtävääni (2026) ja Command Line Basics Revisited (2020) sillä en muistanut ulkkoa miten pääsen tarkastelemaan `tree` rakennetta.
 
-Tässä suoritetut komennot, jolla siirryin `ansible´-hakemistoon:
+Tässä suoritetut komennot, jolla siirryin `ansible`-hakemistoon:
 
 * **`cd ansible`**
 * **`ls`**
@@ -152,6 +152,11 @@ Hetken pohdinnan jälkeen hahmottui että alla oleva sisältö laitettiin tiedos
     owner: "root"
     group: "root"
     mode: "0644" ```
+
+
+
+
+
 
 ## c) Package
 
