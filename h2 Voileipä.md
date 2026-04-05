@@ -23,8 +23,6 @@
 Oma huomio: Selkeä ohje, jossa tulee kuitenkin olla tarkkana, jotta prosessia ei tarvitse monesti toistaa.
 
 ## Munroe 2006: xkcd 149: Sandwitch
-Mitä sarjakuvassa tapahtuu? Mitä yhteistä sillä on Karvisen artikkeliin?
-
 -Sarjakuvassa on hauskasti kuvailtu miten sudo-komento toimii. On pakko totella ja tehdä se voileipä!
 
 -Sudolla toimitaan pääkäyttäjän oikeuksilla (root) eikä userin, eli tavallisen käyttäjän oikeuksilla.
