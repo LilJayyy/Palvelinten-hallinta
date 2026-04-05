@@ -80,12 +80,12 @@ Suoritin seuraavat komennot uuden käyttäjän luomista varten:
 * **`sudo groupadd sudoless`**
 * **`sudo adduser antero sudoless`**
 
-![1](images/1.png)
+![9](images/9.png)
 _Käyttäjän luomien_ 
 
 Käynnistin uuden ikkunan terminaalissa ja otin ssh-yhteyden kohdekoneeseen.
 
-_![2](images/2.png)
+_![10](images/10.png)
 _Onnistunut yhteyden muodostaminen_
 
 Avasin uuteen ikkunaan root-shellin sudolla varmuuden vuoksi, jos sudoers-tiedosto menee rikki.
@@ -109,7 +109,7 @@ Tässä kohtaa hetken mietin, olinko tehnyt väärin, kun ssh-yhteys kysyi salas
 Syötteeksi tuli testi ilman salasanakyselyjä, joten tehtävä oli suoritettu onnistuneesti.
 
 
-_![3](images/3.png)
+_![11](images/11.png)
 _sudo echo komennon vastaus_
 
 
