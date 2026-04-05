@@ -238,9 +238,13 @@ Tässä kävin muutamia sivuja ja ohjeita läpi, jotta asennus menee oikein. Apu
 Ansiblen kanssa ei ole ollut kokemusta aikaisemmin, joten aiheeseen piti enemmän ajan kanssa perehtyä päivän mittaa.
 
 Tässä kohtaa tuli ahaa- elämys: Ansiblessa tulee aina edetä seuraavasti:
-1. Luodaan rooli roles/*roolin_nimi*/tasks/main.yml 
 
-*aina* luoda rooli roles/*roolin_nimi*/tasks/main.yml ja lisätä *aina* rooli site.yml tiedostoon. Roolin main.yml.tiedostoon laitetaan lopuksi varsinainen sisältö, esim apt-komennot. Näin tehdään, jotta Ansible "ajaa" tehdyn toimenpiteen.
+Yksi komento ei riitä, vaan teet järjestyksessä:
+
+1. Luodaan rooli roles/*roolin_nimi*/tasks/main.yml
+2. Roolin sisältö laitetaan main.yml -tiedostoon kuten apt- komennot
+3. Roolin lisääminen site.yml-tiedostoon
+4. `ansible-playbook site.yml -k -K` -komennolla itse asennus
 
 ```
 - apt:
@@ -250,6 +254,24 @@ Tässä kohtaa tuli ahaa- elämys: Ansiblessa tulee aina edetä seuraavasti:
     state: present
     update_cache: yes
 ```
+
+Yllä on apt-komennot main.yml -tiedostossa. Alla prosessi kuvina.
+
+![main](images/main.png)
+
+_main.yml tiedoston sisältö_
+
+![site](images/site.png)
+
+_roolin lisäys site.yml tiedostossa_
+
+Onnistunut lopputulos, jossa pääsi tarkemmin ymmärtämään Ansiblen rakennetta.
+
+
+
+![18](images/18.png)
+
+_Onnistuminen_
 
 ## d) File
 
