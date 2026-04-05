@@ -259,7 +259,7 @@ Olin vielä aiemmin testailujeni aikana tehnyt toisen roolin, mutta unohtanut an
 
 Takaisin isäntäkone (host) näkymään ja suoritin jälleen komennon: 
 * **`ansible-playbook --help`** dokumentaatioon sillä minulla `ansible-playbook site.yml --ask-become-password` ei toiminut. Help-komento tullut muutamilla kursseilla vastaan ja toimi tässä hyvin apuna, vaikka hetki meni hahmottaa, mikä on ongelma ja ratkaisu.
-* **sieltä nappasin kohdan -k ja -K`**
+* sieltä nappasin kohdan -k ja -K
 * **`ansible-playbook site.yml -k -K`** lopulta oikeaksi komennoksi jolla pääsin miellyttävään lopputulemaan: Tehtävä oli onnistunut.
 
 ![17](images/17.png)
