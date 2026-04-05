@@ -79,6 +79,7 @@ Suoritin seuraavat komennot uuden käyttäjän luomista varten:
 * **`sudo adduser antero sudoless`**
 
 ![9](images/9.png)
+
 _Käyttäjän luomien_ 
 
 Käynnistin uuden ikkunan terminaalissa ja otin ssh-yhteyden kohdekoneeseen.
@@ -108,6 +109,7 @@ Syötteeksi tuli testi ilman salasanakyselyjä, joten tehtävä oli suoritettu o
 
 
 _![11](images/11.png)
+
 _sudo echo komennon vastaus_
 
 
@@ -127,6 +129,7 @@ Tässä suoritetut komennot, jolla siirryin `ansible`-hakemistoon:
 Eli `cd ansible` suoritettiin jotta päästiin ansible hakemistoon, rakenteen tarkistus `ls`ja `tree -F`komennolla.
 
 _![4](images/4.png)
+
 _antero rooli lisätty_ 
 
 Hetken pohdinnan jälkeen hahmottui että alla oleva sisältö laitettiin tiedostoon seuraavasti:
