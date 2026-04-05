@@ -169,7 +169,7 @@ _sudo echo komennon vastaus_
 
 ## b) Antero
 
-Siirryin tähän tehtäväosioon 16:30 pienen tauon jälkeen.
+Siirryin tähän tehtäväosioon 16:30 tauon jälkeen.
 
 Jouduin hieman palailemaan omaan h1 tehtävääni (2026) ja Command Line Basics Revisited (2020) sillä en muistanut ulkoa miten pääsen tarkastelemaan `tree` rakennetta.
 
@@ -268,7 +268,7 @@ Takaisin isäntäkone (host) näkymään ja suoritin jälleen komennon:
 
 ## c) Package
 
-Lähdin tähän tehtävänosioon 18.50 pidemmän tauon jälkeen, kun edeltävän tehtävän kohdalla piti hieman edes takaisin veivata. 
+Lähdin tähän tehtävänosioon 18.50 tauon jälkeen, kun edeltävän tehtävän kohdalla piti hieman edes takaisin veivata. 
 
 Muistutuksena edelliseen tehtävään, että `hosts.ini` on aina hyvä tarkistaa, että siellä on päivittyneet tiedot, kehen Ansible ottaa yhteyttä. `site.yml` on myös äärimmäisen tärkeä roolien osalta, eli rooli täytyy muistaa laittaa sinne. 
 
