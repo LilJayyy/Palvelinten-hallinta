@@ -44,21 +44,63 @@ Kysymys: Kumpi tuli ensin, muna vai kana?
 
 ## Ansiblen sisäänrakennettu dokumentaatio ansible-doc -kommennolla
 
+### Copy 
+
+* content: tiedoston sisältö suoraan ilman lähdetiedosta
+* dest: orjakoneen kohdepolku
+* src: tiedoston polku
+* owner: omistaja tiedostolle
+* group: ryhmä joka omistaa
+* mode: oikeudet oktaalina
+
 ![23](images/23.png)
 
 _copy_
+
+### apt
+
+* name: paketin nimi
+* state: paketin tila (absent/present/latest)
+* update_cache: päivitetäänkö luettelo ennen asennusta
 
 ![27](images/27.png)
 
 _apt_
 
+### file
+
+* path: käsiteltävän tiedoston polku
+* recurse: rekursiivisesti tiedosto-oikeudet hakemiston sisältöön
+* src: polku tiedoston linkittämiseen
+* state: tiedoston tila 
+* owner: tiedoston omistaja 
+* group: ryhmän nimi jonka kuuluisi omistaa tiedosto
+* mode: oikeudet joita tiedostolla kuuluu olla 
+
 ![24](images/24.png)
 
 _file_
 
+### user
+
+* name: Käyttäjätilin nimi
+* create_home: luodaanko vai ei kotihakemisto
+* groups: pääryhmän (primary) ryhmäID
+* shell: käyttäjän kirjautumisen shell
+* state: onko käyttäjätili olemassa vai ei
+* system: onko vai ei system account
+
+* 
+
 ![25](images/25.png)
 
 _user_
+
+### authorized key
+
+* user: käyttäjänimi remote hostilla (orjakoneella) jonka authorized key muokataan
+* key: avain, jota vastaan moduuli toimii
+
 
 ![26](images/26.png)
 
