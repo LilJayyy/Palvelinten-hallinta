@@ -267,25 +267,96 @@ _roolin lisäys site.yml tiedostossa_
 
 Onnistunut lopputulos, jossa pääsi tarkemmin ymmärtämään Ansiblen rakennetta.
 
-
-
 ![18](images/18.png)
 
 _Onnistuminen_
 
 ## d) File
 
+Lähdin suorittamaan tätä tehtävää 20.00 paikkeilla. 
+
+ Aloitin tehtävänannon luomalla tiedoston Ansiblella:
+
+1. `mkdir -p roles/file/tasks` - luodaan file -roolin hakemisto
+2. `nano roles/file/tasks/main.yml`** - lähdetään luomaan sisältö
+3. file -rooli lisätään site.yml -tiedostoon
+4. `ansible-playbook site.yml -k -K`- Ajetaan playbook 
+
+Sisällön luomisessa käytin apuna Karvisen (2026) ja Spaceliftin ohjeistusta.
+
+Kertaus on opintojen äiti: Joten tässä oli hyvä toistaa package -ohjeen järjestystä ja ymmärtää samalla Ansiblen käytön sielunelämää. Erittäin hyvä harjoite hahmottamaan toimintajärjestystä.
 
 
+![19](images/19.png)
+
+_site.yml sisältö_ 
+
+* **0644** - määrittelee oktaalimuodossa käyttäjäoikeuksia tiedostoille.
+
+Vasemmalta alkaen aina eli:
+
+0= Erikoisoikeudet
+Ensimmäinen numero = omistajan oikeudet 
+Toinen= ryhmän oikeuksia
+Kolmas= muiden
+
+```
+0 = ei oikeuksia
+1 = suoritus
+2 = kirjoitus
+3 = kirjoitus ja suoritus (2+1)
+4 = luku
+5 = luku ja suoritus (4+1)
+6 = luku ja kirjoitus (4+2)
+7 = luku, kirjoitus ja suoritus (4+2+1)
+```
+
+_Yllä oleva lainattu Linux Wikistä_ 
+
+Oikeudet tiedostoille voidaan merkitä joko numerosarjalla tai kirjainyhdistelmällä `-rw-r--r--`.
+
+Näin ollen `0644` ei ole erikoisoikeuksia, omistajalla on luku ja kirjoitusoikeudet, muilla on lukuoikeudet.
+
+Omistaja on antero, ryhmä on antero ja muut=muut käyttäjät.
 
 ## e) Jotain muuta
 
+Viimeiseen tehtävänosioon lähdin samana iltana 22:35. Löysin tähän tehtävänosioon Spaceliftin (2025) blogikirjoituksesta hyvän esimerkin. 
 
+Valitsin `service`-moduulin, joka toiminnollaan käynnistää ja pysäyttää palveluita orjakoneella. Etenin seuraavasti yllä olevia tehtävänantoja seuraten:
+
+* **`mkdir -p roles/service/tasks`** - luodaan tiedostolle rooli Ansibleen
+* **`nano roles/service/tasks/main.yml`** - laitetaan `service` -roolille sisältö
+* **`nano site.yml`** - service rooli lisätään site.yml -tiedoston listalle
+* **`ansible-playbook site.yml -k -K`** - Ajetaan playbook
+
+Vaihdettu ohjeessa oleva ngix -> ssh:hon sillä se on asennettu aiemmin koneeseen ja löytyi valmiina. Nyt service *varmistaa*, että ssh on käynnissä. Jos ei ole, Ansible käynnistää. 
+
+![20](images/20.png)
+
+_main.yml eli service roolille sisältö_
+
+![21](images/21.png)
+
+_lisätään service rooli listaan site.yml-tiedostoon_
+
+
+Lopuksi vielä onnistuminen. Service varmistaa nyt että ssh on käynnissä, ja Ansible tarvittaessa käynnistää sen, jos ei ole.
+
+![22](images/22.png)
+
+_Onnistuminen_
 
 
 # LÄHTEET 
 
 Ansible Community Documentation. Dokumentti. Luettavissa: https://docs.ansible.com/projects/ansible/latest/collections/ansible/builtin/package_module.html/ Luettu: 05.04.2026.
+
+Odazie, D. Spacelift. 2025. Blogi. _Using Ansible File Module to Manage Files & Directories_ Luettavissa: https://spacelift.io/blog/ansible-file-module/ Luettu: 05.04.2026.
+
+Odazie, D. Spacelift. 2025. Blogi. _Using Ansible apt Module to Manage Packages_ Luettavissa: https://spacelift.io/blog/ansible-apt-module/ Luettu: 05.04.2026.
+
+Odazie, D. Spacelift. 2025. Blogi. _Ansible Service Module: Start, Stop, & Manage Services_ Luettavissa: https://spacelift.io/blog/ansible-service-module/ Luettu: 05.04.2026.
 
 Karvinen, T. 2020. Verkkosivu. _Command Line Basics Revisited_ Luettavissa: https://terokarvinen.com/2020/command-line-basics-revisited/ Luettu: 05.04.2026.
 
@@ -295,8 +366,9 @@ Karvinen, T. 2026. Verkkosivu. _Sudo without password_ Luettavissa: https://tero
 
 Karvinen, T. 2026. Verkkosivu. _Passwordless Sudo with Ansible_ Luettavissa: https://terokarvinen.com/passwordless-sudo-with-ansible/ Luettu 05.04.2026.
 
+Linux.fi. Verkkosivu. Luettavissa: https://www.linux.fi/wiki/Tiedoston_oikeudet#:~:text=Tiedoston%20oikeudet%20%E2%80%93%20Linux.fi/ Luettu: 05.04.2026.
 
-Munroe. 2006. Verkkosivu. _xkcd 149: Sandwitch_ Luettavissa: https://xkcd.com/149/ Luettu: 05.04.2026.
+Munroe, R. 2006. Verkkosivu. _xkcd 149: Sandwitch_ Luettavissa: https://xkcd.com/149/ Luettu: 05.04.2026.
 
 Dhandala, N. OneUpTime. 2026. _How to Install Packages with the Ansible apt Module_ Luettavissa: https://oneuptime.com/blog/post/2026-02-21-how-to-install-packages-with-the-ansible-apt-module/ Luettu 05.04.2026
 
@@ -304,7 +376,5 @@ Sharifi, L. 2026. Verkkosivu. _h1 Hei Ansiblen maailma_. Luettavissa: https://gi
 
 Stack Overflow. 2019. Keskustelufoorumi. Luettavissa: https://stackoverflow.com/questions/54944080/installing-multiple-packages-in-ansible/ Luettu: 05.04.2026.
 
-Spacelift. 2025. Verkkosivu. _Using Ansible apt Module to Manage Packages_ Luettavissa: https://spacelift.io/blog/ansible-apt-module/ Luettu: 05.04.2026.
-
-Youtube. DevOps Journey. 2026. _How to Install Software with Ansible_ Katsottavissa: Youtube.https://www.youtube.com/watch?v=XzdGPbDWx-w/ Katsottu: 05.04.2026.
+Youtube. DevOps Journey. Video. 2026. _How to Install Software with Ansible_ Katsottavissa: https://www.youtube.com/watch?v=XzdGPbDWx-w/ Katsottu: 05.04.2026.
 
