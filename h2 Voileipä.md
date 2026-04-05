@@ -96,11 +96,11 @@ Lähdin seuraavaksi luomaan sudoers -tiedostoon sääntöä alla olevin komennoi
 * **`sudo visudo /etc/sudoers.d/sudoless`**
 * **`%sudoless ALL = (ALL) NOPASSWD: ALL`**
 
-Lopuksi velä `ctrl+ s` ja `ctrl + x` jolla tallensin muutokset
+Lopuksi vielä `ctrl+ s` ja `ctrl + x` jolla tallensin muutokset
 
 Testasin toisella ikkunalla jossa ssh- yhteys oli päällä kirjautua ulos `exit` ja perään uudelleenkirjautuminen ssh-yhteydellä `ssh antero@localhost`
 
-Tässä kohtaa hetken mietin, olinko tehnyt väärin, kun ssh-yhteys kysyi salasanaa. Hetken mietinnän jälkeen tajusin, että en ole vielä kerennyt tuohon kohtaan saakka ja testiosuus jäi väliin. Eli yritin uudestaan:
+Tässä kohtaa hetken mietin, olinko tehnyt väärin, kun ssh-yhteys kysyi salasanaa. Hetken mietinnän jälkeen tajusin, että en ole vielä ehtinyt tuohon kohtaan saakka ja testiosuus jäi väliin. Eli yritin uudestaan:
 
 * **`sudo -k`**
 * **`sudo echo testi`**
@@ -132,12 +132,13 @@ _![12](images/12.png)
 
 _antero rooli lisätty_ 
 
-Hetken pohdinnan jälkeen hahmottui että alla oleva sisältö laitettiin tiedostoon seuraavasti:
+Hetken pohdinnan jälkeen hahmottui, että täytyi luoda tiedosto alla olevilla komennoilla ja lopuksi vielä sisältö: 
 
 * **`mkdir -p roles/antero/tasks`**
 * **`nano roles/antero/tasks/main.yml`**
 
-```- group:
+```
+- group:
     name: "sudoless"
     state: present
 - user:
@@ -155,8 +156,57 @@ Hetken pohdinnan jälkeen hahmottui että alla oleva sisältö laitettiin tiedos
     mode: "0644"
  ```
 
+Tässä kohtaa tulikin jälleen pieni ongelmatilanne. En päässyt etenemään `site.yml` tiedoston muokkaamiseen, sillä ´hosts.ini`-tiedostossa oli vanhemmat tiedot, jossa se yritti kirjautua liljasha@localhost`-ina, jolla olin testaillut aiemmin. Pieni paluu h1 tehtävän raporttiin onneksi auttoi ja löysin syyn. Kävin `hosts.ini` -tiedostoon päivittämässä alla olevasti ansible_user kohtaan `antero ja pyyhin aiemman.
 
 
+_![13](images/13.png)
+
+_useriksi antero kirjautumista varten_
+
+Seuraavaksi SSH-avain jota valitteli ohjeistuksen varoituksen mukaisesti. Syötin komennon:
+
+* **`ansible-playbook site.yml --ask-become-password`**
+
+Pieni ongelma tuli jälleen vastaan. Jostain syystä liljas -salasana ei kirjautunutkaan enää, kun yritin `sudo nano /etc/ssh/sshd_config`  -komennolla tarkistaa salasanakirjautumisen tilanteen. Onneksi pääsin muuttamaan sen anteron kautta sudolla alla olevasti:
+
+_![14](images/14.png)
+
+_Salasananvaihtoa välissä sudolla_
+
+Pääsipähän tuotakin jumppaamaan eri tavalla, kun root-shell ei ollutkaan auki, kuten piti.
+
+Nyt pääsin muokkaamaan mielestäni jo aiemmin muutetua, mutta teinpäs sen uudelleen:
+
+* **`sudo nano /etc/ssh/sshd_config`**
+* Otetaan "#" -merkki pois "PasswordAuthentication" edestä
+* **`ctrl + s ja ctrl x`**
+
+  _![15](images/15.png)
+  
+_Käyttöönotto ottamalla # merkki pois_
+
+Lopuksi vielä ssh:n uudelleenkäynnistystä komennolla:
+* **`sudo systemctl restart ssh`**
+
+Olin vielä aiemmin testailujeni aikana tehnyt toisen roolin, mutta unohtanut anteron sieltä eli pääsin lisäämään sen seuraavin askelin:
+
+* **`cat site.yml`** - tällä havaitsin että antero rooli puuttuu
+* **`nano site.yml`** lisäsin roolin `antero` ja lopuksi vielä tallennus
+
+
+  _![16](images/16.png)
+
+  _antero roolin lisääminen_
+
+
+Takaisin isäntäkone (host) näkymään ja suoritin jälleen komennon: 
+* **`ansible-playbook --help`** dokumentaatioon sillä minulla `ansible-playbook site.yml --ask-become-password` ei toiminut. Help-komento tullut muutamilla kursseilla vastaan ja toimi tässä hyvin apuna, vaikka hetki meni hahmottaa, mikä on ongelma ja ratkaisu.
+* **sieltä nappasin kohdan -k ja -K`**
+* **`ansible-playbook site.yml -k -K`** lopulta oikeaksi komennoksi jolla pääsin miellyttävään lopputulemaan: Tehtävä oli onnistunut.
+
+  ![17](images/17.png)
+
+  _Ansiblella onnistuneesti luotu antero-rooli_ 
 
 ## c) Package
 
