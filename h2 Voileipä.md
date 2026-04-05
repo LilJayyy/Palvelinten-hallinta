@@ -43,6 +43,45 @@ Oma huomio: Miksi juuri voileipä?
 Kysymys: Kumpi tuli ensin, muna vai kana?
 
 ## Ansiblen sisäänrakennettu dokumentaatio ansible-doc -kommennolla
+
+![23](images/23.png)
+
+_copy_
+
+![27](images/27.png)
+
+_apt_
+
+![24](images/24.png)
+
+_file_
+
+![25](images/25.png)
+
+_user_
+
+![26](images/26.png)
+
+_authorized_key_
+
+liljas@lilja-virtualbox:~/ansible$ ansible-doc copy
+> MODULE ansible.builtin.copy (/usr/lib/python3/dist-packages/ansible/modules/copy.py)
+
+  The ansible.builtin.copy module copies a file or a directory structure from the local or remote
+  machine to a location on the remote machine. File system meta-information (permissions, ownership, etc.) may
+  be set, even when the file or directory already exists on the target system. Some meta-information may be
+  copied on request.
+  Get meta-information with the ansible.builtin.stat module.
+  Set meta-information with the ansible.builtin.file module.
+  Use the ansible.builtin.fetch module to copy files from remote locations to the local box.
+  If you need variable interpolation in copied files, use the ansible.builtin.template module. Using
+  a variable with the `content' parameter produces unpredictable results.
+  For Windows targets, use the ansible.windows.win_copy module instead.
+
+  * note: This module has a corresponding action plugin.
+
+
+
 Ansiblen sisäänrakennettu dokumentaatio ansible-doc -kommennolla.
 Kustakin vain
 Johdantokappale (Usein MODULE alla, päättyy OPTIONS alkuun)
