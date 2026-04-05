@@ -56,6 +56,8 @@ Esimerkeistä (EXAMPLES) jokin helppo ja keskeinen esimerkki
 'ansible-doc user': name; create_home, comment, groups, shell, state, system.
 'ansible-doc authorized_key': user, key.
 
+
+
 ### Koneen tekniset tiedot
 * Prosessori: Intel Core i5-8265U CPU @ 1.60 GHz (1.80 GHz turbo, 8 ydintä)
 * RAM: 16 GB (15,7 GB käytettävissä)
@@ -64,17 +66,92 @@ Esimerkeistä (EXAMPLES) jokin helppo ja keskeinen esimerkki
 * Tallennustila: 237 GB, josta 158 GB vapaana
 * DirectX-versio: DirectX 12
 
+
+
+
+
 ## a) Sudoless
 
+Lähdin 15.35 aloittelemaan raportin tekoa. Käynnistin virtuaalikoneen ja lähdin luomaan uutta käyttäjää. Pitäydyin ohjeistuksen mukaisessa `antero` userissa.
 
+Suoritin seuraavat komennot uuden käyttäjän luomista varten:
+
+* **`sudo adduser antero`**
+* **`sudo groupadd sudoless`**
+* **`sudo adduser antero sudoless`**
+
+![1](images/1.png)
+_Käyttäjän luomien_ 
+
+Käynnistin uuden ikkunan terminaalissa ja otin ssh-yhteyden kohdekoneeseen.
+
+_![2](images/2.png)
+_Onnistunut yhteyden muodostaminen_
+
+Avasin uuteen ikkunaan root-shellin sudolla varmuuden vuoksi, jos sudoers-tiedosto menee rikki.
+
+Palasin takaisin toiseen ikkunaan jossa olen kirjautuneena pääkäyttäjän roolissa. 
+
+Lähdin seuraavaksi luomaan sudoers -tiedostoon sääntöä alla olevin komennoin:
+
+* **`sudo visudo /etc/sudoers.d/sudoless`**
+* **`%sudoless ALL = (ALL) NOPASSWD: ALL`**
+
+Lopuksi velä `ctrl+ s` ja `ctrl + x` jolla tallensin muutokset
+
+Testasin toisella ikkunalla jossa ssh- yhteys oli päällä kirjautua ulos `exit` ja perään uudelleenkirjautuminen ssh-yhteydellä `ssh antero@localhost`
+
+Tässä kohtaa hetken mietin, olinko tehnyt väärin, kun ssh-yhteys kysyi salasanaa. Hetken mietinnän jälkeen tajusin, että en ole vielä kerennyt tuohon kohtaan saakka ja testiosuus jäi väliin. Eli yritin uudestaan:
+
+* **`sudo -k`**
+* **`sudo echo testi`**
+
+Syötteeksi tuli testi ilman salasanakyselyjä, joten tehtävä oli suoritettu onnistuneesti.
+
+
+_![3](images/3.png)
+_sudo echo komennon vastaus_
 
 
 
 ## b) Antero
 
+Siirryin tähän tehtäväosioon 16:30 pienen tauon jälkeen.
 
+Tässä kohtaa jouduin hieman palailemaan omaan h1 tehtävääni (2026) ja Command Line Basics Revisited (2020) sillä en muistanut ulkkoa miten pääsen tarkastelemaan `tree` rakennetta.
 
+Tässä suoritetut komennot, jolla siirryin `ansible´-hakemistoon:
 
+* **`cd ansible`**
+* **`ls`**
+* **`tree -F`**
+
+Eli `cd ansible` suoritettiin jotta päästiin ansible hakemistoon, rakenteen tarkistus `ls`ja `tree -F`komennolla.
+
+_![4](images/4.png)
+_antero rooli lisätty_ 
+
+Hetken pohdinnan jälkeen hahmottui että alla oleva sisältö laitettiin tiedostoon seuraavasti:
+
+* **`mkdir -p roles/antero/tasks`**
+* **`nano roles/antero/tasks/main.yml`**
+
+```- group:
+    name: "sudoless"
+    state: present
+- user:
+    name: "antero"
+    state: present
+    groups: ["sudoless", "sudo", "adm"]
+- authorized_key:
+    user: "antero"
+    key: "ssh-ed25519 U2VlIHlvdSBhdCBUZXJvS2FydmluZW4uY29tIQ== tero@example.com"
+- copy:
+    dest: "/etc/sudoers.d/sudoless"
+    content: "%sudoless ALL = (ALL) NOPASSWD: ALL\n"
+    owner: "root"
+    group: "root"
+    mode: "0644" ```
 
 ## c) Package
 
