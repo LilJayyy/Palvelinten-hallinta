@@ -31,7 +31,7 @@ Mitä sarjakuvassa tapahtuu? Mitä yhteistä sillä on Karvisen artikkeliin?
 
 -Siinä on kuvailtu kuvituksen muodossa, millainen merkitys komennolla on. Sudolla "pakotetaan" suorittamaan tiettyjä komentoja ja on äärimmäisen tärkeä ellei yksi tärkeimmistä komennoista muistaa.
 
-Kysymys/huomio: Miksi juuri voileipä? 
+Oma huomio: Miksi juuri voileipä? 
 
 ## Karvinen 2026: Passwordless with Ansible
 -Ansiblessa rooli (role) on luoda "sudoless" ryhmä. Lisää säännön `sudoers.d/ NOPASSWD` ryhmälle.
@@ -42,7 +42,7 @@ Kysymys/huomio: Miksi juuri voileipä?
 
 -Alkuun ei ole sudoa ilman salasanaa, joten sitä työstetään ensin. Pitää ensin lisätä `become: true`oikeaan kohtaan blockissa site.yml:ssä. lopuksi `playbook` ajetaan ja tarvittaessa sudo annetaan -K lisäyksellä.
 
-Kysymys/huomio: Kumpi tuli ensin, muna vai kana?
+Kysymys: Kumpi tuli ensin, muna vai kana?
 
 ## Ansiblen sisäänrakennettu dokumentaatio ansible-doc -kommennolla
 Ansiblen sisäänrakennettu dokumentaatio ansible-doc -kommennolla.
