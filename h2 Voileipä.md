@@ -287,7 +287,7 @@ Tässä kävin muutamia sivuja ja ohjeita läpi, jotta asennus menee oikein. Apu
 
 Ansiblen kanssa ei ole ollut kokemusta aikaisemmin, joten aiheeseen piti enemmän ajan kanssa perehtyä päivän mittaa.
 
-Tässä kohtaa tuli ahaa- elämys: Ansiblessa tulee aina edetä seuraavasti:
+**Tässä kohtaa tuli ahaa- elämys: Ansiblessa tulee aina edetä seuraavasti:** 
 
 Yksi komento ei riitä, vaan teet järjestyksessä:
 
