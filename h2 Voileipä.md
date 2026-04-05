@@ -159,7 +159,7 @@ Hetken pohdinnan jälkeen hahmottui, että täytyi luoda tiedosto alla olevilla 
 
 Tässä kohtaa tulikin jälleen pieni ongelmatilanne. En päässyt etenemään `site.yml` tiedoston muokkaamiseen, sillä ´hosts.ini`-tiedostossa oli vanhemmat tiedot, jossa se yritti kirjautua liljasha@localhost`-ina, jolla olin testaillut aiemmin. Pieni paluu h1 tehtävän raporttiin onneksi auttoi ja löysin syyn. Kävin `hosts.ini` -tiedostoon päivittämässä alla olevasti ansible_user kohtaan `antero ja pyyhin aiemman.
 
-
+![12](images/12.png)
 ![13](images/13.png)
 
 _useriksi antero kirjautumista varten_
