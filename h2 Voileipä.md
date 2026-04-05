@@ -371,7 +371,7 @@ Omistaja on antero, ryhmä on antero ja muut=muut käyttäjät.
 
 ## e) Jotain muuta
 
-Viimeiseen tehtävänosioon lähdin samana iltana 22:35. Löysin tähän tehtävänosioon Spaceliftin (2025) blogikirjoituksesta hyvän esimerkin. 
+Viimeiseen tehtävänosioon lähdin samana iltana 22:00 jälleen tauon jälkeen, jotta mieli pysyi virkeänä. Löysin tähän tehtävänosioon Spaceliftin (2025) blogikirjoituksesta hyvän esimerkin. 
 
 Valitsin `service`-moduulin, joka toiminnollaan käynnistää ja pysäyttää palveluita orjakoneella. Etenin seuraavasti yllä olevia tehtävänantoja seuraten:
 
