@@ -216,8 +216,40 @@ Takaisin isäntäkone (host) näkymään ja suoritin jälleen komennon:
 
 ## c) Package
 
-Lähdin tähän tehtävänosioon 18.50 jälleen tauon jälkeen. 
+Lähdin tähän tehtävänosioon 18.50 pidemmän tauon jälkeen, kun edeltävän tehtävän kohdalla piti hieman edes takaisin veivata. 
 
+Muistutuksena edelliseen tehtävään, että `hosts.ini` on aina hyvä tarkistaa, että siellä on päivittyneet tiedot, kehen Ansible ottaa yhteyttä. `site.yml` on myös äärimmäisen tärkeä roolien osalta, eli rooli täytyy muistaa laittaa sinne. 
+
+Root-shellin osalta on hyvä varmistaa, että tietää sen olevan oikeasti auki taustalla toisella ikkunalla, vaikka ei pahasti käynytkään.
+
+Menikin hetki pohtia uusia paketteja, mitä asentaa. Minulta löytyi entuudestaan cowsay, figlet, sekä fortune. Päätin asentaa lolcatin ja wgetin seuraavaksi.
+
+Asennus tehtiin seuraavilla komennoilla
+
+* **`cd ansible`** tähän pitää muistaa siirtyä ensin hostilta
+* **`sudo apt-get install lolcat`**
+
+Lolcatin asennuksessa välilyönnillä ensimmäinen eli /dev/sda/ valinta ja lopuksi enter:
+
+_GRUB-käynnistysohjelman konfigurointia_
+
+Tässä kävin muutamia sivuja ja ohjeita läpi, jotta asennus menee oikein. Apu löytyikin hetken tutkiskelun jälkeen Dhandala, N (2026) ohjeistuksesta ja DevOps Journeyn Youtube-videolta (2026), sekä Karvinen, T (2026) verkkosivulta.
+
+Ansiblen kanssa ei ole ollut kokemusta aikaisemmin, joten aiheeseen piti enemmän ajan kanssa perehtyä päivän mittaa.
+
+Tässä kohtaa tuli ahaa- elämys: Ansiblessa tulee aina edetä seuraavasti:
+1. Luodaan rooli roles/*roolin_nimi*/tasks/main.yml 
+
+*aina* luoda rooli roles/*roolin_nimi*/tasks/main.yml ja lisätä *aina* rooli site.yml tiedostoon. Roolin main.yml.tiedostoon laitetaan lopuksi varsinainen sisältö, esim apt-komennot. Näin tehdään, jotta Ansible "ajaa" tehdyn toimenpiteen.
+
+```
+- apt:
+    name:
+      - lolcat
+      - wget
+    state: present
+    update_cache: yes
+```
 
 ## d) File
 
@@ -231,14 +263,26 @@ Lähdin tähän tehtävänosioon 18.50 jälleen tauon jälkeen.
 
 # LÄHTEET 
 
+Ansible Community Documentation. Dokumentti. Luettavissa: https://docs.ansible.com/projects/ansible/latest/collections/ansible/builtin/package_module.html/ Luettu: 05.04.2026.
 
-Sharifi, L. 2026. Verkkosivu. _h1 Hei Ansiblen maailma_. Luettavissa: https://github.com/LilJayyy/Palvelinten-hallinta/blob/main/h1.md/ Luettu: xx.04.2026
+Karvinen, T. 2020. Verkkosivu. _Command Line Basics Revisited_ Luettavissa: https://terokarvinen.com/2020/command-line-basics-revisited/ Luettu: 05.04.2026.
 
-Karvinen, T. 2026. Verkkosivu. _Sudo without password_ Luettavissa: https://terokarvinen.com/passwordless-sudo/ Luettu xx.04.2026.
+Karvinen, T. 2026. Verkkosivu. _Hello Ansible_ Luettavissa: https://terokarvinen.com/hello-ansible/ Luettu: 05.04.2026.
 
-Karvinen, T. 2026. Verkkosivu. _Passwordless Sudo with Ansible_ Luettavissa: https://terokarvinen.com/passwordless-sudo-with-ansible/ Luettu xx.04.2026.
+Karvinen, T. 2026. Verkkosivu. _Sudo without password_ Luettavissa: https://terokarvinen.com/passwordless-sudo/ Luettu 05.04.2026.
 
-Karvinen, T. 2020. Verkkosivu. _Command Line Basics Revisited_ Luettavissa: https://terokarvinen.com/2020/command-line-basics-revisited/ Luettu: xx.04.2026.
+Karvinen, T. 2026. Verkkosivu. _Passwordless Sudo with Ansible_ Luettavissa: https://terokarvinen.com/passwordless-sudo-with-ansible/ Luettu 05.04.2026.
 
-Munroe. 2006. Verkkosivu. _xkcd 149: Sandwitch_ Luettavissa: https://xkcd.com/149/ Luettu: xx.04.2026.
+
+Munroe. 2006. Verkkosivu. _xkcd 149: Sandwitch_ Luettavissa: https://xkcd.com/149/ Luettu: 05.04.2026.
+
+Dhandala, N. OneUpTime. 2026. _How to Install Packages with the Ansible apt Module_ Luettavissa: https://oneuptime.com/blog/post/2026-02-21-how-to-install-packages-with-the-ansible-apt-module/ Luettu 05.04.2026
+
+Sharifi, L. 2026. Verkkosivu. _h1 Hei Ansiblen maailma_. Luettavissa: https://github.com/LilJayyy/Palvelinten-hallinta/blob/main/h1.md/ Luettu: 01.04.2026.
+
+Stack Overflow. 2019. Keskustelufoorumi. Luettavissa: https://stackoverflow.com/questions/54944080/installing-multiple-packages-in-ansible/ Luettu: 05.04.2026.
+
+Spacelift. 2025. Verkkosivu. _Using Ansible apt Module to Manage Packages_ Luettavissa: https://spacelift.io/blog/ansible-apt-module/ Luettu: 05.04.2026.
+
+Youtube. DevOps Journey. 2026. _How to Install Software with Ansible_ Katsottavissa: Youtube.https://www.youtube.com/watch?v=XzdGPbDWx-w/ Katsottu: 05.04.2026.
 
