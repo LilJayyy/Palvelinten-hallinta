@@ -402,7 +402,9 @@ _Onnistuminen_
 
 Tehtävän ja raportin teko kesti koko päivän. Varmasti olisi voinut tehdä nopeammin, mutta uuden asian äärellä oli tärkeää pitää taukoja ja oikeasti pohtia kunkin tehtävänannon välissä, mitä oli tehnyt missäkin vaiheessa. 
 
-Tehtävä ja raportti oli työläs, mutta opettavainen. Vielä ei muistu ulkoa komennot ja työvaiheet aloittelijana, vaikka Ansiblen hahmottaminen tuntuukin jo hieman selkeämmältä, kuin aloittaessa. Kaikinpuolin mieluisa ja opettava tehtävä.
+Tehtävä ja raportti oli työläs, mutta opettavainen. Vielä ei muistu ulkoa komennot ja työvaiheet aloittelijana, vaikka Ansiblen hahmottaminen tuntuukin jo hieman selkeämmältä, kuin aloittaessa. 
+
+Kaikinpuolin mieluisa ja opettava tehtävä.
 
 
 # LÄHTEET 
