@@ -183,7 +183,7 @@ Nyt pääsin muokkaamaan mielestäni jo aiemmin muutetua, mutta teinpäs sen uud
 * **`ctrl + s ja ctrl x`**
 
 ![15](images/15.png)
-  
+
 _Käyttöönotto ottamalla # merkki pois_
 
 Lopuksi vielä ssh:n uudelleenkäynnistystä komennolla:
