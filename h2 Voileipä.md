@@ -80,7 +80,7 @@ Suoritin seuraavat komennot uuden käyttäjän luomista varten:
 
 ![9](images/9.png)
 
-_Käyttäjän luomien_ 
+_Käyttäjän luominen_ 
 
 Käynnistin uuden ikkunan terminaalissa ja otin ssh-yhteyden kohdekoneeseen.
 
@@ -101,7 +101,7 @@ Lopuksi vielä `ctrl+ s` ja `ctrl + x` jolla tallensin muutokset
 
 Testasin toisella ikkunalla jossa ssh- yhteys oli päällä kirjautua ulos `exit` ja perään uudelleenkirjautuminen ssh-yhteydellä `ssh antero@localhost`
 
-Tässä kohtaa hetken mietin, olinko tehnyt väärin, kun ssh-yhteys kysyi salasanaa. Hetken mietinnän jälkeen tajusin, että en ole vielä ehtinyt tuohon kohtaan saakka ja testiosuus jäi väliin. Eli yritin uudestaan:
+Mietin hetken, olinko tehnyt väärin, kun ssh-yhteys kysyi salasanaa. Hetken mietinnän jälkeen tajusin, että en ole vielä ehtinyt tuohon kohtaan saakka ja testiosuus jäi väliin. Eli yritin uudestaan:
 
 * **`sudo -k`**
 * **`sudo echo testi`**
@@ -119,7 +119,7 @@ _sudo echo komennon vastaus_
 
 Siirryin tähän tehtäväosioon 16:30 pienen tauon jälkeen.
 
-Tässä kohtaa jouduin hieman palailemaan omaan h1 tehtävääni (2026) ja Command Line Basics Revisited (2020) sillä en muistanut ulkkoa miten pääsen tarkastelemaan `tree` rakennetta.
+Jouduin hieman palailemaan omaan h1 tehtävääni (2026) ja Command Line Basics Revisited (2020) sillä en muistanut ulkoa miten pääsen tarkastelemaan `tree` rakennetta.
 
 Tässä suoritetut komennot, jolla siirryin `ansible`-hakemistoon:
 
@@ -157,9 +157,12 @@ Hetken pohdinnan jälkeen hahmottui, että täytyi luoda tiedosto alla olevilla 
     mode: "0644"
  ```
 
-Tässä kohtaa tulikin jälleen pieni ongelmatilanne. En päässyt etenemään `site.yml` tiedoston muokkaamiseen, sillä ´hosts.ini`-tiedostossa oli vanhemmat tiedot, jossa se yritti kirjautua liljasha@localhost`-ina, jolla olin testaillut aiemmin. Pieni paluu h1 tehtävän raporttiin onneksi auttoi ja löysin syyn. Kävin `hosts.ini` -tiedostoon päivittämässä alla olevasti ansible_user kohtaan `antero ja pyyhin aiemman.
+### Ongelmatilanne
 
-![12](images/12.png)
+En päässyt etenemään `site.yml` tiedoston muokkaamiseen, sillä ´hosts.ini`-tiedostossa oli vanhemmat tiedot, jossa se yritti kirjautua liljasha@localhost`-ina, jolla olin testaillut aiemmin. 
+
+Pieni paluu h1 tehtävän raporttiin onneksi auttoi ja löysin syyn. Kävin `hosts.ini` -tiedostoon päivittämässä alla olevasti `ansible_user` kohtaan `antero` ja pyyhin aiemman.
+
 ![13](images/13.png)
 
 _useriksi antero kirjautumista varten_
@@ -168,7 +171,9 @@ Seuraavaksi SSH-avain jota valitteli ohjeistuksen varoituksen mukaisesti. Syöti
 
 * **`ansible-playbook site.yml --ask-become-password`**
 
-Pieni ongelma tuli jälleen vastaan. Jostain syystä liljas -salasana ei kirjautunutkaan enää, kun yritin `sudo nano /etc/ssh/sshd_config`  -komennolla tarkistaa salasanakirjautumisen tilanteen. Onneksi pääsin muuttamaan sen anteron kautta sudolla alla olevasti:
+Pieni ongelma tuli jälleen vastaan. Jostain syystä liljas -salasana ei kirjautunutkaan enää, kun yritin `sudo nano /etc/ssh/sshd_config`  -komennolla tarkistaa salasanakirjautumisen tilanteen. 
+
+Onneksi pääsin muuttamaan sen anteron kautta sudolla alla olevasti:
 
 ![14](images/14.png)
 
@@ -211,7 +216,7 @@ Takaisin isäntäkone (host) näkymään ja suoritin jälleen komennon:
 
 ## c) Package
 
-
+Lähdin tähän tehtävänosioon 18.50 jälleen tauon jälkeen. 
 
 
 ## d) File
