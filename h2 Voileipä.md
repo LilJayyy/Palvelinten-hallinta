@@ -128,7 +128,7 @@ Tässä suoritetut komennot, jolla siirryin `ansible`-hakemistoon:
 
 Eli `cd ansible` suoritettiin jotta päästiin ansible hakemistoon, rakenteen tarkistus `ls`ja `tree -F`komennolla.
 
-_![4](images/4.png)
+_![12](images/12.png)
 
 _antero rooli lisätty_ 
 
