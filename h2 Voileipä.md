@@ -283,8 +283,6 @@ Asennus tehtiin seuraavilla komennoilla
 
 Lolcatin asennuksessa välilyönnillä ensimmäinen eli /dev/sda/ valinta ja lopuksi enter:
 
-_GRUB-käynnistysohjelman konfigurointia_
-
 Tässä kävin muutamia sivuja ja ohjeita läpi, jotta asennus menee oikein. Apu löytyikin hetken tutkiskelun jälkeen Dhandala, N (2026) ohjeistuksesta ja DevOps Journeyn Youtube-videolta (2026), sekä Karvinen, T (2026) verkkosivulta.
 
 Ansiblen kanssa ei ole ollut kokemusta aikaisemmin, joten aiheeseen piti enemmän ajan kanssa perehtyä päivän mittaa.
