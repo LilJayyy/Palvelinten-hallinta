@@ -334,8 +334,9 @@ Lähdin suorittamaan tätä tehtävää 20.00 paikkeilla.
 
 Sisällön luomisessa käytin apuna Karvisen (2026) ja Spaceliftin ohjeistusta.
 
-Kertaus on opintojen äiti: Joten tässä oli hyvä toistaa package -ohjeen järjestystä ja ymmärtää samalla Ansiblen käytön sielunelämää. Erittäin hyvä harjoite hahmottamaan toimintajärjestystä.
+**Kertaus on opintojen äiti:** Joten tässä oli hyvä toistaa package -ohjeen järjestystä ja ymmärtää samalla Ansiblen käytön sielunelämää. 
 
+Erittäin hyvä harjoite hahmottamaan toimintajärjestystä.
 
 ![19](images/19.png)
 
