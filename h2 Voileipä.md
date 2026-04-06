@@ -263,7 +263,7 @@ Takaisin isäntäkone (host) näkymään ja suoritin jälleen komennon:
 * sieltä nappasin kohdan -k ja -K
 * **`ansible-playbook site.yml -k -K`** lopulta oikeaksi komennoksi jolla pääsin miellyttävään lopputulemaan: Tehtävä oli onnistunut.
 
-![17](images/17.png)
+![uus](images/uus.png)
 
   _Ansiblella onnistuneesti luotu antero-rooli_ 
 
