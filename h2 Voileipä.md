@@ -277,13 +277,6 @@ Root-shellin osalta on hyvä varmistaa, että tietää sen olevan oikeasti auki 
 
 Menikin hetki pohtia uusia paketteja, mitä asentaa. Minulta löytyi entuudestaan cowsay, figlet, sekä fortune. Päätin asentaa lolcatin ja wgetin seuraavaksi.
 
-Asennus tehtiin seuraavilla komennoilla
-
-* **`cd ansible`** tähän pitää muistaa siirtyä ensin hostilta
-* **`sudo apt-get install lolcat`**
-
-Lolcatin asennuksessa välilyönnillä ensimmäinen eli /dev/sda/ valinta ja lopuksi enter:
-
 Tässä kävin muutamia sivuja ja ohjeita läpi, jotta asennus menee oikein. Apu löytyikin hetken tutkiskelun jälkeen Dhandala, N (2026) ohjeistuksesta ja DevOps Journeyn Youtube-videolta (2026), sekä Karvinen, T (2026) verkkosivulta.
 
 Ansiblen kanssa ei ole ollut kokemusta aikaisemmin, joten aiheeseen piti enemmän ajan kanssa perehtyä päivän mittaa.
@@ -408,7 +401,7 @@ Tehtävä ja raportti oli työläs, mutta opettavainen. Vielä ei muistu ulkoa k
 Kaikinpuolin mieluisa ja opettava tehtävä.
 
 
-# LÄHTEET 
+# Lähteet 
 
 Ansible Community Documentation. Dokumentti. Luettavissa: https://docs.ansible.com/projects/ansible/latest/collections/ansible/builtin/package_module.html/ Luettu: 05.04.2026.
 
