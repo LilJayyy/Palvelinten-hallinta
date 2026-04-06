@@ -208,7 +208,7 @@ Hetken pohdinnan jälkeen hahmottui, että täytyi luoda tiedosto alla olevilla 
     group: "root"
     mode: "0644"
  ```
-**Huom! yllä olevassa ohjeessa käytetty esimerkkiavainta - käytetty kuitenkin omaa SSH-avainta, jota en tietoturvasyistä raporttiin laittanut.**
+**Huom** yllä olevassa ohjeessa käytetty esimerkkiavainta - käytetty kuitenkin omaa SSH-avainta.
 
 ### Ongelmatilanne
 
@@ -388,7 +388,7 @@ _lisätään service rooli listaan site.yml-tiedostoon_
 
 Lopuksi vielä onnistuminen. Service varmistaa nyt että ssh on käynnissä, ja Ansible tarvittaessa käynnistää sen, jos ei ole.
 
-![22](images/22.png)
+![uus](images/uus.png)
 
 _Onnistuminen_
 
