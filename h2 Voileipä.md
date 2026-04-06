@@ -311,7 +311,7 @@ _roolin lisäys site.yml tiedostossa_
 
 Onnistunut lopputulos, jossa pääsi tarkemmin ymmärtämään Ansiblen rakennetta.
 
-![18](images/18.png)
+![uus](images/uus.png)
 
 _Onnistuminen_
 
