@@ -208,7 +208,7 @@ Hetken pohdinnan jälkeen hahmottui, että täytyi luoda tiedosto alla olevilla 
     group: "root"
     mode: "0644"
  ```
-**Huom** yllä olevassa ohjeessa esimerkkiavain - käytetty omaa SSH-avainta.
+**Huom** yllä olevassa ohjeessa esimerkkiavain - käytetty omaa SSH-avainta - sen *jälkeen* kun mokasin ja käytin ohjeessa käytettyä avainta ensin.
 
 ### Ongelmatilanne
 
