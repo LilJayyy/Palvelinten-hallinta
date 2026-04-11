@@ -1,4 +1,4 @@
-# h2 Demoni
+# h3 Demoni
  
 # Sisältö
 * [x) Artikkeli](#x-artikkeli)
@@ -23,14 +23,32 @@
 ## x) Artikkeli
 
 ### Karvinen 2026: Apache installed with Ansible - quick notes
+- Ohjeistetaan miten asennetaan Ansiblella Apache2 Web Server automaattisesti.
+  
+- Siinä kerrotaan, että demonit ovat jokseenkin samanlaisia. Sama asia toistuu. Asenna demoni, muuta konfiguraatiot muokkaamalla tiedostoja, ja käynnistä.
+ 
+- Demonia pitää aina muistaa potkaista, jotta konfiguraatiotiedostot lähtevät käyntiin. Eritoten huomioiden file tasks/main.yml:ssä.
 
+Kysymys & vitsi: Miksi demonia pitää potkaista? - Demoni vastasi: Konfiguraatiotiedostoja luen vain käynnistyessäni! Heh heh! Miten voisin muuten huomata muutoksen?
 
 ### Ansible Community Documentation Handlers: running operations on change
 
-a) Handlers: running operations on change (johdantokappale pääotsikon alta)
--Notifying handlers
+#### a) Handlers: running operations on change
+- Siinä kerrotaan, että tehtävä voidaan haluta ajettavaksi vain silloin, kun muutos on tehty koneessa.
+  
+- Kerrotaan, että Ansible käyttää handlerseja suorittaakseen tämän tyyppisiä toimenpiteitä. Handlersit ovat siis eräänlaisia tehtäviä, jotka ajetaan vain silloin, kun pyydetään.
 
-b) 'ansible-doc service':
+Huomio: Tätä oli edelleen hieman vaikea hahmottaa, mutta ainakin hyödynsi, kun ei käynnistynyt Nginx turhaan vaan ainoastaan konfiguraation muuttuessa.
+ 
+**Notifying handlers** 
+- Notify-sanaa käytetään, jos halutaan yhdelle tai useammalle ajaa tehtävä.
+  
+- Notify-sanaa voi käyttää ja laittaa listaan, jossa hyväksytään tiettyjä handler -nimiä, joille ilmoitetaan muutoksen tullessa.
+
+Kysymys: Mikä on raja, kuinka monta sanaa voi käyttää ja laittaa listaan? Vastaus: Mitään rajaa ei ole!
+
+
+#### b) 'ansible-doc service':
 -johdantokappale (MODULE alta)
 -enabled
 -name
@@ -398,15 +416,13 @@ Eli jos polku on normaalina tiedostona tai hakemistona (ei symlinkkinä), Ansibl
 
 * **`ansible-playbook site.yml -k -K`** - ajetaan jälleen playbook
 
-**Jälleen virhetilanne**
-
 Viimeisenä piti vielä muuttaa `main.yml` -tiedostosta Dhandalan (2026) ohjeistuksen kohdan Symlinks for Configuration Management mukaan:
 
 #### copy kopioi tiedoston sites-available kansioon jossa konfiguraatiot
 
 * **dest: `/etc/nginx/sites-available/default`** - kopioidaa konfiguraatiotiedosto sites-available kansioon.
 
-#### file luo symlinkin sites-enabled kansioon ja osoittaa sites-available tiedostoon - ottaen konfiguroinnin käyttöön.
+#### file luo symlinkin sites-enabled-kansioon ja osoittaa sites-available-tiedostoon - ottaen konfiguroinnin käyttöön.
 
 * **`src: `/etc/nginx/sites-available/default`** 
 
@@ -445,15 +461,83 @@ Uskon kyllä, että tarvitsen hieman treeniä tähän symlinkin asiaan, jossa pi
 
 ## d) Vapaaehtoinen bonus
 
- Vapaaehtoinen bonus: Osiris-T. Osiris-T asentaa Wazuhin ja tarvittavat virtuaalikoneet. Voit lähettää vihamielistä verkkoliikennettä (tcpreplay), siepata sen (suricata) ja saat tulokset suoraan dashboardille (wazuh). 
- Enemmän alpha kuin se kreikkalainen kirjain. Mutta Oskari, Nico ja Arttu ilahtuvat, jos kokeilet. Häkämies, Saario, Mukkula 2026: Osiris-T. Häkämies etal 2026: How to Install.
+Lähdin tutustumaan tähän tehtävään. Tarkoituksena oli kokeilla IDS-projektia, jossa asennetaan:
 
+* Suricata
+ 
+* Wazuh Agent
+  
+* Wazuh Manager
+ 
+* Wazuh Alerts Shipper
+ 
+* Wazuh Indexer
 
+Ensin alkuun tarkistin suositellun version ja (+30GB, +8GB RAM) levytilan. Ne olivat kunnossa, joten lähdin etenemään.
 
+Latasin zip-tiedoston ja työkalun niiden purkuun.
 
+* **`wget https://github.com/user-attachments/files/26421526/soc-project-v4.zip`** - zip-tiedosto
+  
+* **`sudo apt-get install zip`**  - työkalu zip-tiedostojen purkuun
 
+* **`unzip soc-project-v4.zip`** - komento zip-tiedoston purkuun
 
-# Lähteet 
+![51](images/51.png)
+
+_zip-tiedoston ja purkutyökalun asenteluprosessia_
+
+* **`cd soc-project`** - navigointi purettuun zip-tiedostoon `cd soc-project`
+* **`ls`** tiedostojen listaukseen
+* **`sudo bash install.sh`** - potkaisin käyntiin
+
+![52](images/52.png)
+
+_Harjoitusympäristön latautumista_
+
+Tässä kohdin jäin vain odottelemaan, sillä kahvin juonnille oli hieman liian myöhäistä.
+
+![53](images/53.png)
+
+_Asennus oli valmis_
+
+Seuraavaksi lähdin ohjeistuksen mukaisesti navigoimaan Firefoxilla `localhost` -sivulle.
+
+![54](images/54.png)
+
+_Advanced kohdasta Accept the Risk and Continue_
+
+![55](images/55.png)
+
+Laitoin käyttäjätunnuksen `admin` ja salasanan `admin`. Tuli kuitenkin alla oleva virheilmoitus:
+
+![55](images/55.png)
+
+_Tulikin virheilmoitus_
+
+* Osoitteeksi `localhost/app/home` ja lähti toimimaan. 
+
+Etenin Threat intelligence > Threat Hunting josta aukesi hälytykset:
+
+![56](images/56.png)
+
+_Hälytykset_ 
+
+Seuraavaksi katsoin, näkyykö liikennettä ja 200 näkyvissä kuten yllä kuvassa näkyy.
+
+Lähdin ajamaan terminaaliin komennon:
+
+* **`curl http://testmynids.org/uid/index.html`** ja lopuksi vielä refresh dashboardilla.
+
+Nyt hälytyksiä oli jo ilmestynyt lisää dashboardille:
+
+![57](images/57.png)
+
+_Uusia hälytyksiä_
+
+Kuten kuvassa näkyy, testaus oli onnistunut. Osiris-T toimi täydellisesti.
+
+# Lähteet
 
 
 Ansible Community Documentation. Dokumentti. Luettavissa: https://docs.ansible.com/projects/ansible/latest/collections/ansible/builtin/package_module.html/ Luettu: 05.04.2026.
@@ -475,3 +559,5 @@ https://terokarvinen.com/2008/05/02/install-apache-web-server-on-ubuntu-4/index.
 https://susannalehto.fi/2022/apache-weppipalvelin-h3/
 
 https://oneuptime.com/blog/post/2026-02-21-how-to-create-symbolic-links-with-the-ansible-file-module/view
+
+https://github.com/oskarihakamies/IDS-project/blob/main/How-To-Install.md
