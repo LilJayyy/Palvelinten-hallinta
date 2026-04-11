@@ -415,7 +415,7 @@ Ja jälleen virhetilanne. Tässä kohtaa onneksi ei niin optimistisesti ollut li
 
 Onneksi jälleen virheilmoitus sanoi selkeästi virheen. 
 
-![48](images/48.png)
+![58](images/58.png)
 
 _Symlink herja_
 
@@ -522,7 +522,7 @@ Seuraavaksi lähdin ohjeistuksen mukaisesti navigoimaan Firefoxilla `localhost` 
 
 _Advanced kohdasta Accept the Risk and Continue_
 
-![55](images/55.png)
+#### Virheilmoitus
 
 Laitoin käyttäjätunnuksen `admin` ja salasanan `admin`. Tuli kuitenkin alla oleva virheilmoitus:
 
@@ -530,7 +530,7 @@ Laitoin käyttäjätunnuksen `admin` ja salasanan `admin`. Tuli kuitenkin alla o
 
 _Tulikin virheilmoitus_
 
-* Osoitteeksi `localhost/app/home` ja lähti toimimaan. 
+* Osoitteeksi `localhost/app/home` ja **lähti toimimaan.**
 
 Etenin Threat intelligence > Threat Hunting josta aukesi hälytykset:
 
