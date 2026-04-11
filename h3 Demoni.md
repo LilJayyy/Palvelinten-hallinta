@@ -303,11 +303,11 @@ Lopuksi vielä `ctrl + s` ja `ctrl + Q` jolla tallensin muutokset.
 
 Alla olevan kuvan mukaisesti tuli virheilmoitus.
 
-YAML-tiedostossa oli muotoiluvirhe. Tätä pääsikin seurailemaan luennolla ja hieman kauhistelemaan, sillä koen että YAML-tiedoston sisältöä on vielä itse hieman hankala hahmottaa.
+YAML-tiedostossa oli muotoiluvirhe. Tätä pääsikin seurailemaan luennolla ja hieman kauhistelemaan, sillä koen, että YAML-tiedoston sisältöä on vielä itse hieman hankala hahmottaa.
 
 Onneksi on Karvisen (2026) esimerkki, jota on voinut seurata.
 
-![43](images/43.png)
+![44](images/44.png)
 
 _Virhe muotoilussa herja_
 
