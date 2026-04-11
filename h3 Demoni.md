@@ -299,7 +299,7 @@ Lopuksi vielä `ctrl + s` ja `ctrl + Q` jolla tallensin muutokset.
 
 * **`ansible-playbook site.yml -k -K`** - ajetaan playbook
 
-### Virhetilanne
+### Virhetilanne: YAML-tiedostossa muotoiluvirhe
 
 Alla olevan kuvan mukaisesti tuli virheilmoitus.
 
@@ -321,10 +321,126 @@ _Sisällön virhe rivillä 1_
 
 Tallennus ja uusi Ansiblen potkaisu. 
 
-**Ja jälleen virhe.**
+* **`ansible-playbook site.yml -k -K`** 
+
+### Virhetilanne: Files tiedostoa ei löydy
+
+![46](images/46.png)
+
+_Ei löydä files tiedostoa_
+
+Tässä virheilmoitus kertoi onnekseni selvästi, että se ei löytänyt tai päässyt tiedostoon `default`. Lähdin luomaan sitä.
+
+### default tiedoston luominen
+
+* **`mkdir roles/nginx/files/`** - luotiin files -tiedosto
+
+Meinasin tässä kohtaa koko ajan laittaa `roles` eteen `/` -merkin. Koska olin jo `ansible` -hakemistossa, ei kauttaviivaa sen eteen tarvittu.
+
+#### Nginx konfiguraatiotiedoston sisällön laittaminen files -tiedostoon
+
+Nyt olin luonut files -tiedoston. Sen sisälle tulee laittaa Nginx konfiguraatiotiedoston sisältö. 
+
+Tässä käytin apuna `cp` -komentoa.
+
+Sillä voidaan kätevästi siirtää lähdepolusta kohdepolkuun tietoa. Tämä oli erittäin hyödyllinen oppi.
+
+* **`cp /etc/nginx/sites-enabled/default roles/nginx/files/`**
+
+Oli aika lähteä potkaisemaan Ansiblea uudestaan.
+
+* **`ansible-playbook site.yml -k -K`** - ajetaan playbook
+
+JA jälleen virhe. 
+
+![47](images/47.png)
+
+_Handlers puuttui_
+
+Tässä olisi voinut toki katsoa välissä Karvisen (2026) ohjeistusta.
+
+#### Virhetilanne: Handlerin puuttuminen
+
+`handler` puuttui. Eli lähdin nyt luomaan `handlers` -hakemiston Nginx-roolin alle ja sinne `main.yml`, johon laitan `restart nginx handler`.
+
+* **`mkdir roles/nginx/handlers`** - luodaan hakemisto handlers
+
+* **`micro roles/nginx/handlers/main.yml`** luodaan sisältö tiedostolle
+
+![48](images/48.png)
+
+_Handlers sisältö_
+
+Katsottu Karvisen (2026) handlers/main.yml -sisältö ohjeesta, mutta Apachen tilalle Nginx. 
+
+Ja sitten vielä kolmas kerta toden sanoo ja Ansiblea potkaisemaan.
 
 
+### Virhetilanne: Refusing to convert from file to symlink
 
+Ja jälleen virhetilanne. Tässä kohtaa onneksi ei niin optimistisesti ollut liikenteessä, joten lähdin selvittämään mikä vikana.
+
+Onneksi jälleen virheilmoitus sanoi selkeästi virheen. 
+
+![48](images/48.png)
+
+_Symlink herja_
+
+Koitin tarkastella `ansible-doc file` - komennolla. Hetken tutkiskelun jälkeen selvisi että Ansible yritti luoda tämän normaalin filen tilalle symlinkin. 
+
+Onneksi tähän löytyi lopulta oikea ja minulle selkeämpi ohjeistus Dhandalalta (2026), jossa kiteytettiin asia. 
+
+Eli jos polku on normaalina tiedostona tai hakemistona (ei symlinkkinä), Ansible ei suostu ajamaan sitä oletuksena.
+
+#### Poistetaan tavallinen tiedosto
+
+* **`sudo rm /etc/nginx/sites-enabled/default`** - poistetaan tavallinen tiedosto
+
+* **`ansible-playbook site.yml -k -K`** - ajetaan jälleen playbook
+
+**Jälleen virhetilanne**
+
+Viimeisenä piti vielä muuttaa `main.yml` -tiedostosta Dhandalan (2026) ohjeistuksen kohdan Symlinks for Configuration Management mukaan:
+
+#### copy kopioi tiedoston sites-available kansioon jossa konfiguraatiot
+
+* **dest: `/etc/nginx/sites-available/default`** - kopioidaa konfiguraatiotiedosto sites-available kansioon.
+
+#### file luo symlinkin sites-enabled kansioon ja osoittaa sites-available tiedostoon - ottaen konfiguroinnin käyttöön.
+
+* **`src: `/etc/nginx/sites-available/default`** 
+
+Tätä kohtaa oli hieman vaikeampi hahmottaa ja todennäköisesti se vaatii lisää treeniä. 
+
+Lopuksi vielä:
+
+* **`ansible-playbook site.yml -k -K`** - ajetaan jälleen playbook
+
+Se herjasi, etten olisi poistanut tavallista tiedostoa. Tein uudestaan onneksi tämän helpomman komennon 
+
+* **`sudo rm /etc/nginx/sites-enabled/default`**
+
+* **`ansible-playbook site.yml -k -K`** - ajetaan jälleen playbook
+
+Ja vihdoin. Onnistuminen monen virheilmoituksen jälkeen.
+
+![49](images/49.png)
+
+_Onnistuminen, ei enää virheilmoituksia_
+
+![50](images/50.png)
+
+_Selaimen tarkistaminen ja localhost toimii_
+
+### Pohdinta
+
+Alkutehtävät sujuivat erittäin helposti. Oli hieman pitänyt aavistella, että tulee vielä vaikeampi osuus.
+
+Tämä oli luennolla juuri se mitä harjoittelimme, että herjoa tulee vuoron perään ammattilaisellakin, ja niitä lähdetään vain yksitellen selvittämään.
+
+Päätehtävät olivat kuitenkin kaikin puolin todella opettavia. 
+
+Uskon kyllä, että tarvitsen hieman treeniä tähän symlinkin asiaan, jossa pitää ymmärtää copy- ja file-tiedostojen järjestykset ja asetukset.
 
 
 ## d) Vapaaehtoinen bonus
@@ -357,3 +473,5 @@ https://www.youtube.com/watch?v=LnKoncbQBsM&t=171s
 https://terokarvinen.com/2008/05/02/install-apache-web-server-on-ubuntu-4/index.html - 2008
 
 https://susannalehto.fi/2022/apache-weppipalvelin-h3/
+
+https://oneuptime.com/blog/post/2026-02-21-how-to-create-symbolic-links-with-the-ansible-file-module/view
