@@ -72,7 +72,7 @@ Lähdin tarkistamaan oikeuksia, eli tehtävänantona oli, että tavallinen käyt
   
 Tehtävän ohjeistuksessa olikin Vinkit -osiossa tähän vihje. 
 
-Tässä oli tärkeää hahmottaa, että uusi tiedosto tehdään kotihakemistossa, ei ansible-hakemistossa.
+**Tässä oli tärkeää hahmottaa, että uusi tiedosto tehdään kotihakemistossa, ei ansible-hakemistossa.**
 
 Lähdin tarkistamaan tiedostoa 000-default.conf jotta voin tarkistaa, olinko luennon aikana onnistunut muuttamaan asetuksia niin, että tavallinen käyttäjä voi tehdä muutoksen. 
 
@@ -105,7 +105,7 @@ Lähdin seuraavaksi etenemään testaamisen merkeissä.
 
 Tarkoitukseni oli muokata nyt index.html -tiedostoa ilman sudoa, jotta voidaan testata onko tosiaan tavallisella käyttäjällä oikeudet.
 
-Tässäkin kohtaa oli tärkeää ymmärtää että alla olevassa kuvassa on Apache-konfiguraatiotiedosto - ei index.html tiedosto. 
+**Tässäkin kohtaa oli tärkeää ymmärtää, että alla olevassa kuvassa on Apache-konfiguraatiotiedosto – ei index.html-tiedosto.** 
 
 Aloittelijana tässäkin kohtaa sai hetken tuijotella.
 
