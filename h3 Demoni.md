@@ -323,7 +323,7 @@ Tallennus ja uusi Ansiblen potkaisu.
 
 * **`ansible-playbook site.yml -k -K`** 
 
-#### Virhetilanne: Files tiedostoa ei löydy
+### Virhetilanne: Files tiedostoa ei löydy
 
 ![46](images/46.png)
 
@@ -359,7 +359,7 @@ _Handlers puuttui_
 
 Tässä olisi voinut toki katsoa välissä Karvisen (2026) ohjeistusta.
 
-#### Virhetilanne: Handlerin puuttuminen
+### Virhetilanne: Handlerin puuttuminen
 
 `handler` puuttui. Eli lähdin nyt luomaan `handlers` -hakemiston Nginx-roolin alle ja sinne `main.yml`, johon laitan `restart nginx handler`.
 
