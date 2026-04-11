@@ -105,7 +105,7 @@ Lähdin seuraavaksi etenemään testaamisen merkeissä.
 
 Tarkoitukseni oli muokata nyt index.html -tiedostoa ilman sudoa, jotta voidaan testata onko tosiaan tavallisella käyttäjällä oikeudet.
 
-**Tässäkin kohtaa oli tärkeää ymmärtää, että alla olevassa kuvassa on Apache-konfiguraatiotiedosto – ei index.html-tiedosto.** 
+**Tässä kohtaa oli tärkeää ymmärtää, että alla olevassa kuvassa on Apache-konfiguraatiotiedosto – ei index.html-tiedosto.** 
 
 Aloittelijana tässäkin kohtaa sai hetken tuijotella.
 
