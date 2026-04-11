@@ -58,7 +58,7 @@ Tässä kohtaa tein välillä paluuta edeltävään raporttiini h2 Voileipä (Sh
 
 Koska olin jo asentanut manuaalisesti aiemmin apache2:n ja weppisivun, niin lähden kertauksen vuoksi tarkistelemaan tiedostojen sisältöjä ja muokkaamaan niitä tarvittaessa. 
 
-#### Tarkistetaan tietojen ja tiedostojen sisällöt
+### Tarkistetaan tietojen ja tiedostojen sisällöt
 
 * Avasin selaimen ja menin Apachen sivustolle `http://localhost` -sivusto näkyi eli se toimi.
 
@@ -66,7 +66,7 @@ _![29](images/29.png)
 
 _Apache pyörii - localhost toimii_
   
-#### Oikeudet 
+### Oikeudet 
 
 Lähdin tarkistamaan oikeuksia, eli tehtävänantona oli, että tavallinen käyttäjä pääsee muokkaamaan sivua ilman sudoa.
   
@@ -101,7 +101,7 @@ Sivu näkyi localhostissa ja minä (liljas) omistin tiedostot.
 Lähdin seuraavaksi etenemään testaamisen merkeissä.
 
 
-#### Testaaminen
+### Testaaminen
 
 Tarkoitukseni oli muokata nyt index.html -tiedostoa ilman sudoa, jotta voidaan testata onko tosiaan tavallisella käyttäjällä oikeudet.
 
@@ -117,7 +117,7 @@ Tarkoitus on päästä `index.html` -tiedostoon muokkaamaan tietoja.
 
 Konfiguraatiotiedostosta selvisi, että `DocumentRoot` on `/var/www/html/`, jonne pitää navigoida.
 
-#### Sivuston muokkaamiseen etenin seuraavin komennoin:
+### Sivuston muokkaamiseen etenin seuraavin komennoin:
 
 * **`micro /var/www/html/index.html`**
 
@@ -135,7 +135,7 @@ Ja kuten yllä näkyy - muokkaus onnistui ongelmitta.
 
 Mikäli tässä kohtaa olisi ilmennyt ongelma, olisi tullut edetä komennoin:
 
-#### Omistajuuden vaihtaminen
+### Omistajuuden vaihtaminen
 
 * **`chown`** = changing owner
 
@@ -151,7 +151,7 @@ Aloitin asentamalla Nginx:n jonka muistelin kuitenkin asentaneeni jo luennon aik
 
 Nginx täytyi asentaa käsin ja Weppisivun tuli näkyä palvelimen etusivulla.
 
-#### Asennettiin Nginx
+### Asennettiin Nginx
 
 ![34](images/34.png)
 
@@ -167,7 +167,7 @@ Lehdon (2022) ohjeen löysin kuitenkin, jota myös käytimme Linux-palvelimet ku
 
 Löysin onnekseni myös luennolla kirjoittamani muistiinpanot, jolla lopulta etenin.
 
-#### Stopattiin Apache 
+### Stopattiin Apache 
 
 * **`sudo apt-get update`** - päivitin paketit
 
@@ -179,13 +179,13 @@ Löysin onnekseni myös luennolla kirjoittamani muistiinpanot, jolla lopulta ete
 
 _Kuvan mukaisesti onnistunut Apachen stoppaus_
 
-#### Potkaistiin Nginx 
+### Potkaistiin Nginx 
 
 * **`sudo apt-get update`** - päivitin paketit tähän väliin
 
 * **`sudo systemctl restart nginx`** - potkaistaan Nginx päälle
 
-#### Tarkistaminen - menikö Nginx päälle
+### Tarkistaminen - menikö Nginx päälle
 
 Kuvan mukaisesti Nginx potkaistiin onnistuneesti käyntiin.
 
@@ -193,7 +193,7 @@ Kuvan mukaisesti Nginx potkaistiin onnistuneesti käyntiin.
 
 _Nginx käynnistyi ja sivu nousi pystyyn_
 
-#### Oikeuksien muokkaaminen tavalliselle käyttäjälle
+### Oikeuksien muokkaaminen tavalliselle käyttäjälle
 
 Lähdin selvittämään alkuun DocumentRootin. 
 
@@ -234,7 +234,7 @@ _komentojen sekoilu ja itse oikeudet_
 
 Olin luennon aikana kerennyt muokkaamaan tähänkin jo oikeudet ilman sudoa. 
 
-#### Testaaminen Nginx ilman sudoa ja oikeuksien tarkistus
+### Testaaminen Nginx ilman sudoa ja oikeuksien tarkistus
 
 Lähdin testaamaan kuten Apachellakin, että voin tosiaan muokata ilman sudoa.
 
@@ -273,9 +273,11 @@ Nginx rooli ei löytynyt `roles`-hakemistosta, joten lähdin luomaan sen.
 
 Käytin tässä apuna omaa h2 Voileipä -raporttiani (Sharifi, 2026).
 
-#### Nginx roolin ja sisällön luominen
+### Nginx roolin luominen
 
 * **`mkdir -p roles/nginx/tasks/`**  - luodaan rooli
+
+### Nginx roolille sisällön luominen
   
 * **`micro roles/nginx/tasks/main.yml`** - luodaan sisältö
 
@@ -290,6 +292,8 @@ _main.yml sisältö jonka muokkasin_
 Lopuksi vielä `ctrl + s` ja `ctrl + Q` jolla tallensin muutokset.
 
 * **`micro site.yml`** - lähdin lisäämään roolin site.yml listalle ja tallennus
+
+ ### Tarkistaminen
 
 * **`cat site.yml`** - tarkistin että rooli oli onnistuneesti lisätty listalle
 
