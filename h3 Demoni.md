@@ -281,9 +281,9 @@ Käytin tässä apuna omaa h2 Voileipä -raporttiani (Sharifi, 2026).
   
 * **`micro roles/nginx/tasks/main.yml`** - luodaan sisältö
 
-Tässä kohtaa minun piti hieman miettiä, mitä laitan `main.yml` sisältöön. Karvisen (2026) ohjeissa onneksi oli esimerkki sisällöstä. 
+**Tässä kohtaa minun piti hieman miettiä, mitä laitan `main.yml` sisältöön. Karvisen (2026) ohjeissa onneksi oli esimerkki sisällöstä.**
 
-Muokkasin `Nginx` -tietojen mukaisesti muuttaen hakemistot ja tiedoston nimet ja muutoin sama sisältö.
+Muokkasin `Nginx` -tietojen mukaisesti muuttaen kuitenkin `hakemistot` ja `tiedostojen nimet`, mutta muutoin sama sisältö.
 
 ![42](images/42.png)
 
@@ -299,11 +299,32 @@ Lopuksi vielä `ctrl + s` ja `ctrl + Q` jolla tallensin muutokset.
 
 * **`ansible-playbook site.yml -k -K`** - ajetaan playbook
 
+### Virhetilanne
+
+Alla olevan kuvan mukaisesti tuli virheilmoitus.
+
+YAML-tiedostossa oli muotoiluvirhe. Tätä pääsikin seurailemaan luennolla ja hieman kauhistelemaan, sillä koen että YAML-tiedoston sisältöä on vielä itse hieman hankala hahmottaa.
+
+Onneksi on Karvisen (2026) esimerkki, jota on voinut seurata.
+
+![43](images/43.png)
+
+_Virhe muotoilussa herja_
+
+* **`micro roles/nginx/tasks/main.yml`** - avataan YAML-tiedosto
+
+Siellä se virhe olikin. Rivillä 1 oli turhaa tekstiä, jonka kumitin pois. 
+
+![45](images/45.png)
+
+_Sisällön virhe rivillä 1_
+
+Tallennus ja uusi Ansiblen potkaisu. 
+
+**Ja jälleen virhe.**
 
 
-![41](images/41.png)
 
-_Rooli lisätty onnistuneesti listalle_ 
 
 ## d) Vapaaehtoinen bonus
 
