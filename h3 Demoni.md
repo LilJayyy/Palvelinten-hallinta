@@ -463,20 +463,10 @@ _Onnistuminen, ei enää virheilmoituksia_
 
 _Selaimen tarkistaminen ja localhost toimii_
 
-### Pohdinta
-
-Alkutehtävät sujuivat erittäin helposti. Oli hieman pitänyt aavistella, että tulee vielä vaikeampi osuus.
-
-Tämä oli luennolla juuri se mitä harjoittelimme, että herjoa tulee vuoron perään ammattilaisellakin, ja niitä lähdetään vain yksitellen selvittämään.
-
-Päätehtävät olivat kuitenkin kaikin puolin todella opettavia. 
-
-Uskon kyllä, että tarvitsen hieman treeniä tähän symlinkin asiaan, jossa pitää ymmärtää copy- ja file-tiedostojen järjestykset ja asetukset.
-
 
 ## d) Vapaaehtoinen bonus
 
-Lähdin tutustumaan tähän tehtävään. Tarkoituksena oli kokeilla IDS-projektia, jossa asennetaan:
+Lähdin tutustumaan tähän tehtävään. Tarkoituksena oli kokeilla IDS-projektia, Osiris T, jossa asennetaan:
 
 * Suricata
  
@@ -552,27 +542,41 @@ _Uusia hälytyksiä_
 
 Kuten kuvassa näkyy, testaus oli onnistunut. Osiris-T toimi täydellisesti.
 
+## Pohdinta
+
+Alkutehtävät sujuivat erittäin helposti. Oli hieman pitänyt aavistella, että tulee vielä vaikeampi osuus.
+
+Tämä oli luennolla juuri se mitä harjoittelimme, että herjoa tulee vuoron perään ammattilaisellakin, ja niitä lähdetään vain yksitellen selvittämään.
+
+Tehtävät olivat kuitenkin kaikin puolin todella opettavia. 
+
+Uskon kyllä, että tarvitsen hieman treeniä tähän symlinkin asiaan, jossa pitää ymmärtää copy- ja file-tiedostojen järjestykset ja asetukset.
+
+
+
 # Lähteet
 
-
-Ansible Community Documentation. Dokumentti. Luettavissa: https://docs.ansible.com/projects/ansible/latest/collections/ansible/builtin/package_module.html/ Luettu: 05.04.2026.
+Ansible Community Documentation. Dokumentti. Luettavissa: https://docs.ansible.com/projects/ansible/latest/collections/ansible/builtin/package_module.html/ Luettu: 11.04.2026.
 
 Ansible Community Documentation. Dokumentti. _Handlers: running operations on change_ Luettavissa: https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_handlers.html/ Luettu: 11.04.2026.
+
+Caleb, C. 2022. Video. Youtube. _File Ownership and Chown - Linux Tutorial 22_ Katsottavissa: https://www.youtube.com/watch?v=moNTR6zCLUc/ Katsottu: 11.04.2026.
+
+Dhandala, N. 2026. Verkkosivu. _How to Create Symbolic Links with the Ansible file Module_ Luettavissa: https://oneuptime.com/blog/post/2026-02-21-how-to-create-symbolic-links-with-the-ansible-file-module/view/ Luettu: 11.04.2026.
+
+Häkämies, Saario, Mukkula 2026: Osiris-T. Luettavissa: https://github.com/oskarihakamies/IDS-project/blob/main/How-To-Install.md/ Luettu: 11.04.2026.
 
 Karvinen, T.2026. Verkkosivu. _Apache installed with Ansible - quick notes_ Luettavissa: https://terokarvinen.com/apache-ansible/ Luettu: 11.04.2026.
 
 Karvinen, T. 2020. Verkkosivu. _Command Line Basics Revisited_ Luettavissa: https://terokarvinen.com/2020/command-line-basics-revisited/ Luettu: 05.04.2026.
 
-https://linuxize.com/post/linux-chown-command/
+Karvinen, T. 2008. Verkkosivu. _Install Apache Web Server on Ubuntu_ Luettavissa: https://terokarvinen.com/2008/05/02/install-apache-web-server-on-ubuntu-4/index.html/ Luettu: 15.10.2025.
 
-https://www.youtube.com/watch?v=moNTR6zCLUc
+Lehto, S. 2022. Verkkosivu. _Apache Weppipalvelin_. Luettavissa: https://susannalehto.fi/2022/apache-weppipalvelin-h3/ Luettu: 11.04.2026.
 
-https://www.youtube.com/watch?v=LnKoncbQBsM&t=171s
+Sharifi, L. 2026. Verkkosivu. _h2 Voileipä_ Luettavissa: https://github.com/LilJayyy/Palvelinten-hallinta/blob/main/h2%20Voileip%C3%A4.md/ Luettu: 11.04.2026.
 
-https://terokarvinen.com/2008/05/02/install-apache-web-server-on-ubuntu-4/index.html - 2008
+Travis Media. 2024. Video. Youtube. _Linux File Permissions in 5 Minutes | MUST Know!_ Katsottavissa: https://www.youtube.com/watch?v=LnKoncbQBsM/ Katsottu: 11.04.2026.
 
-https://susannalehto.fi/2022/apache-weppipalvelin-h3/
+Panovski, D. 2026. Verkkosivu. _chown Command in Linux: Change File Ownership_ Luettavissa: https://linuxize.com/post/linux-chown-command/ Luettu: 11.04.2026.
 
-https://oneuptime.com/blog/post/2026-02-21-how-to-create-symbolic-links-with-the-ansible-file-module/view
-
-https://github.com/oskarihakamies/IDS-project/blob/main/How-To-Install.md
