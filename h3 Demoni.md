@@ -8,6 +8,9 @@
 * [d) Vapaaehtoinen bonus](#d-vapaaehtoinen-bonus)
 
 
+
+
+
 ### Koneen tekniset tiedot
 Prosessori: Intel Core i5-8265U CPU @ 1.60 GHz (1.80 GHz turbo, 8 ydintä)
 
