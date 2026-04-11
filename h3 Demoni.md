@@ -242,7 +242,7 @@ Lähdin testaamaan kuten Apachellakin, että voin tosiaan muokata ilman sudoa.
  
 * **`ctrl + s` ja `ctrl + Q`** - tallennetaan muutokset
 
-Muokkasin sisältöön "Hei vaan hei" aiemman "Hei vaan pitkästä aikaa!" - tekstin tilalle.
+Muokkasin sisältöön: `"Hei vaan hei"` aiemman `"Hei vaan pitkästä aikaa!"` - tekstin tilalle.
 
 Sitten sivuston päivitystä ja alla olevan kuvan mukaisesti pääsin onnistuneesti muokkaamaan tiedostoa ilman sudoa.
 
