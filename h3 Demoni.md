@@ -159,7 +159,7 @@ _Nginx olikin jo asennettu_
 
 Sama ohjeistus tässä kuten Apachella, eli tuli olla tavallisen käyttäjän muokattavissa sivut ilman root -tai sudo-oikeuksia. 
 
-Oli tärkeää muistaa sammuttaa Apache käsin.
+**Oli tärkeää muistaa sammuttaa Apache käsin.**
 
 Olisin tässä käyttänyt Karvisen (2008) Apachen asennus ohjetta, mutta sivustoa ei saanut auki. 
 
