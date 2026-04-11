@@ -326,6 +326,7 @@ Tallennus ja uusi Ansiblen potkaisu.
 
 
 
+
 ## d) Vapaaehtoinen bonus
 
  Vapaaehtoinen bonus: Osiris-T. Osiris-T asentaa Wazuhin ja tarvittavat virtuaalikoneet. Voit lähettää vihamielistä verkkoliikennettä (tcpreplay), siepata sen (suricata) ja saat tulokset suoraan dashboardille (wazuh). 
