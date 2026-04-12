@@ -439,9 +439,9 @@ Viimeisenä piti vielä muuttaa `main.yml` -tiedostosta Dhandalan (2026) ohjeist
 
 #### file luo symlinkin `sites-enabled` -kansioon ja osoittaa `sites-available` -tiedostoon - ottaen konfiguroinnin käyttöön.
 
-* **`src: /etc/nginx/sites-available/default`**
+* **`src: /etc/nginx/sites-available/default`** - tiedosto johon symlink osoittaa
  
-* **`dest: /etc/nginx/sites-enabled/default`**
+* **`dest: /etc/nginx/sites-enabled/default`** - symlinkin sijainti
 
 **Symlink luodaan siis sites-enabled -kansioon (dest) ja laitetaan osoittamaan sites-available -kansioon olevaan tiedostoon (src).**
 
