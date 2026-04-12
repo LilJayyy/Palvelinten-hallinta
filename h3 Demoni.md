@@ -437,7 +437,7 @@ Viimeisenä piti vielä muuttaa `main.yml` -tiedostosta Dhandalan (2026) ohjeist
 
 * **dest: `/etc/nginx/sites-available/default`** - kopioidaan konfiguraatiotiedosto sites-available kansioon.
 
-#### file luo symlinkin `sites-enabled` -kansioon ja osoittaa sites-available-tiedostoon - ottaen konfiguroinnin käyttöön.
+#### file luo symlinkin `sites-enabled` -kansioon ja osoittaa `sites-available` -tiedostoon - ottaen konfiguroinnin käyttöön.
 
 * **`src: /etc/nginx/sites-available/default`**
  
