@@ -119,7 +119,7 @@ Yritin tässä tehtävänannossa kovin itse muistella komentoja ja ymmärtää, 
  
 * **`ls /etc/apache2/sites-enabled/`** - katsoin sites-enabled hakemiston sisällön
  
-* **`cat /etc/apache2/sites-enabled/000-default.conf`** - katsoin tiedoston sisällön - tässä kohtaa ei näe vielä omistajatietoja - löysin tässä tiedon, että DocumentRoot on /var/www/html/ josta pitää tarkistaa oikeudet.
+* **`cat /etc/apache2/sites-enabled/000-default.conf`** - katsoin tiedoston sisällön - tässä kohtaa ei näe vielä omistajatietoja - löysin tässä tiedon, että DocumentRoot on `/var/www/html/` josta pitää tarkistaa oikeudet.
  
 * **`ls -la /var/www/html/`** - tarkistetaan oikeudet
 
