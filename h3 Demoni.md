@@ -435,11 +435,21 @@ Viimeisenä piti vielä muuttaa `main.yml` -tiedostosta Dhandalan (2026) ohjeist
 
 #### copy kopioi tiedoston `sites-available` -kansioon jossa konfiguraatiot
 
-* **dest: `/etc/nginx/sites-available/default`** - kopioidaa konfiguraatiotiedosto sites-available kansioon.
+* **dest: `/etc/nginx/sites-available/default`** - kopioidaan konfiguraatiotiedosto sites-available kansioon.
 
 #### file luo symlinkin `sites-enabled` -kansioon ja osoittaa sites-available-tiedostoon - ottaen konfiguroinnin käyttöön.
 
-* **`src: /etc/nginx/sites-available/default`** 
+* **`src: /etc/nginx/sites-available/default`**
+ 
+* **`dest: /etc/nginx/sites-enabled/default`**
+
+**Symlink luodaan siis sites-enabled -kansioon (dest) ja laitetaan osoittamaan sites-available -kansioon olevaan tiedostoon (src).**
+
+
+
+![59](images/59.png)
+
+_Korjattu main.yml sisältö_
 
 Tätä kohtaa oli hieman vaikeampi hahmottaa ja todennäköisesti se vaatii lisää treeniä. Sain kuitenkin lopulta hahmoteltua, että `main.yml`tiedostossa `dest` ja `src`, `file` ja `copy` osoittivat väärään polkuun.
 
