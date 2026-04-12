@@ -433,15 +433,15 @@ Eli jos polku on normaalina tiedostona tai hakemistona (ei symlinkkinä), Ansibl
 
 Viimeisenä piti vielä muuttaa `main.yml` -tiedostosta Dhandalan (2026) ohjeistuksen kohdan Symlinks for Configuration Management mukaan:
 
-#### copy kopioi tiedoston sites-available kansioon jossa konfiguraatiot
+#### copy kopioi tiedoston `sites-available` -kansioon jossa konfiguraatiot
 
 * **dest: `/etc/nginx/sites-available/default`** - kopioidaa konfiguraatiotiedosto sites-available kansioon.
 
-#### file luo symlinkin sites-enabled-kansioon ja osoittaa sites-available-tiedostoon - ottaen konfiguroinnin käyttöön.
+#### file luo symlinkin `sites-enabled` -kansioon ja osoittaa sites-available-tiedostoon - ottaen konfiguroinnin käyttöön.
 
-* **`src: `/etc/nginx/sites-available/default`** 
+* **`src: /etc/nginx/sites-available/default`** 
 
-Tätä kohtaa oli hieman vaikeampi hahmottaa ja todennäköisesti se vaatii lisää treeniä. 
+Tätä kohtaa oli hieman vaikeampi hahmottaa ja todennäköisesti se vaatii lisää treeniä. Sain kuitenkin lopulta hahmoteltua, että `main.yml`tiedostossa `dest` ja `src`, `file` ja `copy` osoittivat väärään polkuun.
 
 Lopuksi vielä:
 
@@ -544,9 +544,9 @@ Kuten kuvassa näkyy, testaus oli onnistunut. Osiris-T toimi täydellisesti.
 
 ## Pohdinta
 
-Alkutehtävät sujuivat erittäin helposti. Oli hieman pitänyt aavistella, että tulee vielä vaikeampi osuus.
+Alkutehtävät sujuivat erittäin helposti. Olisi hieman pitänyt aavistella, että tulee vielä vaikeampi osuus.
 
-Tämä oli luennolla juuri se mitä harjoittelimme, että herjoa tulee vuoron perään ammattilaisellakin, ja niitä lähdetään vain yksitellen selvittämään.
+Tämä oli luennolla juuri se mitä harjoittelimme, että herjoja tulee vuoron perään ammattilaisellakin, ja niitä lähdetään vain yksitellen selvittämään.
 
 Tehtävät olivat kuitenkin kaikin puolin todella opettavia. 
 
