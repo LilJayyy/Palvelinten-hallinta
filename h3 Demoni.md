@@ -50,24 +50,24 @@ Kysymys: Mikä on raja, kuinka monta sanaa voi käyttää ja laittaa listaan? Va
 
 #### b) 'ansible-doc service':
 -johdantokappale:
--Hallitsee palveluita etäkoneilla. 
--Tämä moduuli on välittäjä monelle spesifimmälle palvelunhallintamoduulille moduulille
+- Hallitsee palveluita etäkoneilla. 
+- Tämä moduuli on välittäjä monelle spesifimmälle palvelunhallintamoduulille moduulille
 
 -enabled:
--määrittää palvelun käynnistymisen koneen käynnistyessä
--Vähintään yksi `state` ja `enabled` on vaadittu.
+- Määrittää palvelun käynnistymisen koneen käynnistyessä
+- Vähintään yksi `state` ja `enabled` on vaadittu.
 
 -name: 
--palvelun nimi
--tyyppi: str
+- Palvelun nimi
+- Tyyppi: str
 
 -state: 
--`started` ja `stopped` ovat idempotentteja, eli toiminto voidaan suorittaa monta kertaa samalla lopputulemalla.
--`reloaded` käynnistää palvelun jos se ei ole jo valmiiksi käynnistetty, vaikka valittu init-järjestelmä ei tekisi niin.
+- `started` ja `stopped` ovat idempotentteja, eli toiminto voidaan suorittaa monta kertaa samalla lopputulemalla.
+- `reloaded` käynnistää palvelun jos se ei ole jo valmiiksi käynnistetty, vaikka valittu init-järjestelmä ei tekisi niin.
 
 -EXAMPLES:
--name: aloita palvelu httpd, jos ei ole käynnistetty
--name: pysäytä palvelu httpd jos käynnistetty
+* name: aloita palvelu httpd, jos ei ole käynnistetty
+* name: pysäytä palvelu httpd jos käynnistetty
 
 Huomio: Auttoi ymmärtämään käytännössä service-moduulin käytössä. Opittavaa toki vielä on ja paljon.
 
