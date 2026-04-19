@@ -162,7 +162,7 @@ Fail2Ban lukee `.local` -tiedostoja oletuksena ennen `.conf` -tiedostoja, joten 
 
 Fail2Banin asennuksessa tulee kaksi oletuskonfiguraatiotiedostoa: 
 
-`/etc/fail2ban/jail.conf` ja `/etc/fail2ban/jail.d/defaults-debian.conf`.
+* `/etc/fail2ban/jail.conf` ja `/etc/fail2ban/jail.d/defaults-debian.conf`.
 
 Oli tärkeää ymmärtää, ettei `default.conf` -oletustiedostoja muuteta suoraan. 
 
