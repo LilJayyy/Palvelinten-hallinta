@@ -168,11 +168,18 @@ Kopiot konfiguraatiotiedostoista luotiin `.local` -päätteellä, jotta omat muu
 
 Fail2Ban lukee `.local` -tiedostoja oletuksena ennen `.conf` -tiedostoja, joten siksi muutokseni tehtiin sinne.
 
-### Luodaan jail.local 
+### Luodaan jail.local-tiedosto ja kopioidaan konfiguraatiotiedoston sisältö sinne
 
 * **`sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local`** - kopioidaan sudona `cp` komennolla konfiguraatiotiedoston sisältö jail.localiin
 
-* **`
+* **`ls /etc/fail2ban`** -  tarkistetaan fail2ban-hakemistosta, kopioituiko sisältö onnistuneesti.
+  
+* **`cat /etc/fail2ban/jail.local`** - hakemistosta katsotaan cat-komennolla tiedoston sisään
+
+![64](images/64.png)
+
+_Konfiguraatiotiedoston sisältö onnistuneesti jail.local -tiedostossa_
+
 
 ## b) Automaatti
 Automaatti. Automatisoi valitsemasi demonin asennus Ansiblella.
