@@ -30,7 +30,7 @@ Esimerkkejä: postgresql, caddy, mariadb, haproxy, varnish
 Nämä voivat olla mutkikkaampia: samba, nfs, jokin ftp-palvelin, jokin vaihtoehtoinen ssh, jokin dhcpd, jokin tftpd
 
 
-## x) Artikkeli
+# x) Artikkeli
 
 ### Karvinen 2023: Configuration Management of Distributed Systems over Unreliable and Hostile Networks
 
@@ -57,7 +57,7 @@ Nämä voivat olla mutkikkaampia: samba, nfs, jokin ftp-palvelin, jokin vaihtoeh
 
 
 
-## a) Räpylä
+# a) Räpylä
 
 Lähdin tekemään raporttiosiota 19.4. kello 14.20. Meni hetki valita mieluinen demoni.
 
@@ -270,7 +270,7 @@ _SSH vankilan käyttöönotto_
 
 _sshd vankila aktiivinen, konfiguraatiotesti onnistunut, ei estettyjä osoitteita_ 
 
-## b) Automaatti
+# b) Automaatti
 Automaatti. Automatisoi valitsemasi demonin asennus Ansiblella.
 
 Tehtävän osioon siirryin 17:58.
@@ -360,13 +360,13 @@ Vihdoin – onnistuminen! Kello olikin jo tässä vaiheessa 20:01.
 _failed 0 ja TASK install ja start fail2ban OK_
 
 
-## c) Asetus
+# c) Asetus
 Muuta asetustiedostoa herralla (master, "control node") ja aja Ansible uudestaan. Osoita, että asetukset tulivat käyttöön.
 
-## d) Paikka remonttiin
+# d) Paikka remonttiin
 Riko jotain asetuksia. Voit esimerkiksi poistaa demonin 'sudo apt-get purge foobar' (purge poistaa myös asetustiedostoja), poistaa asennuksen yhteydessä tulevan kansion (sudo rm -r /etc/foobar/ # vaarallista) tms. Ja sitten ajaa ansible-roolisi uudestaan ja todeta, että se korjaa tilanteen.
 
-## e) Idempotentti
+# e) Idempotentti
 Osoita, että tilasi on idempotentti.
 
 
