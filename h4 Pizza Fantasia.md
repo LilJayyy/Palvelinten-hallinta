@@ -172,7 +172,7 @@ Kopiot konfiguraatiotiedostoista luotiin `.local` -päätteellä, jotta omat muu
 
 ## Luodaan jail.local-tiedosto ja kopioidaan sinne konfiguraatiotiedoston sisältö
 
-* **`sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local`** - kopioidaan sudona `cp` komennolla konfiguraatiotiedoston sisältö jail.localiin
+* **`sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local`** - luodaan tiedosto ja kopioidaan sudona `cp` komennolla konfiguraatiotiedoston sisältö jail.localiin
 
 * **`ls /etc/fail2ban`** -  tarkistetaan fail2ban-hakemistosta, kopioituiko sisältö onnistuneesti.
   
