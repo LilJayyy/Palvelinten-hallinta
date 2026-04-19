@@ -73,7 +73,8 @@ Sitä voidaan ajatella eräänlaisena vartijana, joka tutkii ja tarkistelee palv
 
 Epäilyttävän toiminnan havaittuaan se estää automaattisesti hyökkääjän IP-osoitteen lisäämällä palomuuriin uusia sääntöjä estäen pääsyn tietyksi määräajaksi.
 
-Löysin tähän erittäin selkeän ohjeen (James, J.) ja lähdin etenemään seuraavin askelin:
+Löysin tähän erittäin selkeän ohjeen (James, J.) ja lähdin etenemään seuraavin askelin.
+
 
 #### Asennetaan Fail2Ban ja tarkistetaan asennuksen onnistuminen
 
