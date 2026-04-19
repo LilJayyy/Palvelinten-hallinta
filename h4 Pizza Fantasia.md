@@ -170,7 +170,7 @@ Kopiot konfiguraatiotiedostoista luotiin `.local` -päätteellä, jotta omat muu
 
 
 
-### Luodaan jail.local-tiedosto, kopioidaan sinne konfiguraatiotiedoston sisältö ja määritellään asetukset
+### Luodaan jail.local-tiedosto ja kopioidaan sinne konfiguraatiotiedoston sisältö
 
 * **`sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local`** - kopioidaan sudona `cp` komennolla konfiguraatiotiedoston sisältö jail.localiin
 
@@ -181,6 +181,8 @@ Kopiot konfiguraatiotiedostoista luotiin `.local` -päätteellä, jotta omat muu
 ![64](images/64.png)
 
 _Konfiguraatiotiedoston sisältö onnistuneesti jail.local -tiedostossa_
+
+### Määritellään omat asetukset jail.local -tiedostoon
 
 #### Asetetaan Fail2Banille bantime -asetukset
 
