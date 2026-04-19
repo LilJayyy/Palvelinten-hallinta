@@ -388,7 +388,7 @@ Dhandala, N. OneUpTime. 2026. Verkkosivu. _Ansible configure fail2ban._ Luettavi
 
 James, J. Verkkosivu. _How to Install Fail2Ban on Debian (13, 12, 11)._ Luettavissa: https://linuxcapable.com/how-to-install-fail2ban-on-debian-linux/ Luettu: 19.4.2026.
 
-Karvinen, T. 2024. Opinnäytetyö. _Configuration Management of Distributed Systems over Unreliable and Hostile Networks._ Luettavissa: https://westminsterresearch.westminster.ac.uk/item/w7vvz/configuration-management-of-distributed-systems-over-unreliable-and-hostile-networks/ Luettu: 19.04.2026.
+Karvinen, T. 2023. Opinnäytetyö. _Configuration Management of Distributed Systems over Unreliable and Hostile Networks._ Luettavissa: https://westminsterresearch.westminster.ac.uk/item/w7vvz/configuration-management-of-distributed-systems-over-unreliable-and-hostile-networks/ Luettu: 19.04.2026.
 
 Karvinen, T.2026. Verkkosivu. _Apache installed with Ansible - quick notes._ Luettavissa: https://terokarvinen.com/apache-ansible/ Luettu: 19.04.2026.
 
