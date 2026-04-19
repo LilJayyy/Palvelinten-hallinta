@@ -273,9 +273,95 @@ _sshd vankila aktiivinen, konfiguraatiotesti onnistunut, ei estettyjä osoitteit
 ## b) Automaatti
 Automaatti. Automatisoi valitsemasi demonin asennus Ansiblella.
 
+Tehtävän osioon siirryin 17:58.
+
+Tutustuin ensin Dhandalan (2026) ohjeeseen, kunnes tajusin, että käytän sitä yhdellä koneella localhostina, enkä kahtena erillisenä. 
+
+Sain sieltä kuitenkin hyviä viitteitä, sillä `main.yml` -sisällön luominen itsekseen on vielä haasteellista.
+
+Palasin alkujuurille Ansible Docsiin ja Karvisen (2026) sekä omiin ohjeisiini ja sovittelin main.yml-sisällön.
+
+Lähdin etenemään seuraavasti: 
+
+## Luodaan tiedostolle rooli Ansibleen
+
+* **`mkdir -p roles/fail2ban/tasks`** - luodaan tiedostolle rooli hakemistorakenteeseen Ansibleen
+  
+## Luodaan tehtävätiedosto ja sisältö
+
+* **`micro roles/fail2ban/tasks/main.yml`** - Lähdetään luomaan tehtävätiedosto ja kirjoitetaan sisältö
+
+**Laitan tähän kohtaan perusteellisen selityksen, jotta minun olisi helpompi ymmärtää, miten main.yml -sisältö rakentuu.**
+
+````
+--- #tämä tiedoston alkuun
+
+- name: install fail2ban # tehtävän nimi eli esimerkiksi asentaa fail2ban
+  apt: # apt-moduuli, tämä aina tyhjä
+    name: fail2ban # mikä asennetaan eli fail2ban
+    state: present # varmistaa että asennettu
+
+- name: start fail2ban # toinen tehtävän nimi eli esimerkiksi käynnistää fail2ban
+  service: # tähän ei koskaan kirjoteta mitään 
+    name: fail2ban # palvelun nimi
+    state: started # varmistaa että käynnissä
+    enabled: yes # käynnistyy automaattisesti boottauksesta
+````
+
+Main.ymlssä ensin:
+
+1.  **`apt`** eli **ensimmäinen tehtävä** joka **asentaa ohjelman**
+  
+2.  **`service`** - **toinen tehtävä** joka **käynnistää ohjelman, pitää käynnissä automaattisesti**
+
+Tässä menikin pieni tovi hahmottaessa ja kirjoittaessa asiaa. 
+
+Tärkeintä on sisäistää. Eiköhän tätä tule vielä harjoiteltua, mutta tämä perusteellisempi pohdinta ja ohje auttoi kyllä hieman.
+
+Lopuksi vielä yllä oleva sisältö laitettiin `main.yml` YAML-tiedostoon ja tallennettiin `ctrl + S`.
+
+
+## Roolin lisäys site.yml -tiedostoon Ansiblelle
+
+* **`micro site.yml`** - service rooli lisätään site.yml -tiedoston listalle
+
+* **`ctrl + S ja ctrl + Q`*** - tallennetaan muutokset
+
+
+![70](images/70.png)
+
+_Onnistunut roolin lisäys_
+
+
+## Ajetaan playbook eli potkaistaan käyntiin
+
+* **`ansible-playbook site.yml -K`** - Ajetaan playbook
+
+### Virhetilanne: YAML parsing failed: Mapping values are not allowed in this context
+
+Alla olevan kuvan mukaisesti sisennysvirhe löytyi YAML-tiedostosta.
+
+![71](images/71.png)
+
+_Virheilmoitus_
+
+Virheilmoitus näytti hyvin, että virhe on rivillä 14. Korjasin sen ja yritin uudestaan.
+
+![72](images/72.png)
+
+_Korjattu YAML-tiedoston sisältö_
+
+## Onnistuminen
+
+Vihdoin – onnistuminen! Kello olikin jo tässä vaiheessa 20:01.
+
+![73](images/73.png)
+
+_failed 0 ja TASK install ja start fail2ban OK_
+
 
 ## c) Asetus
-Muuta asetustiedostoa herralla (master, "control node") ja aja ansible uudestaan. Osoita, että asetukset tulivat käyttöön.
+Muuta asetustiedostoa herralla (master, "control node") ja aja Ansible uudestaan. Osoita, että asetukset tulivat käyttöön.
 
 ## d) Paikka remonttiin
 Riko jotain asetuksia. Voit esimerkiksi poistaa demonin 'sudo apt-get purge foobar' (purge poistaa myös asetustiedostoja), poistaa asennuksen yhteydessä tulevan kansion (sudo rm -r /etc/foobar/ # vaarallista) tms. Ja sitten ajaa ansible-roolisi uudestaan ja todeta, että se korjaa tilanteen.
@@ -286,8 +372,22 @@ Osoita, että tilasi on idempotentti.
 
 ## Lähteet 
 
-Karvinen, T. 2024. Opinnäytetyö. _Configuration Management of Distributed Systems over Unreliable and Hostile Networks._ Luettavissa: https://westminsterresearch.westminster.ac.uk/item/w7vvz/configuration-management-of-distributed-systems-over-unreliable-and-hostile-networks/ Luettu: 19.4.2026.
+Ansible Docs. Dokumentti. __Connection methods and details._ Luettavissa: https://docs.ansible.com/projects/ansible/latest/inventory_guide/connection_details.html/ Luettu: 19.04.2026.
 
-Dhandala, N. 2026. Verkkosivu. _How to Use Ansible local Connection Plugin_ Luettavissa: https://oneuptime.com/blog/post/2026-02-21-how-to-use-ansible-local-connection-plugin/view/ Luettu: 19.4.2026
+Ansible Docs. Dokumentti. _Getting started._ Luettavissa: https://docs.ansible.com/projects/ansible/latest/getting_started/get_started_playbook.html/ Luettu: 19.04.2026.
 
-James, J. Verkkosivu. _How to Install Fail2Ban on Debian (13, 12, 11)_ Luettavissa: https://linuxcapable.com/how-to-install-fail2ban-on-debian-linux/ Luettu: 19.4.2026.
+Karvinen, T. 2024. Opinnäytetyö. _Configuration Management of Distributed Systems over Unreliable and Hostile Networks._ Luettavissa: https://westminsterresearch.westminster.ac.uk/item/w7vvz/configuration-management-of-distributed-systems-over-unreliable-and-hostile-networks/ Luettu: 19.04.2026.
+
+Karvinen, T.2026. Verkkosivu. _Apache installed with Ansible - quick notes._ Luettavissa: https://terokarvinen.com/apache-ansible/ Luettu: 19.04.2026.
+
+Karvinen, T. 2020. Verkkosivu. _Command Line Basics Revisited._ Luettavissa: https://terokarvinen.com/2020/command-line-basics-revisited/ Luettu: 19.04.2026.
+
+Dhandala, N. OneUpTime. 2026. Verkkosivu. _How to Use Ansible local Connection Plugin._ Luettavissa: https://oneuptime.com/blog/post/2026-02-21-how-to-use-ansible-local-connection-plugin/view/ Luettu: 19.4.2026
+
+Dhandala, N. OneUpTime. 2026. Verkkosivu. _Ansible configure fail2ban._ Luettavissa: https://oneuptime.com/blog/post/2026-02-21-ansible-configure-fail2ban/view/ Luettu: 19.04.2026.
+
+James, J. Verkkosivu. _How to Install Fail2Ban on Debian (13, 12, 11)._ Luettavissa: https://linuxcapable.com/how-to-install-fail2ban-on-debian-linux/ Luettu: 19.4.2026.
+
+Sharifi, L. 2026. Verkkosivu. _h2 Voileipä_. Luettavissa: https://github.com/LilJayyy/Palvelinten-hallinta/blob/main/h2%20Voileip%C3%A4.md/ Luettu: 19.04.2026.
+
+Sharifi, L. 2026. Verkkosivu. _h3 Demoni_. Luettavissa: https://github.com/LilJayyy/Palvelinten-hallinta/blob/main/h3%20Demoni.md/ Luettu 19.04.2026.
