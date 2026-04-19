@@ -118,7 +118,7 @@ Fail2Ban käynnistyy automaattisesti eikä tässä kohtaa ollut ongelmia, eli se
 
 * **`sudo systemctl enable --now fail2ban`** - komento pakottaa käynnistämään ja pitää käynnissä boottauksen jälkeen.
 
-#### UFW asentaminen 
+### UFW asentaminen 
 
 Tässä kohtaa pystyin skippaamaan, sillä minulla oli jo UFW asennettuna. 
 
