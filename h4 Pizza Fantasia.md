@@ -166,7 +166,7 @@ Oli tärkeää ymmärtää, ettei `default.conf` -oletustiedostoja muuteta suora
 
 Kopiot konfiguraatiotiedostoista luotiin `.local` -päätteellä, jotta omat muutokset säilyisivät. 
 
-Fail2Ban lukee `.local` -tiedostoja oletuksena ennen `.conf` -tiedostoja, joten siksi muutokseni tehtiin sinne.
+**Fail2Ban lukee `.local` -tiedostoja oletuksena ennen `.conf` -tiedostoja, joten siksi muutokseni tehtiin sinne.**
 
 ### Luodaan jail.local-tiedosto, kopioidaan konfiguraatiotiedosto ja määritellään asetukset
 
