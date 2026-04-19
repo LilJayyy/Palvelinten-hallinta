@@ -162,7 +162,7 @@ Fail2Banin asennuksessa tulee kaksi oletuskonfiguraatiotiedostoa:
 
 Lähdin luomaan Fail2Banin konfiguraatiotiedostoille varmuuskopiota, jotta tekemäni muutokset päivittyvät pakettipäivitysten aikana.
 
-Oli tärkeää muistaa, ettei default.conf -oletustiedostoja muuteta suoraan. 
+Oli tärkeää ymmärtää, ettei `default.conf` -oletustiedostoja muuteta suoraan. 
 
 Kopiot konfiguraatiotiedostoista luotiin `.local` -päätteellä, jotta omat muutokset säilyisivät. 
 
