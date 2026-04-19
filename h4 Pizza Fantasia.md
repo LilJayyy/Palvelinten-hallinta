@@ -208,7 +208,7 @@ Tässä kohdassa oli tärkeää olla tarkkana, ettei vain copy-pasteta sisältö
 
 ## IP Whitelist konfiguraatio ja oletusestoaika
 
-**Lisäsin `localhost` IP-osoitteen sallittujen listalle IP Whitelistiin.**
+**Lisäsin `localhost` IP-osoitteen sallittujen listalle IP Whitelistiin samaan tiedostoon**
 
 * Etsitään samasta konfiguraatiotiedostosta (jail.local eli oma konfiguraatiotiedoston kopio) kohta `ignoreip`
 
