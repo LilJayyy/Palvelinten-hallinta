@@ -87,10 +87,6 @@ Ennen asennusta tehdään tärkein asia: Päivitetään paketit.
 
 * **`apt-cache policy fail2ban`** - paketin lähde kertoo asennusversion ja repositorion (varasto) lähteen
 
-![60](images/60.png)
-
-_Asennus onnistunut ja versio 1.1.0_
-
 ````
 fail2ban:
   Installed: 1.1.0-8
@@ -100,6 +96,12 @@ fail2ban:
         500 http://deb.debian.org/debian trixie/main amd64 Packages
         100 /var/lib/dpkg/status
 ````
+
+![60](images/60.png)
+
+_Asennus onnistunut ja versio 1.1.0_
+
+
 
 #### tarkistetaan Fail2Banin status eli onko aktiivinen
 
