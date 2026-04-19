@@ -168,7 +168,7 @@ Kopiot konfiguraatiotiedostoista luotiin `.local` -päätteellä, jotta omat muu
 
 **Fail2Ban lukee `.local` -tiedostoja oletuksena ennen `.conf` -tiedostoja, joten siksi muutokseni tehtiin sinne.**
 
-### Luodaan jail.local-tiedosto, kopioidaan konfiguraatiotiedosto ja määritellään asetukset
+### Luodaan jail.local-tiedosto, kopioidaan konfiguraatiotiedosto sinne ja määritellään asetukset
 
 * **`sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local`** - kopioidaan sudona `cp` komennolla konfiguraatiotiedoston sisältö jail.localiin
 
