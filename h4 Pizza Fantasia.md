@@ -138,7 +138,7 @@ _ufw versio eli onnistunut asennus_
 
 ### Enabloidaan eli otetaan käyttöön UFW
 
-Palomuuri aktivoitiin ja varmistettiin, että se alkaa automaattisesti, kun Debian-palvelin käynnistyy. 
+**Palomuuri aktivoitiin ja varmistettiin, että se alkaa automaattisesti, kun Debian-palvelin käynnistyy.**
 
 On tärkeää muistaa, että jos olet kirjautunut SSH-yhteydellä, palomuurin tulee antaa oikeudet OpenSSH:lle. 
 
@@ -156,11 +156,11 @@ Fail2Ban oli nyt asennettu ja UFW-palomuuri otettu käyttöön.
 
 ### Varmuuskopio Fail2Banin konfiguraatiotiedostoille
 
+**Lähdin luomaan Fail2Banin konfiguraatiotiedostoille varmuuskopiota, jotta tekemäni muutokset päivittyvät pakettipäivitysten aikana.**
+
 Fail2Banin asennuksessa tulee kaksi oletuskonfiguraatiotiedostoa: 
 
 `/etc/fail2ban/jail.conf` ja `/etc/fail2ban/jail.d/defaults-debian.conf`.
-
-Lähdin luomaan Fail2Banin konfiguraatiotiedostoille varmuuskopiota, jotta tekemäni muutokset päivittyvät pakettipäivitysten aikana.
 
 Oli tärkeää ymmärtää, ettei `default.conf` -oletustiedostoja muuteta suoraan. 
 
@@ -168,7 +168,7 @@ Kopiot konfiguraatiotiedostoista luotiin `.local` -päätteellä, jotta omat muu
 
 Fail2Ban lukee `.local` -tiedostoja oletuksena ennen `.conf` -tiedostoja, joten siksi muutokseni tehtiin sinne.
 
-### Luodaan jail.local-tiedosto ja kopioidaan konfiguraatiotiedoston sisältö sinne
+### Luodaan jail.local-tiedosto, kopioidaan konfiguraatiotiedosto ja määritellään asetukset
 
 * **`sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local`** - kopioidaan sudona `cp` komennolla konfiguraatiotiedoston sisältö jail.localiin
 
@@ -180,6 +180,91 @@ Fail2Ban lukee `.local` -tiedostoja oletuksena ennen `.conf` -tiedostoja, joten 
 
 _Konfiguraatiotiedoston sisältö onnistuneesti jail.local -tiedostossa_
 
+#### Asetetaan Fail2Banille bantime -asetukset
+
+**Tällä asetusten muuttamisella pidennetään estoaikaa toistuvien hyökkäysten varalta.**
+
+* **`sudo micro /etc/fail2ban/jail.local`** - muokataan microlla konfiguraatiotiedostoa
+
+* Etsitään kohta `DEFAULT` konfiguraatiotiedostosta ja laitetaan ohjeistuksen mukaisesti siihen alla oleva:
+
+````
+## Ban time multipliers
+bantime.increment = true
+bantime.factor = 2
+bantime.formula = ban.Time * (1<<(ban.Count if ban.Count<20 else 20)) * banFactor
+````
+
+![65](images/65.png)
+
+_estoajan muutosten asettaminen_
+
+Tässä kohdassa oli tärkeää olla tarkkana, ettei vain copy-pasteta sisältöä. Piti olla tarkkana, mitä muutoksia konfigurointitiedostoon teen.
+
+
+#### IP Whitelist konfiguraatio ja oletusestoaika
+
+**Lisäsin `localhost` IP-osoitteen sallittujen listalle IP Whitelistiin.**
+
+* Etsitään samasta konfiguraatiotiedostosta (jail.local eli oma konfiguraatiotiedoston kopio) kohta `ignoreip`
+
+* **`#ignoreip = 127.0.0.1/8 ::1`** - kohta löytyi mutta se ei ollut käytössä
+
+* Poistetaan `#` eli hashtag -merkki rivin alusta eli otetaan asetus käyttöön
+
+Ohjeessa oli sopivasti valmiiksi localhostina käyttäminen esimerkkinä, jota tässä harjoituksessa toteutin.
+
+* Tarkistetaan että `bantime`, `findtime` ja `maxretry` kohdassa on oikeat tiedot eli: 
+
+````
+# "bantime" is the number of seconds that a host is banned.
+bantime = 10m
+
+# A host is banned if it has generated "maxretry" during the last "findtime" seconds.
+findtime = 10m
+
+# "maxretry" is the number of failures before a host get banned.
+maxretry = 5
+```` 
+
+Ne näyttivät olevan kunnossa joten siirryin seuraavaan kohtaan
+
+
+![66](images/66.png)
+
+_IP Whitelistille localhost_
+
+#### SSH vankilan käyttöönottoa 
+
+* **`ctrl + F`** - etsin `sshd` asetusten kohdan ja lisäsin ohjeistuksen mukaiset tiedot:
+
+````
+[sshd]
+maxretry = 3 
+bantime = 1h
+findtime = 10m
+```` 
+Tällä konfiguraatiolla estetään IP-osoitteet yhdeksi (1) tunniksi kolmen epäonnistuneen yrityksen jälkeen, jotka tehdään kymmenen minuutin (10) sisällä.
+
+* **`ctrl + S`** - tallennetaan määritetyt muutokset
+
+![67](images/67.png)
+
+_SSH vankilan käyttöönotto_
+
+### Potkaistaan fail2ban käyttöön ja tarkistetaan toiminta
+
+* **`sudo systemctl restart fail2ban`** - Potkaistaan fail2b2n käyntiin
+
+* **`sudo fail2ban-client status`** - tarkistetaan toimiiko eli kertoo kaikki aktiiviset vankilat
+
+* **`sudo fail2ban-client status sshd`** -tarkistetaan tietyn vankilan status
+
+* **`sudo fail2ban-client -t`** - tarkistetaan vielä konfiguraation syntaksi
+
+![67](images/67.png)
+
+_sshd vankila aktiivinen, konfiguraatiotesti onnistunut, ei estettyjä osoitteita_ 
 
 ## b) Automaatti
 Automaatti. Automatisoi valitsemasi demonin asennus Ansiblella.
