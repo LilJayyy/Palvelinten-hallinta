@@ -65,35 +65,102 @@ Lähdin tekemään raporttiosiota 19.4. kello 14.20. Meni hetki valita mieluinen
 
 Päätin asentaa fail2banin, eli tunkeutumisen estoon kehitetty järjestelmä, joka suojelee Linux-servereitä automaattisilta hyökkäyksiltä.  
 
-Työkalu toimii `jails`:ien eli vankiloiden avulla. Näitä kutsutaan valvontasäännöiksi tietyille palveluille. 
+Työkalu toimii _jailsien_, eli vankiloiden, avulla. Näitä kutsutaan valvontasäännöiksi tietyille palveluille. 
 
 Sitä voidaan ajatella eräänlaisena vartijana, joka tutkii ja tarkistelee palvelimen lokitietoja kellon ympäri ja tutkii merkkejä haitallisesta toiminnasta, kuten epäonnistuneet kirjautumisyritykset, toistuvat yritykset, skannausyritykset, salasanan arvaukset ja niin edelleen. 
 
 Epäilyttävän toiminnan vuoksi se estää automaattisesti hyökkääjän IP-osoitteen lisäämällä palomuuriin uusia sääntöjä estäen pääsyn tietyksi määräajaksi.
 
-Löysin tähän erittäin selkeän ohjeen (James, J.). Lähdin aloittamaan seuraavin askelin.
+Löysin tähän erittäin selkeän ohjeen (James, J.) ja lähdin etenemään seuraavin askelin:
 
-#### Asennetaan Fail2Ban 
+#### Asennetaan Fail2Ban ja tarkistetaan asennuksen onnistuminen
 
 Ennen asennusta tehdään tärkein asia: Päivitetään paketit.
 
-* **`sudo apt-get update`** - päivitetään paketit 
+* **`sudo apt-get update`** - päivitetään paketit eli pakettilistat
 
 * **`sudo apt install fail2ban`** - asennetaan fail2ban
 
 * **`fail2ban-client --version`** - katsotaan että asennus on onnistunut tarkistamalla versio
 
+* **`apt-cache policy fail2ban`** - paketin lähde kertoo asennusversion ja repositorion (varasto) lähteen
 
-_
+![60](images/60.png)
 
+_Asennus onnistunut ja versio 1.1.0_
 
+````
+fail2ban:
+  Installed: 1.1.0-8
+  Candidate: 1.1.0-8
+  Version table:
+ *** 1.1.0-8 500
+        500 http://deb.debian.org/debian trixie/main amd64 Packages
+        100 /var/lib/dpkg/status
+````
 
+#### tarkistetaan Fail2Banin status eli onko aktiivinen
 
+* **`systemctl status fail2ban`** -tarkistetaan tila eli status
 
+![61](images/61.png)
 
+_enabled ja active eli käynnissä jo_
 
+Fail2Ban käynnistyy automaattisesti eikä tässä kohtaa ollut ongelmia, eli se oli käynnissä. 
 
- 
+#### Jos ei olisi ollut käynnissä etenisit seuraavasti:
+
+* **`sudo systemctl enable --now fail2ban`** - komento pakottaa käynnistämään ja pitää käynnissä boottauksen jälkeen.
+
+#### UFW asentaminen 
+
+Tässä kohtaa pystyin skippaamaan, sillä minulla oli jo UFW asennettuna. 
+
+Debian 13 käyttää oletuksena nftables-palomuuria, joka toimii fail2banin kanssa automaattisesti.
+
+UFW on vaihtoehtoinen, ei pakollinen, sillä fail2ban itsessään tukee useita palomuuritaustajärjestelmiä.
+
+#### Jos UFW:tä ei ole ja halutaan asentaa:
+
+* **`sudo apt install ufw`** - asennetaan UFW eli Uncomplicated Firewall palomuuri
+
+* **`ufw version tai sudo ufw version`** - tarkistetaan versio jälleen eli onnistuiko asentaminen 
+
+![62](images/62.png)
+
+_ufw versio eli onnistunut asennus_
+
+#### Enabloidaan eli otetaan käyttöön UFW
+
+Palomuuri aktivoitiin ja varmistettiin, että se alkaa automaattisesti, kun Debian-palvelin käynnistyy. 
+
+On tärkeää muistaa, että jos olet kirjautunut SSH-yhteydellä, palomuurin tulee antaa oikeudet OpenSSH:lle. 
+
+* **`sudo ufw allow OpenSSH`** - annetaan lupa SSH-yhteydelle - Olin suoraan konsoliyhteydellä, joten tämä oli itselleni tarpeeton.
+
+* **`sudo ufw enable`** - laitetaan palomuuri päälle
+
+Seuraavaksi tuli ilmoitus:
+
+![63](images/63.png)
+
+_Palomuuri oli päällä ja käynnistyy bootatessa_
+
+Fail2Ban oli nyt asennettu ja UFW-palomuuri otettu käyttöön.
+
+#### Varmuuskopio Fail2Banin konfiguraatiotiedostoille
+
+Fail2Ban luo aina automaattisesti kaksi oletuskonfiguraatiotiedostoa: 
+
+`/etc/fail2ban/jail.conf` ja `/etc/fail2ban/jail.d/defaults-debian.conf`.
+
+Lähdin luomaan Fail2Banin konfiguraatiotiedostoille varmuuskopiota, jotta tekemäni muutokset päivittyvät pakettipäivitysten aikana.
+
+Oli tärkeää muistaa, ettei default.conf -oletustiedostoja muuteta suoraan. 
+
+Kopiot konfiguraatiotiedostoista luotiin 
+
 ## b) Automaatti
 Automaatti. Automatisoi valitsemasi demonin asennus Ansiblella.
 
