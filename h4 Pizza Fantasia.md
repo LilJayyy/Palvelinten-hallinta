@@ -358,6 +358,8 @@ Pessimisti ei pety. Olin tässä kohtaa jo varautunut henkisesti koko päivän o
 
 Aiheet ovat niin uusia, ja jokaisen kohdan ja aiheen sekä virheen sisäistämisessä meni tovi.  Oli aika nukkua yön yli, jotta aiheita sisäistäisi paremmin.
 
+Opin tässä osiossa sen, että vaikka Ansible alkaa tuntumaan tutulta, itse `main.yml` YAML-tiedoston sisällön luominen ja muut ovat kuitenkin vielä kesken ja harjoituksia tulee jatkaa.
+
 ![73](images/73.png)
 
 _failed 0 ja TASK install ja start fail2ban OK_
