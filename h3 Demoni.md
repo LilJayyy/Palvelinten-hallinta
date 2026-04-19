@@ -532,9 +532,9 @@ _Tulikin virheilmoitus_
 
 * Osoitteeksi `localhost/app/home` ja **lähti toimimaan.**
 
-Etenin Threat intelligence > Threat Hunting josta aukesi hälytykset:
+Etenin Threat intelligence > Threat Hunting josta aukesi hälytykset.
 
-![56](images/56.png)
+![99](images/99.png)
 
 _Hälytykset_ 
 
@@ -542,15 +542,17 @@ Seuraavaksi katsoin, näkyykö liikennettä ja 200 näkyvissä kuten yllä kuvas
 
 Lähdin ajamaan terminaaliin komennon:
 
-* **`curl http://testmynids.org/uid/index.html`** ja lopuksi vielä refresh dashboardilla.
+* **`curl http://testmynids.org/uid/index.html`** ja lopuksi vielä refresh dashboardilla. Olin nyt hyökkääjä, jolla oli root-oikeudet.
 
 Nyt hälytyksiä oli jo ilmestynyt lisää dashboardille:
 
-![57](images/57.png)
+![100](images/100.png)
 
 _Uusia hälytyksiä_
 
-Kuten kuvassa näkyy, testaus oli onnistunut. Osiris-T toimi täydellisesti.
+Kuten kuvassa näkyy, testaus oli onnistunut. Minun tunkeutumisyrityksestäni `GPL ATTACK_RESPONSE id check returned root` tuli hälytys Suricatalla. Osiris-T toimi täydellisesti.
+
+![101](images/101.png)
 
 ## Pohdinta
 
