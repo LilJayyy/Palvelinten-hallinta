@@ -258,7 +258,7 @@ _SSH vankilan käyttöönotto_
 
 ## Potkaistaan fail2ban käyttöön ja tarkistetaan toiminta
 
-* **`sudo systemctl restart fail2ban`** - Potkaistaan fail2b2n käyntiin
+* **`sudo systemctl restart fail2ban`** - Potkaistaan fail2ban käyntiin
 
 * **`sudo fail2ban-client status`** - tarkistetaan toimiiko eli kertoo kaikki aktiiviset vankilat
 
@@ -266,7 +266,7 @@ _SSH vankilan käyttöönotto_
 
 * **`sudo fail2ban-client -t`** - tarkistetaan vielä konfiguraation syntaksi
 
-![67](images/67.png)
+![68](images/68.png)
 
 _sshd vankila aktiivinen, konfiguraatiotesti onnistunut, ei estettyjä osoitteita_ 
 
