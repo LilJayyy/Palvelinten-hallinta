@@ -158,6 +158,8 @@ Fail2Ban oli nyt asennettu ja UFW-palomuuri otettu käyttöön.
 
 **Lähdin luomaan Fail2Banin konfiguraatiotiedostoille varmuuskopiota, jotta tekemäni muutokset päivittyvät pakettipäivitysten aikana.**
 
+Fail2Ban lukee `.local` -tiedostoja oletuksena ennen `.conf` -tiedostoja, joten siksi muutokseni tehtiin sinne.
+
 Fail2Banin asennuksessa tulee kaksi oletuskonfiguraatiotiedostoa: 
 
 `/etc/fail2ban/jail.conf` ja `/etc/fail2ban/jail.d/defaults-debian.conf`.
@@ -166,7 +168,7 @@ Oli tärkeää ymmärtää, ettei `default.conf` -oletustiedostoja muuteta suora
 
 Kopiot konfiguraatiotiedostoista luotiin `.local` -päätteellä, jotta omat muutokset säilyisivät. 
 
-**Fail2Ban lukee `.local` -tiedostoja oletuksena ennen `.conf` -tiedostoja, joten siksi muutokseni tehtiin sinne.**
+
 
 ### Luodaan jail.local-tiedosto, kopioidaan konfiguraatiotiedosto sinne ja määritellään asetukset
 
