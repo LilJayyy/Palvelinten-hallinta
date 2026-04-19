@@ -2,10 +2,12 @@
  
 # Sisältö
 * [x) Artikkeli](#x-artikkeli)
-* [a) Apassi](#a-apassi)
-* [b) Moottorix](#b-moottorix)
-* [c) Automoottorix](#c-automoottorix)
-* [d) Vapaaehtoinen bonus](#d-vapaaehtoinen-bonus)
+* [a) Räpylä](#a-apassi)
+* [b) Automaatti](#b-moottorix)
+* [c) Asetus](#c-automoottorix)
+* [d) Paikka remonttiin](#d-paikka-remonttin)
+* [e) Idempotentti](#e-idempotentti)
+
 
 
 
