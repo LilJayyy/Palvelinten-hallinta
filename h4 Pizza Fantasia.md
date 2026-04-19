@@ -145,13 +145,13 @@ Seuraavaksi tuli ilmoitus:
 
 ![63](images/63.png)
 
-_Palomuuri oli päällä ja käynnistyy bootatessa_
+_Palomuuri oli päällä_
 
 Fail2Ban oli nyt asennettu ja UFW-palomuuri otettu käyttöön.
 
 #### Varmuuskopio Fail2Banin konfiguraatiotiedostoille
 
-Fail2Ban luo aina automaattisesti kaksi oletuskonfiguraatiotiedostoa: 
+Fail2Banin asennuksessa tulee kaksi oletuskonfiguraatiotiedostoa: 
 
 `/etc/fail2ban/jail.conf` ja `/etc/fail2ban/jail.d/defaults-debian.conf`.
 
@@ -159,7 +159,15 @@ Lähdin luomaan Fail2Banin konfiguraatiotiedostoille varmuuskopiota, jotta tekem
 
 Oli tärkeää muistaa, ettei default.conf -oletustiedostoja muuteta suoraan. 
 
-Kopiot konfiguraatiotiedostoista luotiin 
+Kopiot konfiguraatiotiedostoista luotiin `.local` -päätteellä, jotta omat muutokset säilyisivät. 
+
+Fail2Ban lukee `.local` -tiedostoja oletuksena ennen `.conf` -tiedostoja, joten siksi muutokseni tehtiin sinne.
+
+#### Luodaan jail.local 
+
+* **`sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local`** - kopioidaan sudona `cp` komennolla konfiguraatiotiedoston sisältö jail.localiin
+
+* **`
 
 ## b) Automaatti
 Automaatti. Automatisoi valitsemasi demonin asennus Ansiblella.
