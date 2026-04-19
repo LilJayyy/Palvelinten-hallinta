@@ -38,18 +38,18 @@ Nämä voivat olla mutkikkaampia: samba, nfs, jokin ftp-palvelin, jokin vaihtoeh
 - DSL-kielet voivat olla monimutkaisia ja laajoja. Karvinen analysoi johtavien konfiguraatiotyökalujen Saltin sekä Puppetin monimutkaisuutta.
 - Analysoinnissa Karvinen käytti ja tutki automaattisesti generoituja manuaaleja lähdekoodista.
 - Saltilla oli 510 toimintoa, 20 000 riviä dokumentaatiota ja yli 75 000 sanaa. Puppetilla on 113 toimintoa ja se käyttää omia erikoiskäsitteitä ja ohjausrakenteita, toisin kuin perinteisimmät ohjelmointikielet, kuten C, Go tai Python.
-Kysymys: Arvioiko juuri manuaalin koko monimutkaisuutta?
+- Kysymys: Arvioiko juuri manuaalin koko monimutkaisuutta?
 
 #### 4.12.2 Use of DSL Functions in Case Configuration (112-115. Mitä oikeasti käytetään.)
 - Tutkimuksen laajuuden analysointia varten valikoitui United States Government Configuration baseline (NIST,2016) ja Mozilla Release Engineering Puppet Manifests (Mitchell et al., 2020).
 - Pieni joukko komentoja kattaa 87% kaikista komennoista ja ohjausrakenteista. Yleisimpinä myös alla mainitut `file`, `package`, `exec` ja `service`.
-Kommentti: Miksi tehdä vaikeasti, kun voi tehdä yksinkertaisesti?
+- Kommentti: Miksi tehdä vaikeasti, kun voi tehdä yksinkertaisesti?
 
 
 #### 4.12.3.1 Dependencies Between Main Functions (115-117. Tärkeimmät rakennuspalikat.)
 - Muutama komento kattaa suurimman osan konfiguraatioista.
 - Tärkeimmät perustoiminnot ovat kaiken perusta: `exec`, joka kutsuu muita ohjelmistoja, ja `file` tiedostojen hallintaan joiden pohjalle yllä olevat funktiot rakentuvat
-Kommentti: Miksi sitten muita komentoja on niin paljon, jos tarvitaan vain perustoiminnot?
+- Kommentti: Miksi sitten muita komentoja on niin paljon, jos tarvitaan vain perustoiminnot?
 
 
 
