@@ -71,7 +71,7 @@ Työkalu toimii _jailsien_, eli vankiloiden, avulla. Näitä kutsutaan valvontas
 
 Sitä voidaan ajatella eräänlaisena vartijana, joka tutkii ja tarkistelee palvelimen lokitietoja kellon ympäri ja tutkii merkkejä haitallisesta toiminnasta, kuten epäonnistuneet kirjautumisyritykset, toistuvat yritykset, skannausyritykset, salasanan arvaukset ja niin edelleen. 
 
-Epäilyttävän toiminnan vuoksi se estää automaattisesti hyökkääjän IP-osoitteen lisäämällä palomuuriin uusia sääntöjä estäen pääsyn tietyksi määräajaksi.
+Epäilyttävän toiminnan havaittuaan se estää automaattisesti hyökkääjän IP-osoitteen lisäämällä palomuuriin uusia sääntöjä estäen pääsyn tietyksi määräajaksi.
 
 Löysin tähän erittäin selkeän ohjeen (James, J.) ja lähdin etenemään seuraavin askelin:
 
