@@ -61,7 +61,7 @@ Nämä voivat olla mutkikkaampia: samba, nfs, jokin ftp-palvelin, jokin vaihtoeh
 
 Lähdin tekemään raporttiosiota 19.4. kello 14.20. Meni hetki valita mieluinen demoni.
 
-## fail2ban
+# fail2ban
 
 #### Mikä se on? 
 
@@ -76,7 +76,7 @@ Epäilyttävän toiminnan havaittuaan se estää automaattisesti hyökkääjän 
 Löysin tähän erittäin selkeän ohjeen (James, J.) ja lähdin etenemään seuraavin askelin.
 
 
-### Asennetaan Fail2Ban ja tarkistetaan asennuksen onnistuminen
+## Asennetaan Fail2Ban ja tarkistetaan asennuksen onnistuminen
 
 Ennen asennusta tehdään tärkein asia: Päivitetään paketit.
 
@@ -104,7 +104,7 @@ _Asennus onnistunut ja versio 1.1.0_
 
 
 
-### Tarkistetaan Fail2Banin status eli onko aktiivinen
+## Tarkistetaan Fail2Banin status eli onko aktiivinen
 
 * **`systemctl status fail2ban`** -tarkistetaan tila eli status
 
@@ -136,7 +136,7 @@ UFW on vaihtoehtoinen, ei pakollinen, sillä fail2ban itsessään tukee useita p
 
 _ufw versio eli onnistunut asennus_
 
-### Enabloidaan eli otetaan käyttöön UFW
+## Enabloidaan eli otetaan käyttöön UFW
 
 **Palomuuri aktivoitiin ja varmistettiin, että se alkaa automaattisesti, kun Debian-palvelin käynnistyy.**
 
@@ -154,7 +154,7 @@ _Palomuuri oli päällä_
 
 Fail2Ban oli nyt asennettu ja UFW-palomuuri otettu käyttöön.
 
-### Varmuuskopio Fail2Banin konfiguraatiotiedostoille
+## Varmuuskopio Fail2Banin konfiguraatiotiedostoille
 
 **Lähdin luomaan Fail2Banin konfiguraatiotiedostoille varmuuskopiota, jotta tekemäni muutokset päivittyvät pakettipäivitysten aikana.**
 
@@ -170,7 +170,7 @@ Kopiot konfiguraatiotiedostoista luotiin `.local` -päätteellä, jotta omat muu
 
 
 
-### Luodaan jail.local-tiedosto ja kopioidaan sinne konfiguraatiotiedoston sisältö
+## Luodaan jail.local-tiedosto ja kopioidaan sinne konfiguraatiotiedoston sisältö
 
 * **`sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local`** - kopioidaan sudona `cp` komennolla konfiguraatiotiedoston sisältö jail.localiin
 
@@ -182,7 +182,7 @@ Kopiot konfiguraatiotiedostoista luotiin `.local` -päätteellä, jotta omat muu
 
 _Konfiguraatiotiedoston sisältö onnistuneesti jail.local -tiedostossa_
 
-### Määritellään omat asetukset jail.local -tiedostoon
+## Määritellään omat asetukset jail.local -tiedostoon
 
 #### Asetetaan Fail2Banille bantime -asetukset
 
@@ -256,7 +256,7 @@ Tällä konfiguraatiolla estetään IP-osoitteet yhdeksi (1) tunniksi kolmen ep�
 
 _SSH vankilan käyttöönotto_
 
-### Potkaistaan fail2ban käyttöön ja tarkistetaan toiminta
+## Potkaistaan fail2ban käyttöön ja tarkistetaan toiminta
 
 * **`sudo systemctl restart fail2ban`** - Potkaistaan fail2b2n käyntiin
 
