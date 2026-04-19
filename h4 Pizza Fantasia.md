@@ -206,7 +206,7 @@ _estoajan muutosten asettaminen_
 Tässä kohdassa oli tärkeää olla tarkkana, ettei vain copy-pasteta sisältöä. Piti olla tarkkana, mitä muutoksia konfigurointitiedostoon teen.
 
 
-#### IP Whitelist konfiguraatio ja oletusestoaika
+## IP Whitelist konfiguraatio ja oletusestoaika
 
 **Lisäsin `localhost` IP-osoitteen sallittujen listalle IP Whitelistiin.**
 
@@ -238,7 +238,7 @@ Ne näyttivät olevan kunnossa joten siirryin seuraavaan kohtaan
 
 _IP Whitelistille localhost_
 
-#### SSH vankilan käyttöönottoa 
+### SSH vankilan käyttöönottoa 
 
 * **`ctrl + F`** - etsin `sshd` asetusten kohdan ja lisäsin ohjeistuksen mukaiset tiedot:
 
