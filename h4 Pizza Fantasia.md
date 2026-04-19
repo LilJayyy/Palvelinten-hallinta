@@ -356,7 +356,7 @@ Vihdoin – onnistuminen! Kello olikin jo tässä vaiheessa 20:01.
 
 Pessimisti ei pety. Olin tässä kohtaa jo varautunut henkisesti koko päivän opettelemiseen. 
 
-Aiheet ovat niin uusia, ja jokaisen kohdan ja aiheen sekä virheen sisäistämisessä meni tovi.
+Aiheet ovat niin uusia, ja jokaisen kohdan ja aiheen sekä virheen sisäistämisessä meni tovi.  Oli aika nukkua yön yli, jotta aiheita sisäistäisi paremmin.
 
 ![73](images/73.png)
 
@@ -364,8 +364,6 @@ _failed 0 ja TASK install ja start fail2ban OK_
 
 
 # c) Asetus
-
-Siirryin tähän tehtävän osioon seuraavana päivänä, jotta aiheet pystyisi virkeimmin ajatuksin sisäistämään.
 
 Muuta asetustiedostoa herralla (master, "control node") ja aja Ansible uudestaan. Osoita, että asetukset tulivat käyttöön.
 
