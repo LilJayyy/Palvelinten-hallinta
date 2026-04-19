@@ -271,7 +271,6 @@ _SSH vankilan käyttöönotto_
 _sshd vankila aktiivinen, konfiguraatiotesti onnistunut, ei estettyjä osoitteita_ 
 
 # b) Automaatti
-Automaatti. Automatisoi valitsemasi demonin asennus Ansiblella.
 
 Tehtävän osioon siirryin 17:58.
 
@@ -353,7 +352,11 @@ _Korjattu YAML-tiedoston sisältö_
 
 ## Onnistuminen
 
-Vihdoin – onnistuminen! Kello olikin jo tässä vaiheessa 20:01.
+Vihdoin – onnistuminen! Kello olikin jo tässä vaiheessa 20:01. 
+
+Pessimisti ei pety. Olin tässä kohtaa jo varautunut henkisesti koko päivän opettelemiseen. 
+
+Aiheet ovat niin uusia, ja jokaisen kohdan ja aiheen sekä virheen sisäistämisessä meni tovi.
 
 ![73](images/73.png)
 
@@ -361,6 +364,9 @@ _failed 0 ja TASK install ja start fail2ban OK_
 
 
 # c) Asetus
+
+Siirryin tähän tehtävän osioon seuraavana päivänä, jotta aiheet pystyisi virkeimmin ajatuksin sisäistämään.
+
 Muuta asetustiedostoa herralla (master, "control node") ja aja Ansible uudestaan. Osoita, että asetukset tulivat käyttöön.
 
 # d) Paikka remonttiin
