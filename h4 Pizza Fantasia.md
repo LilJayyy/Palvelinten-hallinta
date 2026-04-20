@@ -11,8 +11,6 @@
 
 
 
-
-
 ### Koneen tekniset tiedot
 * Prosessori: Intel Core i5-8265U CPU @ 1.60 GHz (1.80 GHz turbo, 8 ydintä)
 * RAM: 16 GB (15,7 GB käytettävissä)
@@ -20,15 +18,6 @@
 * Näytönohjain: Intel UHD Graphics 620
 * Tallennustila: 237 GB, josta 158 GB vapaana
 * DirectX-versio: DirectX 12
-
-Vinkit
-
-CM: configuration management
-DSL: domain specific language. Yhteen käyttötarkoitukseen tehty kieli. Esim Ansiblen oma kieli, jolla määrittelemme konfiguraatiota.
-Kannattaa valita demoni, joka löytyy suoraan Debian 13 varastoista apt-get:lla.
-Esimerkkejä: postgresql, caddy, mariadb, haproxy, varnish
-Nämä voivat olla mutkikkaampia: samba, nfs, jokin ftp-palvelin, jokin vaihtoehtoinen ssh, jokin dhcpd, jokin tftpd
-
 
 # x) Artikkeli
 
@@ -370,21 +359,142 @@ _failed 0 ja TASK install ja start fail2ban OK_
 
 # c) Asetus
 
-Muuta asetustiedostoa herralla (master, "control node") ja aja Ansible uudestaan. Osoita, että asetukset tulivat käyttöön.
+Lähdin tekemään tätä 19:48 seuraavana päivänä. Aiemmin olin asentanut asennustiedoston Ansiblelle. 
+
+Tarkoitukseni oli luoda Ansible-roolin asetustiedosto. Ansible vie tiedoston sisällön masterilta orjalle. 
+
+Kaikki asetukset, joita muutan, vie Ansible muutokseni automaattisesti orjalle (eli toiselle koneelle), joka normaalissa tilanteissa olisi.
+
+## Luodaan files-kansio
+
+* **`mkdir -p roles/fail2ban/files/`** - luodaan kansiorakenne filesille
+
+* **`sudo cp /etc/fail2ban/jail.local roles/fail2ban/files/jail.local`** - luodaan tiedosto `cp` komennolla ja kopioidaan asennustiedoston sisältö luotuun tiedostoon sudona
+
+* **`cat roles/fail2ban/files/jail.local`** - katsoin tiedoston sisälle että sisältö kopioitui oikein
+
+ ## Muutetaan asetustiedostosta jotain pientä
+
+* **`micro roles/fail2ban/files/jail.local`** - loin tiediavasin luodun asetustiedoston auki ja muutin bantime-arvon
+
+![74](images/74.png)
+
+_bantime muutettu 10 minuutista 5 minuuttiin_
+
+* **`ctrl + S`** - tallennetaan tehty muutos
+
+
+## Handlers kansio fail2banille ja sisältö eli tehtävä
+
+Handlersilla luodaan tehtävä, joka ajetaan vain jonkin asian muuttuessa, eli uudelleenkäynnistetään fail2ban, kun jokin muutos on tässä tapauksessa tehty.
+
+Katsoin Karvisen (2026) Ansible-ohjeistusta, josta sain suuntaa itse handlersin sisältöön. 
+
+Löytyi onneksi Ansible Community Documentationin Handlers-ohjeesta apua.
+
+* **`rm -r roles/fail2ban/handlers/main.yml`** - poistin virheellisen luodun `main.yml`-kansion (piti luoda handlersille kansio ei main.yml:lle).
+
+Tässäkin kohtaa piti olla tarkkana, sillä `/`merkki main.yml -komennon perässä loi `main.yml` -kansion, eikä tiedoston. Jatkossa pitää olla tarkkana kauttaviivojen kanssa.
+
+* **`mkdir -p roles/fail2ban/handlers`** - luodaan kansiorakenne handlersille
+ 
+* **`micro roles/fail2ban/handlers/main.yml`** - laitetaan hadlersin tiedostolle sisältö
+
+![75](images/75.png)
+
+_Handlersille sisältö_
+
+
+## Main.yml-tiedostoon copy-tehtävä 
+
+Tässä osiossa käytin Karvisen (2026) Apache installed with Ansible - quick notes -ohjetta.
+
+* **`micro roles/fail2ban/tasks/main.yml`** - muokataan tiedostoon copy-tehtävä ja lopuksi tallennus `ctrl + S`
+ 
+````
+ -name: copy jail.local  => tämä voi olla mikä vain eli nimi tehtävälle 
+ -copy: => copy eli moduulin nimi mitä Ansible käyttää
+   dest: "/etc/fail2ban/jail.local" => kohde minne kopioidaan orjakoneella eli kohdekoneella
+   src: "jail.local" => mistä otetaan tieto eli masterilta
+   owner: "root" => kuka omistaa
+   group: "root" => mikä ryhmä omistaa
+   mode: "0644" => käyttoikeudet, 6 = omistaja (root), 4= ryhmä (root), 4= muut käyttäjät
+ notify: restart fail2ban
+````
+
+![76](images/76.png)
+
+_Copy-tehtävän rakenne main.yml tiedostossa_ 
+
+## Ajetaan playbook
+
+### Virhe: YAML parsing failed 
+
+Virheilmoitus ilmoitti, että on löytynyt sisennysvirhe `handlers/main.yml` -tiedostosta riveiltä 1,2 ja 3 tarkistamalla.
+
+* **`micro roles/fail2ban/handlers/main.yml/`** - mennään muokkaamaan tiedoston sisennystä
+
+![81](images/81.png)
+
+_Virheilmoitus YAML parsing failed_
+
+### Korjaus
+
+![77](images/77.png)
+
+_Ylimääräiset välilyönnit pois, kolme viivaa alkuun ja service samalle riville kuin name_
+
+Potkaisin uudestaan käyntiin playbookin 
+
+* **`ansible-playbook site.yml -K`** - Ajetaan Ansible uudestaan
+
+![78](images/78.png)
+
+_Onnistunut lopputulos_
+
+Kello alkoi olla jo jonkin verran ja sain onnekseni toisella yrityksellä käyntiin onnistuneesti fail2banin Ansiblella.
+
 
 # d) Paikka remonttiin
-Riko jotain asetuksia. Voit esimerkiksi poistaa demonin 'sudo apt-get purge foobar' (purge poistaa myös asetustiedostoja), poistaa asennuksen yhteydessä tulevan kansion (sudo rm -r /etc/foobar/ # vaarallista) tms. Ja sitten ajaa ansible-roolisi uudestaan ja todeta, että se korjaa tilanteen.
+
+Tehtävänä oli rikkoa asetuksia esimerkiksi poistamalla demoni. 
+
+* **`sudo rm /etc/fail2ban/jail.local`** - poistin tiedoston
+
+* **`ls -l /etc/fail2ban/jail.local`** - tarkistin että oli poissa
+
+* **`ansible-playbook site.yml -K`** - Ajetaan Ansible uudestaan
+
+![79](images/79.png)
+
+_Poistin tiedoston, tarkistus ja Ansible ajo_
+
+![80](images/80.png)
+
+_Onnistunut Ansiblen korjaus_
+
 
 # e) Idempotentti
-Osoita, että tilasi on idempotentti.
+
+Tässä piti todistaa idempotenssi. 
+
+* **`ansible-playbook site.yml -K`** - Ajetaan Ansible uudestaan
+
+Saman tilan voi tehdä monta kertaa ja päätyä samaan tilanteeseen. Mitään ei muuttunut.
+
+![83](images/83.png)
+
+_Ei muutoksia. Idempotenssi on onnistunut_
 
 
 ## Lähteet 
 
 Ansible Docs. Dokumentti. __Connection methods and details._ Luettavissa: https://docs.ansible.com/projects/ansible/latest/inventory_guide/connection_details.html/ Luettu: 19.04.2026.
 
-Ansible Docs. Dokumentti. _Getting started._ Luettavissa: https://docs.ansible.com/projects/ansible/latest/getting_started/get_started_playbook.html/ Luettu: 19.04.2026.
+Ansible Docs. Dokumentti. _Handlers: running operations on change._ Luettavissa: https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_handlers.html/ Luettu:20.4.2026.
 
+Ansible Docs. Dokumentti. _Getting started._ Luettavissa: https://docs.ansible.com/projects/ansible/latest/getting_started/get_started_playbook.html/ Luettu: 19.04.2026.
+ 
 Dhandala, N. OneUpTime. 2026. Verkkosivu. _How to Use Ansible local Connection Plugin._ Luettavissa: https://oneuptime.com/blog/post/2026-02-21-how-to-use-ansible-local-connection-plugin/view/ Luettu: 19.4.2026
 
 Dhandala, N. OneUpTime. 2026. Verkkosivu. _Ansible configure fail2ban._ Luettavissa: https://oneuptime.com/blog/post/2026-02-21-ansible-configure-fail2ban/view/ Luettu: 19.04.2026.
