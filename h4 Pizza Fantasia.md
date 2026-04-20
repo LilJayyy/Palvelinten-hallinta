@@ -346,9 +346,7 @@ _Korjattu YAML-tiedoston sisältö_
 
 Vihdoin – onnistuminen! Kello olikin jo tässä vaiheessa 20:01. 
 
-Pessimisti ei pety. Olin tässä kohtaa jo varautunut henkisesti koko päivän opettelemiseen. 
-
-Aiheet ovat niin uusia, ja jokaisen kohdan ja aiheen sekä virheen sisäistämisessä meni tovi.  Oli aika nukkua yön yli, jotta aiheita sisäistäisi paremmin.
+Pessimisti ei pety. Olin tässä kohtaa jo varautunut henkisesti koko päivän opettelemiseen.
 
 Opin tässä osiossa sen, että vaikka Ansible alkaa tuntumaan tutulta, itse `main.yml` YAML-tiedoston sisällön luominen ja muut ovat kuitenkin vielä kesken ja harjoituksia tulee jatkaa.
 
@@ -359,7 +357,7 @@ _failed 0 ja TASK install ja start fail2ban OK_
 
 # c) Asetus
 
-Lähdin tekemään tätä 19:48 seuraavana päivänä. Aiemmin olin asentanut asennustiedoston Ansiblelle. 
+Lähdin jatkamaan 19:48 seuraavana päivänä. Aiemmin olin asentanut asennustiedoston Ansiblelle. 
 
 Tarkoitukseni oli luoda Ansible-roolin asetustiedosto. Ansible vie tiedoston sisällön masterilta orjalle. 
 
@@ -492,9 +490,7 @@ _Ei muutoksia. Idempotenssi on onnistunut_
 
 Kello oli tässä kohtaa 22:41 ja tällä kertaa oli hyvä tehdä raportti kahdessa osassa. 
 
-Komennot ja hahmottaminen vaativat edelleen opettelua kaikin puolin, sekä Ansiblen roolin sisällöt että Playbookin. 
-
-Tehtävä oli muutoin mieluisa ja hyvää harjoitusta.
+Peruskomennot, hahmottaminen sekä koko kokonaisuuden hahmottaminen vaativat edelleen opettelua kaikin puolin. Tehtävä oli muutoin mieluisa ja hyvää harjoitusta.
 
 ## Lähteet 
 
