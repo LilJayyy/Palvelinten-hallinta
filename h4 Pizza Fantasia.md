@@ -56,7 +56,7 @@ Päätin asentaa fail2banin, eli tunkeutumisen estoon kehitetty järjestelmä, j
 
 Työkalu toimii _jailsien_, eli vankiloiden, avulla. Näitä kutsutaan valvontasäännöiksi tietyille palveluille. 
 
-Sitä voidaan ajatella eräänlaisena vartijana, joka tutkii ja tarkistelee palvelimen lokitietoja kellon ympäri ja tutkii merkkejä haitallisesta toiminnasta, kuten epäonnistuneet kirjautumisyritykset, toistuvat yritykset, skannausyritykset, salasanan arvaukset ja niin edelleen. 
+Sitä voidaan ajatella vartijana, joka tutkii ja tarkistelee palvelimen lokitietoja kellon ympäri ja tutkii merkkejä haitallisesta toiminnasta, kuten epäonnistuneet kirjautumisyritykset, toistuvat yritykset, skannausyritykset, salasanan arvaukset ja niin edelleen. 
 
 Epäilyttävän toiminnan havaitessaan se estää automaattisesti hyökkääjän IP-osoitteen lisäämällä palomuuriin uusia sääntöjä estäen pääsyn tietyksi määräajaksi.
 
