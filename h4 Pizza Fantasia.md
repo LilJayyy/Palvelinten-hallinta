@@ -375,7 +375,7 @@ Kaikki asetukset, joita muutan, vie Ansible muutokseni automaattisesti orjalle (
 
  ## Muutetaan asetustiedostosta jotain pientä
 
-* **`micro roles/fail2ban/files/jail.local`** - loin tiediavasin luodun asetustiedoston auki ja muutin bantime-arvon
+* **`micro roles/fail2ban/files/jail.local`** - avasin luodun asetustiedoston auki ja muutin bantime-arvon
 
 ![74](images/74.png)
 
@@ -398,7 +398,7 @@ Tässäkin kohtaa piti olla tarkkana, sillä `/`merkki main.yml -komennon peräs
 
 * **`mkdir -p roles/fail2ban/handlers`** - luodaan kansiorakenne handlersille
  
-* **`micro roles/fail2ban/handlers/main.yml`** - laitetaan hadlersin tiedostolle sisältö
+* **`micro roles/fail2ban/handlers/main.yml`** - laitetaan handlersin tiedostolle sisältö
 
 ![75](images/75.png)
 
@@ -412,14 +412,15 @@ Tässä osiossa käytin Karvisen (2026) Apache installed with Ansible - quick no
 * **`micro roles/fail2ban/tasks/main.yml`** - muokataan tiedostoon copy-tehtävä ja lopuksi tallennus `ctrl + S`
  
 ````
- -name: copy jail.local  => tämä voi olla mikä vain eli nimi tehtävälle 
- -copy: => copy eli moduulin nimi mitä Ansible käyttää
-   dest: "/etc/fail2ban/jail.local" => kohde minne kopioidaan orjakoneella eli kohdekoneella
-   src: "jail.local" => mistä otetaan tieto eli masterilta
-   owner: "root" => kuka omistaa
-   group: "root" => mikä ryhmä omistaa
-   mode: "0644" => käyttoikeudet, 6 = omistaja (root), 4= ryhmä (root), 4= muut käyttäjät
- notify: restart fail2ban
+---
+- name: copy jail.local  => tämä voi olla mikä vain eli nimi tehtävälle 
+  copy: => copy eli moduulin nimi mitä Ansible käyttää
+    dest: "/etc/fail2ban/jail.local" => kohde minne kopioidaan orjakoneella eli kohdekoneella
+    src: "jail.local" => mistä otetaan tieto eli masterilta
+    owner: "root" => kuka omistaa
+    group: "root" => mikä ryhmä omistaa
+    mode: "0644" => käyttöoikeudet, 6 = omistaja (root), 4= ryhmä (root), 4= muut käyttäjät
+  notify: restart fail2ban
 ````
 
 ![76](images/76.png)
