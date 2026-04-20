@@ -328,15 +328,13 @@ _Onnistunut roolin lisäys_
 
 * **`ansible-playbook site.yml -K`** - Ajetaan playbook
 
-### Virhetilanne: YAML parsing failed: Mapping values are not allowed in this context
-
-Alla olevan kuvan mukaisesti sisennysvirhe löytyi YAML-tiedostosta.
+### Virhetilanne: Conflicting action statements: hosts, tasks
 
 ![71](images/71.png)
 
 _Virheilmoitus_
 
-Virheilmoitus näytti hyvin, missä rivillä virhe oli. Korjasin sen ja yritin uudestaan.
+Virheilmoitus näytti hyvin, missä virhe oli. Olin erheellisesti lisännyt `tasks/main.yml` sisältöön `hosts` -rivin ja `tasks` -otsikon. Sekoitin playbookin ja roolin rakenteet, jotka kuuluivat `site.yml`:ään.
 
 ![72](images/72.png)
 
