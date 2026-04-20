@@ -5,7 +5,7 @@
 * [a) Räpylä](#a-rapyla)
 * [b) Automaatti](#b-automaatti)
 * [c) Asetus](#c-asetus)
-* [d) Paikka remonttiin](#d-paikka-remonttin)
+* [d) Paikka remonttiin](#d-paikka-remonttiin)
 * [e) Idempotentti](#e-idempotentti)
 
 
@@ -145,7 +145,7 @@ Fail2Ban oli nyt asennettu ja UFW-palomuuri otettu käyttöön.
 
 ## Varmuuskopio Fail2Banin konfiguraatiotiedostoille
 
-**Lähdin luomaan Fail2Banin konfiguraatiotiedostoille varmuuskopiota, jotta tekemäni muutokset päivittyvät pakettipäivitysten aikana.**
+**Lähdin luomaan Fail2Banin konfiguraatiotiedostoille varmuuskopiota, jotta tekemäni muutokset eivät katoa pakettipäivitysten aikana.**
 
 **Fail2Ban lukee `.local` -tiedostoja oletuksena ennen `.conf` -tiedostoja, joten muutokset tehtiin sinne.**
 
@@ -491,7 +491,7 @@ Kello oli tässä kohtaa 22:41 ja tällä kertaa oli hyvä tehdä raportti kahde
 
 ## Lähteet 
 
-Ansible Docs. Dokumentti. __Connection methods and details._ Luettavissa: https://docs.ansible.com/projects/ansible/latest/inventory_guide/connection_details.html/ Luettu: 19.04.2026.
+Ansible Docs. Dokumentti. _Connection methods and details._ Luettavissa: https://docs.ansible.com/projects/ansible/latest/inventory_guide/connection_details.html/ Luettu: 19.04.2026.
 
 Ansible Docs. Dokumentti. _Handlers: running operations on change._ Luettavissa: https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_handlers.html/ Luettu:20.4.2026.
 
@@ -505,7 +505,7 @@ James, J. Verkkosivu. _How to Install Fail2Ban on Debian (13, 12, 11)._ Luettavi
 
 Karvinen, T. 2023. Väitöskirja. _Configuration Management of Distributed Systems over Unreliable and Hostile Networks._ Luettavissa: https://westminsterresearch.westminster.ac.uk/item/w7vvz/configuration-management-of-distributed-systems-over-unreliable-and-hostile-networks/ Luettu: 19.04.2026.
 
-Karvinen, T.2026. Verkkosivu. _Apache installed with Ansible - quick notes._ Luettavissa: https://terokarvinen.com/apache-ansible/ Luettu: 19.04.2026.
+Karvinen, T. 2026. Verkkosivu. _Apache installed with Ansible - quick notes._ Luettavissa: https://terokarvinen.com/apache-ansible/ Luettu: 19.04.2026.
 
 Karvinen, T. 2020. Verkkosivu. _Command Line Basics Revisited._ Luettavissa: https://terokarvinen.com/2020/command-line-basics-revisited/ Luettu: 19.04.2026.
 
