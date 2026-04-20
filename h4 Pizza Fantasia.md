@@ -52,15 +52,13 @@ Lähdin tekemään raporttiosiota 19.4. kello 14.20. Meni hetki valita mieluinen
 
 # Fail2Ban
 
-#### Mikä se on? 
-
 Päätin asentaa fail2banin, eli tunkeutumisen estoon kehitetty järjestelmä, joka suojelee Linux-servereitä automaattisilta hyökkäyksiltä.  
 
 Työkalu toimii _jailsien_, eli vankiloiden, avulla. Näitä kutsutaan valvontasäännöiksi tietyille palveluille. 
 
 Sitä voidaan ajatella eräänlaisena vartijana, joka tutkii ja tarkistelee palvelimen lokitietoja kellon ympäri ja tutkii merkkejä haitallisesta toiminnasta, kuten epäonnistuneet kirjautumisyritykset, toistuvat yritykset, skannausyritykset, salasanan arvaukset ja niin edelleen. 
 
-Epäilyttävän toiminnan havaittuaan se estää automaattisesti hyökkääjän IP-osoitteen lisäämällä palomuuriin uusia sääntöjä estäen pääsyn tietyksi määräajaksi.
+Epäilyttävän toiminnan havaitessaan se estää automaattisesti hyökkääjän IP-osoitteen lisäämällä palomuuriin uusia sääntöjä estäen pääsyn tietyksi määräajaksi.
 
 Löysin tähän erittäin selkeän ohjeen (James, J.) ja lähdin etenemään seuraavin askelin.
 
