@@ -413,13 +413,13 @@ Tässä osiossa käytin Karvisen (2026) Apache installed with Ansible - quick no
  
 ````
 ---
-- name: copy jail.local  => tämä voi olla mikä vain eli nimi tehtävälle 
-  copy: => copy eli moduulin nimi mitä Ansible käyttää
-    dest: "/etc/fail2ban/jail.local" => kohde minne kopioidaan orjakoneella eli kohdekoneella
-    src: "jail.local" => mistä otetaan tieto eli masterilta
-    owner: "root" => kuka omistaa
-    group: "root" => mikä ryhmä omistaa
-    mode: "0644" => käyttöoikeudet, 6 = omistaja (root), 4= ryhmä (root), 4= muut käyttäjät
+- name: copy jail.local  # tämä voi olla mikä vain eli nimi tehtävälle 
+  copy: # copy eli moduulin nimi mitä Ansible käyttää
+    dest: "/etc/fail2ban/jail.local" # kohde minne kopioidaan orjakoneella eli kohdekoneella
+    src: "jail.local" # mistä otetaan tieto eli masterilta
+    owner: "root" # kuka omistaa
+    group: "root" # mikä ryhmä omistaa
+    mode: "0644" # käyttöoikeudet, 6 = omistaja (root), 4= ryhmä (root), 4= muut käyttäjät
   notify: restart fail2ban
 ````
 
