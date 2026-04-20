@@ -261,9 +261,7 @@ _sshd vankila aktiivinen, konfiguraatiotesti onnistunut, ei estettyjä osoitteit
 
 Tehtävän osioon siirryin 17:58.
 
-Tutustuin ensin Dhandalan (2026) ohjeeseen, kunnes tajusin, että käytän sitä yhdellä koneella localhostina, enkä kahtena erillisenä. 
-
-Sain sieltä kuitenkin hyviä viitteitä, sillä `main.yml` -sisällön luominen itsekseen on vielä haasteellista.
+Tutustuin ensin Dhandalan (2026) ohjeeseen, kunnes tajusin, että käytän sitä yhdellä koneella localhostina, enkä kahtena erillisenä. Sain sieltä kuitenkin hyviä viitteitä.
 
 Palasin alkujuurille Ansible Docsiin ja Karvisen (2026) sekä omiin ohjeisiini ja sovittelin main.yml-sisällön.
 
