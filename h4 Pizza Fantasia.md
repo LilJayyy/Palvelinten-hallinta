@@ -336,7 +336,7 @@ Alla olevan kuvan mukaisesti sisennysvirhe löytyi YAML-tiedostosta.
 
 _Virheilmoitus_
 
-Virheilmoitus näytti hyvin, että virhe on rivillä 14. Korjasin sen ja yritin uudestaan.
+Virheilmoitus näytti hyvin, missä rivillä virhe oli. Korjasin sen ja yritin uudestaan.
 
 ![72](images/72.png)
 
