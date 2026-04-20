@@ -334,7 +334,7 @@ _Onnistunut roolin lisäys_
 
 _Virheilmoitus_
 
-Virheilmoitus näytti hyvin, missä virhe oli. Olin erheellisesti lisännyt `tasks/main.yml` sisältöön `hosts` -rivin ja `tasks` -otsikon. Sekoitin playbookin ja roolin rakenteet, jotka kuuluivat `site.yml`:ään.
+Virheilmoitus näytti hyvin, missä virhe oli. Olin erheellisesti lisännyt `tasks/main.yml` sisältöön `hosts` -rivin ja `tasks` -otsikon. Sekoitin playbookin roolin sisällön, jotka kuuluivat `site.yml`:ään.
 
 ![72](images/72.png)
 
