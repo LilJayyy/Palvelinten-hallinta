@@ -489,7 +489,14 @@ Saman tilan voi tehdä monta kertaa ja päätyä samaan tilanteeseen. Mitään e
 
 _Ei muutoksia. Idempotenssi on onnistunut_
 
+
+## Pohdinta 
+
 Kello oli tässä kohtaa 22:41 ja tällä kertaa oli hyvä tehdä raportti kahdessa osassa. 
+
+Komennot ja hahmottaminen vaativat edelleen opettelua kaikin puolin, sekä Ansiblen roolin sisällöt että Playbookin. 
+
+Tehtävä oli muutoin mieluisa ja hyvää harjoitusta.
 
 ## Lähteet 
 
