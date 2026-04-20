@@ -336,7 +336,7 @@ _Virheilmoitus_
 
 Virheilmoitus näytti hyvin, missä virhe oli. 
 
-Olin virheellisesti laittanut `tasks/main.yml` tiedoston sisälle `hosts` -rivin ja `tasks`-otsikon. 
+**Olin virheellisesti laittanut `tasks/main.yml` tiedoston sisälle `hosts` -rivin ja `tasks`-otsikon.**
 
 Sekoitin tässä playbookin ja roolin sisällöt keskenään. Ne kuuluivat `site.yml`:ään, eivät `tasks/main.yml`:ään.
 
