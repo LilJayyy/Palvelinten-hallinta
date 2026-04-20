@@ -490,7 +490,9 @@ _Ei muutoksia. Idempotenssi on onnistunut_
 
 Kello oli tässä kohtaa 22:41 ja tällä kertaa oli hyvä tehdä raportti kahdessa osassa. 
 
-Peruskomennot, hahmottaminen sekä koko kokonaisuuden hahmottaminen vaativat edelleen opettelua kaikin puolin. Tehtävä oli muutoin mieluisa ja hyvää harjoitusta.
+Peruskomennot, hahmottaminen sekä koko kokonaisuuden hahmottaminen vaativat edelleen opettelua kaikin puolin. 
+
+Tehtävä oli muutoin mieluisa ja hyvää harjoitusta.
 
 ## Lähteet 
 
