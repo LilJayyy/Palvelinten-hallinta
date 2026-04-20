@@ -338,7 +338,7 @@ Virheilmoitus näytti hyvin, missä virhe oli.
 
 Olin virheellisesti laittanut `tasks/main.yml` tiedoston sisälle `hosts` -rivin ja `tasks`-otsikon. 
 
-Sekoitin tässä playbookin roolin ja sisällöt keskenään. Ne kuuluivat `site.yml`:ään, eivät `tasks/main.yml`:ään.
+Sekoitin tässä playbookin ja roolin sisällöt keskenään. Ne kuuluivat `site.yml`:ään, eivät `tasks/main.yml`:ään.
 
 ![72](images/72.png)
 
