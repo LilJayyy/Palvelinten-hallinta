@@ -473,9 +473,9 @@ _Onnistunut Ansiblen korjaus_
 
 # e) Idempotentti
 
-Tässä piti todistaa idempotenssi. 
-
 * **`ansible-playbook site.yml -K`** - Ajetaan Ansible uudestaan
+
+Tässä piti todistaa idempotenssi, joka oli onnistunut.
 
 Saman tilan voi tehdä monta kertaa ja päätyä samaan tilanteeseen. Mitään ei muuttunut.
 
