@@ -2,9 +2,9 @@
  
 # Sisältö
 * [x) Artikkeli](#x-artikkeli)
-* [a) Räpylä](#a-apassi)
-* [b) Automaatti](#b-moottorix)
-* [c) Asetus](#c-automoottorix)
+* [a) Räpylä](#a-rapyla)
+* [b) Automaatti](#b-automaatti)
+* [c) Asetus](#c-asetus)
 * [d) Paikka remonttiin](#d-paikka-remonttin)
 * [e) Idempotentti](#e-idempotentti)
 
@@ -486,6 +486,7 @@ Saman tilan voi tehdä monta kertaa ja päätyä samaan tilanteeseen. Mitään e
 
 _Ei muutoksia. Idempotenssi on onnistunut_
 
+Kello oli tässä kohtaa 22:41 ja tällä kertaa oli hyvä tehdä raportti kahdessa osassa. 
 
 ## Lähteet 
 
