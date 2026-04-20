@@ -324,7 +324,7 @@ _Onnistunut roolin lisäys_
 
 * **`ansible-playbook site.yml -K`** - Ajetaan playbook
 
-### Virhetilanne: Conflicting action statements: hosts, tasks
+## Virhetilanne: Conflicting action statements: hosts, tasks
 
 ![71](images/71.png)
 
@@ -425,7 +425,7 @@ _Copy-tehtävän rakenne main.yml tiedostossa_
 
 ## Ajetaan playbook
 
-### Virhe: YAML parsing failed 
+## Virhetilanne: YAML parsing failed 
 
 Virheilmoitus ilmoitti, että on löytynyt sisennysvirhe `handlers/main.yml` -tiedostosta riveiltä 1,2 ja 3 tarkistamalla.
 
