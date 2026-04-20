@@ -147,7 +147,7 @@ Fail2Ban oli nyt asennettu ja UFW-palomuuri otettu käyttöön.
 
 **Lähdin luomaan Fail2Banin konfiguraatiotiedostoille varmuuskopiota, jotta tekemäni muutokset päivittyvät pakettipäivitysten aikana.**
 
-Fail2Ban lukee `.local` -tiedostoja oletuksena ennen `.conf` -tiedostoja, joten siksi muutokseni tehtiin sinne.
+**Fail2Ban lukee `.local` -tiedostoja oletuksena ennen `.conf` -tiedostoja, joten muutokset tehtiin sinne.**
 
 Fail2Banin asennuksessa tulee kaksi oletuskonfiguraatiotiedostoa: 
 
