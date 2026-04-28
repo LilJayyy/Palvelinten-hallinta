@@ -1,5 +1,3 @@
-<img width="850" height="897" alt="image" src="https://github.com/user-attachments/assets/0fc8aa6c-0045-42c7-b7a1-f6cd749a3aaf" /># h3 Pizza Fantasia
- 
 # Sisältö
 * [x) Artikkeli](#x-artikkeli)
 * [a) Online ](#a-online)
@@ -10,6 +8,14 @@
 * [f) Hae pari projektiin](#f-hae-pari-projektiin)
 * [g) Se toinen järjestelmä](#g-se-toinen-jarjestelmä)
 * [h) Yhteistyötä](#h-yhteistyötä)
+
+### Koneen tekniset tiedot
+* Prosessori: Intel Core i5-8265U CPU @ 1.60 GHz (1.80 GHz turbo, 8 ydintä)
+* RAM: 16 GB (15,7 GB käytettävissä)
+* Järjestelmä: Windows 11 Pro 64-bittinen (x64-suoritin)
+* Näytönohjain: Intel UHD Graphics 620
+* Tallennustila: 237 GB, josta 158 GB vapaana
+* DirectX-versio: DirectX 12
 
 # x) Artikkeli
 
