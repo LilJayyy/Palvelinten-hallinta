@@ -18,7 +18,7 @@
 # x) Artikkeli
 
 #### What is Git?
-- Versionhallintajärjestelmä, joka ottaa valokuvia projektin jokaisesta vaiheesta commitilla.
+- Versionhallintajärjestelmä, joka ottaa valokuvia eli snapshotteja projektin jokaisesta vaiheesta commitilla.
  
 - Muutokset ja sisältö luodaan paikallisesti omalta koneelta, ja ne siirtyvät etäpalvelimelle, kun on suoritettu push-komento eli `git push`. Aina ennen tätä on suositeltavaa suorittaa komento `git pull`.
 
