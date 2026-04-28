@@ -23,6 +23,9 @@
 - Muutokset ja sisältö luodaan paikallisesti omalta koneelta, ja ne siirtyvät etäpalvelimelle, kun on suoritettu push-komento eli `git push`. Aina ennen tätä on suositeltavaa suorittaa komento `git pull`.
 
 #### 'git add --all && git commit; git pull && git push'.
+
+* **`&&`** - "and&and" eli shell-operaattori jokajaa ehtona vain jos edellinen onnistunut. `;` ajaa vaikka ei olisi.
+ 
 * **`git add`** -komento siirtää työhakemistosta staging-alueelle muutokset snapshotin ottamista varten. 
 
 * **`git commit`** - komento ottaa snapshotin eli valokuvan projektin Git-tietokantaan.
@@ -44,7 +47,7 @@ Alkuun loin repositoryn eli varaston:
 
 ![84](images/84.png)
 
-_Varasto (repository) luotu onnistuneesti_
+_Varasto (repository) luotu onnistuneesti "Sunshine" sanalla_
 
 # b) Dolly
 
@@ -85,7 +88,7 @@ _Onnistunut kansion luominen ja varaston kloonaus_
 
 * **`git commit -m "Sunshine turtley update!"`** - commit ja mitä tehty
 
-* **`git pull`**
+* **`git pull`** - etäpalvelimesta muutosten hakeminen haaraan
 
 * **`git push`** - pushataan eli lähetetään muutokset etäpalvelimelle
 
