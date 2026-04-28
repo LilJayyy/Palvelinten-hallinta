@@ -24,7 +24,7 @@
 
 #### 'git add --all && git commit; git pull && git push'.
 
-* **`&&`** - "and&and" eli shell-operaattori jokajaa ehtona vain jos edellinen onnistunut. `;` ajaa vaikka ei olisi.
+* **`&&`** -  shell-operaattori joka ajaa ehtona vain jos edellinen onnistunut. `;` ajaa vaikka ei olisikaan onnistunut
  
 * **`git add`** -komento siirtää työhakemistosta staging-alueelle muutokset snapshotin ottamista varten. 
 
