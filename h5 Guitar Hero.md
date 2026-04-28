@@ -74,9 +74,13 @@ _Onnistunut kansion luominen ja varaston kloonaus_
 
 ## Muutos luotuun varastoon
 
-* **`cd sunshine-turtley`** - siirrytään repoon
+Varastossa/repossa Sunshine-turtley, kertauksena sinne päästiin:
+
+* **`cd git-repot`** - Mennään git-repot kansioon
+  
+* **cd Sunshine-turtley`** Avataan Sunshine-turtley varasto eli repo
  
-* **`micro README.md`** -  muokataan microlla varaston eli repon sisältö
+* **`micro README.md`** -  muokataan microlla varaston eli repon  "Hello Sunshine turtley!" valikoitui tekstiksi
 
 * **`ctrl + S ja ctrl + Q`** - tallennetaan muutokset
 
