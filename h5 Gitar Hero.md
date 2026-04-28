@@ -15,11 +15,13 @@
 * Tallennustila: 237 GB, josta 158 GB vapaana
 * DirectX-versio: DirectX 12
 
-# x) Artikkeli
+# h5 Gitar Hero
+
+## x) Artikkeli
 
 #### What is Git?
-- Versionhallintajärjestelmä, joka ottaa valokuvia eli snapshotteja projektin jokaisesta vaiheesta commitilla.
- 
+- Git on versionhallintatyökalu jota voidaan käyttää myös paikallisesti
+- Ottaa valokuvia eli snapshotteja projektin jokaisesta vaiheesta commitilla.
 - Muutokset ja sisältö luodaan paikallisesti omalta koneelta, ja ne siirtyvät etäpalvelimelle, kun on suoritettu push-komento eli `git push`. Aina ennen tätä on suositeltavaa suorittaa komento `git pull`.
 
 #### 'git add --all && git commit; git pull && git push'.
