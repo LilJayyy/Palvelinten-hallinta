@@ -78,23 +78,23 @@ Varastossa/repossa Sunshine-turtley, kertauksena sinne päästiin:
 
 * **`cd git-repot`** - Mennään git-repot kansioon
   
-* **cd Sunshine-turtley`** Avataan Sunshine-turtley varasto eli repo
+* **`cd Sunshine-turtley`** - Avataan Sunshine-turtley varasto eli repo
  
-* **`micro README.md`** -  muokataan microlla varaston eli repon  "Hello Sunshine turtley!" valikoitui tekstiksi
+* **`micro README.md`** -  Muokataan microlla varaston eli repon sisällöksi  "Hello Sunshine turtley!" joka valikoitui tekstiksi
 
-* **`ctrl + S ja ctrl + Q`** - tallennetaan muutokset
+* **`ctrl + S ja ctrl + Q`** - Tallennetaan muutokset
 
-* **`git status`** - tarkistetaan tila 
+* **`git status`** - Tarkistetaan tila 
 
-* **`git diff`** - muutoksien erot
+* **`git diff`** - Muutoksien erot
 
-* **`git add --all`** - lisätään
+* **`git add --all`** - Lisätään staging-alustalle tiedostot 
 
-* **`git commit -m "Sunshine turtley update!"`** - commit ja mitä tehty
+* **`git commit -m "Sunshine turtley update!"`** - Commit ja kommentti commitille
 
-* **`git pull`** - etäpalvelimesta muutosten hakeminen haaraan
+* **`git pull`** - Etäpalvelimesta muutosten hakeminen haaraan
 
-* **`git push`** - pushataan eli lähetetään muutokset etäpalvelimelle
+* **`git push`** - Pushataan eli lähetetään muutokset etäpalvelimelle
 
 ![86](images/86.png)
 
