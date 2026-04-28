@@ -35,7 +35,9 @@
 
 # a) Online.
 
-Lähdin alkuun luomaan repositorya eli varastoa:
+Lähdin kirjoittamaan raporttia 28.4.2026 kello 20:35.
+
+Alkuun loin repositoryn eli varaston:
 
 1. Kirjauduin: www.github.com
 2. Loin uuden varaston oikeasta yläkulmasta `+` ja new repository. Julkinen ja "Add readme" valittuna.
@@ -47,9 +49,90 @@ Lähdin alkuun luomaan repositorya eli varastoa:
 _Varasto (repository) luotu onnistuneesti_
 
 # b) Dolly
+
+Seuraavaan tehtävän osioon etenin 20:38. 
+
+Oli tarkoitus kloonata äsken luotu varasto eli repository, tehdä siihen muutoksia ja puskea muutokset palvelimelle ja katsoa onnistunut lopputulos
+
+## Kloonataan varasto 
+
+* HTTPS linkin kopiointia klikkaamalla repositoryn vihreästä "Code" -painikkeesta
+ 
+* **`cd`** - kotihakemistoon
+  
+* **`mkdir -p git-repot`** - luodaan kansio
+ 
+* **`cd git-repot`** - siirrytään kansioon
+
+* **`git clone git@github.com:LilJayyy/Sunshine-turtley.git`** - kloonataan varasto
+
+
+![84](images/84.png)
+
+_Onnistunut kansion luominen ja varaston kloonaus_
+
+## Muutos luotuun varastoon
+
+* **`cd sunshine-turtley`** - siirrytään repoon
+ 
+* **`micro README.md`** - aletaan muokkaamaan microlla sisältöä
+
+* **`ctrl + S ja ctrl + Q`** - tallennetaan muutokset
+
+* **`git status`** - tarkistetaan tila 
+
+* **`git diff`** - muutoksien voimaan tulo
+
+* **`git add --all`** - lisätään
+
+* **`git commit -m "Sunshine turtley update!"`** - commit ja mitä tehty
+
+* **`git pull`**
+
+* **`git push`** - pushataan eli lähetetään muutokset etäpalvelimelle
+
+![84](images/84.png)
+
+_Sisällön muutos ja muutosten lähettäminen etäpalvelimelle_ 
+
+
+
 # c) Doh!
+
+Tähän tehtävänosioon lähdin 21:18. Tämän tehtäväosion tarkoituksena oli tehdä muutos ja kumota se.
+
+## Lähdetään tekemään jälleen muutos
+
+Tässä kohtaa piti olla tarkkana, sillä kaikki ei-commitatut muutokset poistuvat eikä muutosta voi perua.
+
+* **`echo "Muutos EIKUN virhe!! >> README.md"`**
+
+## Poistetaan tehty muutos
+
+* **`git reset --hard`** - resetoidaan tehty muutos
+
+* **`cat README.md`** - tarkistetaan poistuiko se
+
+![84](images/84.png)
+
+_Onnistunut muutos ja muutoksen kumoaminen_ 
+
+
 # d) Tukki
+
+Tähän tehtävänosioon siirryin 21:25. Tarkoitukseni oli tarkastella varastoni lokitiedostoja.
+
+Tehtävässä käytin apuna tehtävänannon osiota (Karvinen, 2026) sekä Atlassianin ohjesivua.
+
+
+## Avataan lokitedostot tarkistelua varten
+
+* **`git log`** - avataan varaston lokitiedostot tarkastelua varten
+
+* **`git log oneline`** - lyhennetään 
+
 # e) Gitanbile
+
 # f) Hae pari projektiin
 
 Pari on hankittu.
@@ -72,7 +155,9 @@ Ansible Docs. Dokumentti. _Handlers: running operations on change._ Luettavissa:
 
 Ansible Docs. Dokumentti. _Getting started._ Luettavissa: https://docs.ansible.com/projects/ansible/latest/getting_started/get_started_playbook.html/ Luettu: 28.4.2026.
 
-Atlassian. Dokumentti. _Git Glossary_ Luettavissa: https://www.atlassian.com/git/glossary/ Luettu: 28.4.2026.
+Atlassian. Verkkosivu. _Git Glossary_ Luettavissa: https://www.atlassian.com/git/glossary/ Luettu: 28.4.2026.
+
+Atlassian. Verkkosivu. _Inspecting a repository._ Luettavissa: https://www.atlassian.com/git/tutorials/inspecting-a-repository#git-log/  Luettu: 28.4.2026.
 
 Chacon and Straub 2014: _Pro Git, 2ed: 1.3 Getting Started - What is Git?._ Luettavissa: https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F/ Luettu: 28.4.2026.
 
