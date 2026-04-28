@@ -19,7 +19,7 @@
 
 ## x) Artikkeli
 
-#### What is Git?
+#### Chacon and Straub 2014: Pro Git, 2ed: 1.3 Getting Started - What is Git?
 - Git on versionhallintatyökalu jota voidaan käyttää myös paikallisesti
 - Ottaa valokuvia eli snapshotteja projektin jokaisesta vaiheesta
 - Muutokset ja sisältö luodaan paikallisesti omalta koneelta, ja ne siirtyvät etäpalvelimelle, kun on suoritettu push-komento eli `git push`. Aina ennen tätä on suositeltavaa suorittaa komento `git pull`.
