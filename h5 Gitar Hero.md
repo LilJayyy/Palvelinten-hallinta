@@ -21,7 +21,7 @@
 
 #### What is Git?
 - Git on versionhallintatyökalu jota voidaan käyttää myös paikallisesti
-- Ottaa valokuvia eli snapshotteja projektin jokaisesta vaiheesta commitilla.
+- Ottaa valokuvia eli snapshotteja projektin jokaisesta vaiheesta
 - Muutokset ja sisältö luodaan paikallisesti omalta koneelta, ja ne siirtyvät etäpalvelimelle, kun on suoritettu push-komento eli `git push`. Aina ennen tätä on suositeltavaa suorittaa komento `git pull`.
 
 #### 'git add --all && git commit; git pull && git push'.
