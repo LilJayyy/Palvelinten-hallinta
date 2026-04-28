@@ -1,4 +1,4 @@
-# h3 Pizza Fantasia
+<img width="850" height="897" alt="image" src="https://github.com/user-attachments/assets/0fc8aa6c-0045-42c7-b7a1-f6cd749a3aaf" /># h3 Pizza Fantasia
  
 # Sisältö
 * [x) Artikkeli](#x-artikkeli)
@@ -15,15 +15,31 @@
 
 #### What is Git?
 -Versionhallintajärjestelmä, joka ottaa valokuvia projektin jokaisesta vaiheesta commitilla.
-
+ 
 -Muutokset ja sisältö luodaan paikallisesti omalta koneelta ja ne siirtyvät etäpalvelimelle (Githubiin) kun on tehty push komento eli `git push`. Aina ennen tätä on suositeltavaa suorittaa komento `git pull`.
 
 #### 'git add --all && git commit; git pull && git push'.
--
+* **`git add`** -komento siirtää työhakemistosta staging-alueelle muutokset snapshotin ottamista varten. 
 
--
+* **`git commit`** - komento ottaa snapshotin eli valokuvan projektin Git-tietokantaan.
+  
+* **`git pull`** - komento on automatisoitu versio fetch-komennosta. Haara ladataan etärepositorysta ja yhdistetään eli "mergataan" se nykyiseen haaraan Git-tietokantaan.
+
+* **`git push`** -komento lähettää muutokset etäpalvelimelle eli siirtää paikallisen haarakkeen toiseen repositoryyn jossa se julkaistaan.
 
 # a) Online.
+
+Lähdin alkuun luomaan repositorya eli varastoa:
+
+1. Kirjauduin: www.github.com
+2. Loin uuden varaston oikeasta yläkulmasta `+` ja new repository. Julkinen ja "Add readme" valittuna.
+3. Add a license ja sieltä `GNU General Public License v3.0`
+4. Lopuksi vielä "Create" -painikkeesta.
+
+![84](images/84.png)
+
+_Varasto (repository) luotu onnistuneesti_
+
 # b) Dolly
 # c) Doh!
 # d) Tukki
@@ -49,6 +65,8 @@ Ansible Docs. Dokumentti. _Connection methods and details._ Luettavissa: https:/
 Ansible Docs. Dokumentti. _Handlers: running operations on change._ Luettavissa: https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_handlers.html/ Luettu: 28.4.2026
 
 Ansible Docs. Dokumentti. _Getting started._ Luettavissa: https://docs.ansible.com/projects/ansible/latest/getting_started/get_started_playbook.html/ Luettu: 28.4.2026.
+
+Atlassian. Dokumentti. _Git Glossary_ Luettavissa: https://www.atlassian.com/git/glossary/ Luettu: 28.4.2026.
 
 Chacon and Straub 2014: _Pro Git, 2ed: 1.3 Getting Started - What is Git?._ Luettavissa: https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F/ Luettu: 28.4.2026.
 
