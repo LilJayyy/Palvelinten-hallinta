@@ -67,7 +67,7 @@ Oli tarkoitus kloonata äsken luotu varasto eli repository, tehdä siihen muutok
 * **`git clone git@github.com:LilJayyy/Sunshine-turtley.git`** - kloonataan varasto
 
 
-![84](images/84.png)
+![85](images/85.png)
 
 _Onnistunut kansion luominen ja varaston kloonaus_
 
@@ -91,7 +91,7 @@ _Onnistunut kansion luominen ja varaston kloonaus_
 
 * **`git push`** - pushataan eli lähetetään muutokset etäpalvelimelle
 
-![84](images/84.png)
+![86](images/86.png)
 
 _Sisällön muutos ja muutosten lähettäminen etäpalvelimelle_ 
 
@@ -113,7 +113,7 @@ Tässä kohtaa piti olla tarkkana, sillä kaikki ei-commitatut muutokset poistuv
 
 * **`cat README.md`** - tarkistetaan poistuiko se
 
-![84](images/84.png)
+![87](images/87.png)
 
 _Onnistunut muutos ja muutoksen kumoaminen_ 
 
@@ -125,20 +125,67 @@ Tähän tehtävänosioon siirryin 21:25. Tarkoitukseni oli tarkastella varastoni
 Tehtävässä käytin apuna tehtävänannon osiota (Karvinen, 2026) sekä Atlassianin ohjesivua.
 
 
-## Avataan lokitedostot tarkistelua varten
+## Avataan lokitiedostot tarkistelua varten
 
 * **`git log`** - avataan varaston lokitiedostot tarkastelua varten
 
-* **`git log oneline`** - lyhennetään 
+* **`git log --oneline`** - lyhennetään eli tiivistellään loki näkymää yhteen riviin
+
+* **`git log --stat`** - tarkistetaan tilastot joita muutettu tiedostoissa commiteissa ja rivimuutokset
+
+* **`git config --get user.name` ja `git config --get user.email``** - tarkistetaan käyttäjän nimi ja sähköpostiosoite, tätä kokeilimmekin  luennon aikana.
+
+* **`git log -p`** - tarkistetaan tällä tiedostojen muutokset
+
+## Lokitiedostojen tulkinta
+
+Alla olevasta kuvasta pystyin havaita, että minulla oli:
+
+* Kaksi committia
+
+* Initial committissä lisätty 675 riviä (License 674 + README 1)
+
+* Nimeni ja sähköpostiosoitteeni olivat oikein ja minun haluamallani tavalla näkyvissä.
+
+
+![87](images/87.png)
+
+_Lokitiedostot_ 
+
 
 # e) Gitanbile
+
+Tähän tehtävänosioon siirryin 22:03 tutkittuani hieman aihetta.
+
+Tarkoituksena oli laittaa Ansible-kansio versionhallintaan. 
+
+Piti tehdä muutos, ajaa se ansiblella ja tallentaa versio `commit`:lla.
+
+Käytin tässä apuna 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # f) Hae pari projektiin
 
 Pari on hankittu.
-
-# g) Se toinen järjestelmä
-# h) Yhteistyötä
 
 
 
@@ -165,6 +212,10 @@ Karvinen, T. 2026. Verkkosivu. _Apache installed with Ansible - quick notes._ Lu
 
 Karvinen, T. 2020. Verkkosivu. _Command Line Basics Revisited._ Luettavissa: https://terokarvinen.com/2020/command-line-basics-revisited/ Luettu: 28.4.2026.
 
-Sharifi, L. 2026. Verkkosivu. _h2 Voileipä_. Luettavissa: https://github.com/LilJayyy/Palvelinten-hallinta/blob/main/h2%20Voileip%C3%A4.md/ Luettu: 28.4.2026.
+Redhat. _Introduction to Git and GitHub._ Verkkosivu. Luettavissa: https://developers.redhat.com/learning/learn:ansible:foundations-ansible/resource/resources:introduction-git-and-github/ Luettu: 28.4.2026.
 
-Sharifi, L. 2026. Verkkosivu. _h3 Demoni_. Luettavissa: https://github.com/LilJayyy/Palvelinten-hallinta/blob/main/h3%20Demoni.md/ Luettu: 28.4.2026.
+Swiftorial. Verkkosivu. _Using Git with Ansible._ Luettavissa: https://www.swiftorial.com/tutorials/devops/ansible/version_control/using_git_with_ansible/ Luettu: 28.4.2026.
+
+Sharifi, L. 2026. Verkkosivu. _h4 Voileipä. Luettavissa: https://github.com/LilJayyy/Palvelinten-hallinta/edit/main/h2%20Voileip%C3%A4.md Luettu: 28.4.2026.
+
+Sharifi, L. 2026. Verkkosivu. h3 Demoni. Luettavissa: https://github.com/LilJayyy/Palvelinten-hallinta/blob/main/h3%20Demoni.md/ Luettu 28.04.2026.
