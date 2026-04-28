@@ -1,13 +1,11 @@
-# Sisältö
 * [x) Artikkeli](#x-artikkeli)
 * [a) Online ](#a-online)
 * [b) Dolly](#b-dolly)
 * [c) Doh!](#c-doh!)
 * [d) Tukki](#d-tukki)
-* [e) Gitanible](#e-gitanible)
+* [e) Gitanbile](#e-gitanbile)
 * [f) Hae pari projektiin](#f-hae-pari-projektiin)
-* [g) Se toinen järjestelmä](#g-se-toinen-jarjestelmä)
-* [h) Yhteistyötä](#h-yhteistyötä)
+
 
 ### Koneen tekniset tiedot
 * Prosessori: Intel Core i5-8265U CPU @ 1.60 GHz (1.80 GHz turbo, 8 ydintä)
@@ -105,7 +103,7 @@ Tähän tehtävänosioon lähdin 21:18. Tämän tehtäväosion tarkoituksena oli
 
 Tässä kohtaa piti olla tarkkana, sillä kaikki ei-commitatut muutokset poistuvat eikä muutosta voi perua.
 
-* **`echo "Muutos EIKUN virhe!! >> README.md"`**
+* **`echo "Muutos EIKUN virhe!!" >> README.md`**
 
 ## Poistetaan tehty muutos
 
@@ -133,7 +131,7 @@ Tehtävässä käytin apuna tehtävänannon osiota (Karvinen, 2026) sekä Atlass
 
 * **`git log --stat`** - tarkistetaan tilastot joita muutettu tiedostoissa commiteissa ja rivimuutokset
 
-* **`git config --get user.name` ja `git config --get user.email``** - tarkistetaan käyttäjän nimi ja sähköpostiosoite, tätä kokeilimmekin  luennon aikana.
+* **`git config --get user.name` ja `git config --get user.email`** - tarkistetaan käyttäjän nimi ja sähköpostiosoite, tätä kokeilimmekin  luennon aikana.
 
 * **`git log -p`** - tarkistetaan tällä tiedostojen muutokset
 
@@ -148,7 +146,7 @@ Alla olevasta kuvasta pystyin havaita, että minulla oli:
 * Nimeni ja sähköpostiosoitteeni olivat oikein ja minun haluamallani tavalla näkyvissä.
 
 
-![87](images/87.png)
+![88](images/88.png)
 
 _Lokitiedostot_ 
 
@@ -161,27 +159,65 @@ Tarkoituksena oli laittaa Ansible-kansio versionhallintaan.
 
 Piti tehdä muutos, ajaa se ansiblella ja tallentaa versio `commit`:lla.
 
-Käytin tässä apuna 
+Käytin tässä apuna tovin etsimisen jälkeen erinomaisen ohjeen Subbiahilta (2024).
+
+## Ansible kansio versionhallintaan
+
+* **`cd ansible`** - siirryin Ansibleen
+
+* **`git init`** - initialize eli "init" jolla **alustin** versionhallinnan kansioon
+-Tämän komennon hahmottamisessa meni hetki, mutta käytännössä se luo .git/kansion ja kokonaisuuden, jolla Git alkaa toimimaan seuraamalla muutoksia.
+
+* **`git add --all`** - staging -alueelle lisätään tiedostot
+
+* **`git commit -m "Ansiblen Git ja ensimmäinen commit"`** - snapshotin tallennus ja commit-viesti
+
+* **`git log --oneline`** - tiivistetty lokinäkymä yhden rivin tarkkuudella, tarkistin onnistumisen
+
+Ajattelin tämän tehtävänosion olevan haasteellisempi. Lähinnä meni aikaa hahmottaessa, mitä lähden tekemään.
+
+Asia lähti luistamaan, kun oikea ohjeistus löytyi ja kerkesin pohtia hetken.
 
 
+![89](images/89.png)
+
+_Lokinäkymässä Ansible-kansion alustus ja ensimmäinen commit_ 
+
+## Tiedoston sisällön muuttaminen
+
+* **`micro site.yml`** - muutin olemassa olevan tiedoston sisältöä eli avasin micron
+
+Lisäsin alkuun alla olevan tekstin testinä:
+
+![90](images/90.png)
+
+_site.yml tiedostoon muutos testinä_
+
+Lopuksi vielä tallennus
+
+## Ajetaan ansible testiksi
+
+* **`sudo ansible-playbook site.yml`** - ajetaan ansiblella
 
 
+![91](images/91.png)
+
+_Miellyttävä lopputulos, playbook on ajettu täydellisesti_ 
 
 
+## Tallennetaan muutokset eli commit 
 
+* **`git add --all`** - Staging-alueelle tiedostojen lisäys
 
+* **`git commit -m "Muutos lisätty site.yml"`** - commit ja viesti
 
+* **`git log --oneline`** - tarkistus vielä lokitiedoista yhdeltä riviltä oliko onnistunut 
 
+![92](images/92.png)
 
+_Commit eli tallennus onnistui_
 
-
-
-
-
-
-
-
-
+Tässä kohtaa kello olikin jo 23:09 harmikseni jää vapaaehtoiset tehtävät tällä kertaa tekemättä.
 
 # f) Hae pari projektiin
 
@@ -189,10 +225,6 @@ Pari on hankittu.
 
 
 
-
-
-
-![60](images/60.png)
 
 ## Lähteet 
 
@@ -212,10 +244,12 @@ Karvinen, T. 2026. Verkkosivu. _Apache installed with Ansible - quick notes._ Lu
 
 Karvinen, T. 2020. Verkkosivu. _Command Line Basics Revisited._ Luettavissa: https://terokarvinen.com/2020/command-line-basics-revisited/ Luettu: 28.4.2026.
 
+Subbiah, V. 2024. Day 22: _Integrating Ansible with Version Control Systems._ Luettavissa: https://medium.com/@vinoji2005/day-22-integrating-ansible-with-version-control-systems-57f47d635a95/ Luettu: 28.4.2026.
+
 Redhat. _Introduction to Git and GitHub._ Verkkosivu. Luettavissa: https://developers.redhat.com/learning/learn:ansible:foundations-ansible/resource/resources:introduction-git-and-github/ Luettu: 28.4.2026.
 
 Swiftorial. Verkkosivu. _Using Git with Ansible._ Luettavissa: https://www.swiftorial.com/tutorials/devops/ansible/version_control/using_git_with_ansible/ Luettu: 28.4.2026.
 
-Sharifi, L. 2026. Verkkosivu. _h4 Voileipä. Luettavissa: https://github.com/LilJayyy/Palvelinten-hallinta/edit/main/h2%20Voileip%C3%A4.md Luettu: 28.4.2026.
+Sharifi, L. 2026. Verkkosivu. _h2 Voileipä._ Luettavissa: https://github.com/LilJayyy/Palvelinten-hallinta/blob/main/h2%20Voileip%C3%A4.md/ Luettu: 28.4.2026.
 
-Sharifi, L. 2026. Verkkosivu. h3 Demoni. Luettavissa: https://github.com/LilJayyy/Palvelinten-hallinta/blob/main/h3%20Demoni.md/ Luettu 28.04.2026.
+Sharifi, L. 2026. Verkkosivu. _h3 Demoni._ Luettavissa: https://github.com/LilJayyy/Palvelinten-hallinta/blob/main/h3%20Demoni.md/ Luettu 28.04.2026.
