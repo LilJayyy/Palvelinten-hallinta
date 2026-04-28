@@ -73,13 +73,13 @@ _Onnistunut kansion luominen ja varaston kloonaus_
 
 * **`cd sunshine-turtley`** - siirrytään repoon
  
-* **`micro README.md`** - aletaan muokkaamaan microlla sisältöä
+* **`micro README.md`** -  muokataan microlla varaston eli repon sisältö
 
 * **`ctrl + S ja ctrl + Q`** - tallennetaan muutokset
 
 * **`git status`** - tarkistetaan tila 
 
-* **`git diff`** - muutoksien voimaan tulo
+* **`git diff`** - muutoksien erot
 
 * **`git add --all`** - lisätään
 
@@ -99,7 +99,7 @@ _Sisällön muutos ja muutosten lähettäminen etäpalvelimelle_
 
 Tähän tehtävänosioon lähdin 21:18. Tämän tehtäväosion tarkoituksena oli tehdä muutos ja kumota se.
 
-## Lähdetään tekemään jälleen muutos
+## Lähdetään tekemään muutos README.md tiedostoon
 
 Tässä kohtaa piti olla tarkkana, sillä kaikki ei-commitatut muutokset poistuvat eikä muutosta voi perua.
 
@@ -211,7 +211,7 @@ _Miellyttävä lopputulos, playbook on ajettu täydellisesti_
 
 * **`git commit -m "Muutos lisätty site.yml"`** - commit ja viesti
 
-* **`git log --oneline`** - tarkistus vielä lokitiedoista yhdeltä riviltä oliko onnistunut 
+* **`git log --oneline`** - tarkistus lokitiedoista onnistuiko muutos
 
 ![92](images/92.png)
 
