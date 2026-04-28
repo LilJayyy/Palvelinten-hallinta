@@ -110,7 +110,7 @@ Tähän tehtävänosioon lähdin 21:18. Tämän tehtäväosion tarkoituksena oli
 
 Tässä kohtaa piti olla tarkkana, sillä kaikki ei-commitatut muutokset poistuvat eikä muutosta voi perua.
 
-* **`echo "Muutos EIKUN virhe!!" >> README.md`**
+* **`echo "Muutos EIKUN virhe!!" >> README.md`** - tehty muutos README -tiedostoon
 
 ## Poistetaan tehty muutos
 
